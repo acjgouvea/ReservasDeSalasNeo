@@ -3,6 +3,8 @@ Imports System.Security.Cryptography.X509Certificates
 
 Public Class ConexaoComOBancoDeDados
     Public Property ConnectionString As String
+
+
     Public Sub ConectarComBanco(username As String, password As String)
 
         Dim serverName As String = "192.168.10.14"

@@ -7,15 +7,9 @@ Public Class LoginForm
 
     Private Sub ButtonLogin_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLogin.Click
 
-
-
         Dim conexao As New ConexaoComOBancoDeDados()
 
         conexao.ConectarComBanco(TextBoxUser.Text, TextBoxPassword.Text)
-
-
-
-
 
 
         Try
