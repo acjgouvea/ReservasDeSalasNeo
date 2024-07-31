@@ -6,32 +6,31 @@ Imports FontAwesome.Sharp
 Public Class Form1
     Private conexao As ConexaoComOBancoDeDados
     Private currentStartDate As DateTime
+    Private username As String
+    Private password As String
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
+        Me.username = username
+        Me.password = password
         conexao = New ConexaoComOBancoDeDados()
         conexao.ConectarComBanco(username, password)
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         currentStartDate = DateTime.Now
-
         CarregarReservasDaSemana(currentStartDate)
 
-        'Dim iconButton As New IconButton()
-        'iconButton.IconChar = IconChar.Plus
-        'iconButton.IconColor = Color.Black
-        'iconButton.IconFont = IconFont.Auto
-        'iconButton.Text = "Adicionar Reserva"
-        'iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
-        'iconButton.Size = New Size(150, 50)
-        'iconButton.Location = New Point(10, 10)
+        Dim iconButton As New IconButton()
 
-        '' Adiciona o botão ao formulário e configura o evento de clique
-        'AddHandler iconButton.Click, AddressOf Me.ButtonAdd_Click
-        'Me.Controls.Add(iconButton)
+        iconButton.IconFont = IconFont.Auto
+        iconButton.Text = "Adicionar Reunião"
+        iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
+        iconButton.Size = New Size(227, 33)
+        iconButton.Location = New Point(768, 368) ' Define a posição do botão
 
-
+        Me.Controls.Add(iconButton)
+        AddHandler iconButton.Click, AddressOf Me.IconButton_Click
     End Sub
 
     Private Sub CarregarReservasDaSemana(data As DateTime)
@@ -53,22 +52,18 @@ Public Class Form1
             Dim newTable As New DataTable()
             newTable.Columns.Add("Horario", GetType(String))
 
-            ' Adiciona as outras colunas
             For Each col As DataColumn In dataTable.Columns
                 If col.ColumnName <> "Horario" Then
                     newTable.Columns.Add(col.ColumnName, col.DataType)
                 End If
             Next
+
             DataGridView1.AutoGenerateColumns = True
             DataGridView1.DataSource = dataTable
-
             DataGridView1.Columns("Horario").DisplayIndex = 0
 
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar semana: " & ex.Message)
-
-
-
         End Try
     End Sub
 
@@ -87,22 +82,10 @@ Public Class Form1
         CarregarReservasDaSemana(currentStartDate)
     End Sub
 
-    Private Sub ButtonAdd_Click(sender As Object, e As EventArgs) Handles ButtonAdd.Click
 
-        Dim iconButton As New IconButton()
-        iconButton.IconChar = IconChar.Plus
-        iconButton.IconColor = Color.Black
-        iconButton.IconFont = IconFont.Auto
-        iconButton.Text = "Adicionar"
-        iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
-        iconButton.Size = New Size(100, 50)
-        iconButton.Location = New Point(10, 70) ' Define a posição do botão
 
-        ' Adiciona o botão ao formulário
-        Me.Controls.Add(iconButton)
-
-        ' Adiciona o evento de clique ao botão dinamicamente
-        AddHandler iconButton.Click, AddressOf Me.IconButton_Click
-
+    Private Sub IconButton_Click(sender As Object, e As EventArgs)
+        Dim eventForm As New EventForm(Me.username, Me.password)
+        eventForm.Show()
     End Sub
 End Class

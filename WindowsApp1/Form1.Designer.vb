@@ -22,7 +22,6 @@ Partial Class Form1
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ButtonAdd = New System.Windows.Forms.Button()
         Me.ButtonEdit = New System.Windows.Forms.Button()
         Me.ButtonDelete = New System.Windows.Forms.Button()
         Me.ButtonPrevWeek = New System.Windows.Forms.Button()
@@ -36,15 +35,6 @@ Partial Class Form1
         Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ButtonAdd
-        '
-        Me.ButtonAdd.Location = New System.Drawing.Point(768, 368)
-        Me.ButtonAdd.Name = "ButtonAdd"
-        Me.ButtonAdd.Size = New System.Drawing.Size(227, 33)
-        Me.ButtonAdd.TabIndex = 1
-        Me.ButtonAdd.Text = "Adicionar"
-        Me.ButtonAdd.UseVisualStyleBackColor = True
         '
         'ButtonEdit
         '
@@ -132,7 +122,6 @@ Partial Class Form1
         Me.Controls.Add(Me.ButtonPrevWeek)
         Me.Controls.Add(Me.ButtonDelete)
         Me.Controls.Add(Me.ButtonEdit)
-        Me.Controls.Add(Me.ButtonAdd)
         Me.Controls.Add(Me.DataGridView1)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -140,7 +129,6 @@ Partial Class Form1
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents ButtonAdd As Button
     Friend WithEvents ButtonEdit As Button
     Friend WithEvents ButtonDelete As Button
     Friend WithEvents ButtonPrevWeek As Button
