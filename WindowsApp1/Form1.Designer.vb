@@ -33,6 +33,7 @@ Partial Class Form1
         Me.Quarta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Quinta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Horario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,7 +82,7 @@ Partial Class Form1
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Segunda, Me.Terca, Me.Quarta, Me.Quinta, Me.Sexta})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Segunda, Me.Terca, Me.Quarta, Me.Quinta, Me.Sexta, Me.Horario})
         Me.DataGridView1.Location = New System.Drawing.Point(24, 22)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(732, 457)
@@ -112,6 +113,11 @@ Partial Class Form1
         Me.Sexta.HeaderText = "Sexta"
         Me.Sexta.Name = "Sexta"
         '
+        'Horario
+        '
+        Me.Horario.HeaderText = "Horario"
+        Me.Horario.Name = "Horario"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -140,4 +146,5 @@ Partial Class Form1
     Friend WithEvents Quarta As DataGridViewTextBoxColumn
     Friend WithEvents Quinta As DataGridViewTextBoxColumn
     Friend WithEvents Sexta As DataGridViewTextBoxColumn
+    Friend WithEvents Horario As DataGridViewTextBoxColumn
 End Class
