@@ -39,7 +39,7 @@ Partial Class Form1
         '
         'ButtonEdit
         '
-        Me.ButtonEdit.Location = New System.Drawing.Point(768, 407)
+        Me.ButtonEdit.Location = New System.Drawing.Point(801, 397)
         Me.ButtonEdit.Name = "ButtonEdit"
         Me.ButtonEdit.Size = New System.Drawing.Size(227, 33)
         Me.ButtonEdit.TabIndex = 2
@@ -48,7 +48,7 @@ Partial Class Form1
         '
         'ButtonDelete
         '
-        Me.ButtonDelete.Location = New System.Drawing.Point(768, 446)
+        Me.ButtonDelete.Location = New System.Drawing.Point(801, 436)
         Me.ButtonDelete.Name = "ButtonDelete"
         Me.ButtonDelete.Size = New System.Drawing.Size(227, 33)
         Me.ButtonDelete.TabIndex = 3
@@ -75,7 +75,7 @@ Partial Class Form1
         '
         'MonthCalendar1
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(768, 22)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(801, 18)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 6
         '
@@ -83,46 +83,59 @@ Partial Class Form1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Segunda, Me.Terca, Me.Quarta, Me.Quinta, Me.Sexta, Me.Horario})
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 22)
+        Me.DataGridView1.Location = New System.Drawing.Point(24, 12)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(732, 457)
+        Me.DataGridView1.Size = New System.Drawing.Size(765, 457)
         Me.DataGridView1.TabIndex = 0
         '
         'Segunda
         '
+        Me.Segunda.DataPropertyName = "IdSegunda_IN"
         Me.Segunda.HeaderText = "Segunda"
+        Me.Segunda.MinimumWidth = 100
         Me.Segunda.Name = "Segunda"
+        Me.Segunda.Width = 120
         '
         'Terca
         '
         Me.Terca.HeaderText = "Terça"
+        Me.Terca.MinimumWidth = 100
         Me.Terca.Name = "Terca"
+        Me.Terca.Width = 120
         '
         'Quarta
         '
         Me.Quarta.HeaderText = "Quarta"
+        Me.Quarta.MinimumWidth = 100
         Me.Quarta.Name = "Quarta"
+        Me.Quarta.Width = 120
         '
         'Quinta
         '
         Me.Quinta.HeaderText = "Quinta"
+        Me.Quinta.MinimumWidth = 100
         Me.Quinta.Name = "Quinta"
+        Me.Quinta.Width = 120
         '
         'Sexta
         '
         Me.Sexta.HeaderText = "Sexta"
+        Me.Sexta.MinimumWidth = 100
         Me.Sexta.Name = "Sexta"
+        Me.Sexta.Width = 120
         '
         'Horario
         '
         Me.Horario.HeaderText = "Horario"
+        Me.Horario.MinimumWidth = 100
         Me.Horario.Name = "Horario"
+        Me.Horario.Width = 120
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1027, 573)
+        Me.ClientSize = New System.Drawing.Size(1060, 573)
         Me.Controls.Add(Me.MonthCalendar1)
         Me.Controls.Add(Me.ButtonNextWeek)
         Me.Controls.Add(Me.ButtonPrevWeek)

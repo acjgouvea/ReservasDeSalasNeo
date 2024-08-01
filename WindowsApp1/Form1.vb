@@ -17,89 +17,107 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        currentStartDate = DateTime.Now
-        CarregarReservasDaSemana(currentStartDate)
 
-        Dim iconButton As New IconButton()
+        Dim reservas As New List(Of Reserva) From {
+        
+        New Reserva(   ),    
+        
+        }
 
-        iconButton.IconFont = IconFont.Auto
-        iconButton.Text = "Adicionar Reunião"
-        iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
-        iconButton.Size = New Size(227, 33)
-        iconButton.Location = New Point(768, 368) ' Define a posição do botão
+        DataGridView1.DataSource = reservas
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        Me.Controls.Add(iconButton)
-        AddHandler iconButton.Click, AddressOf Me.IconButton_Click
     End Sub
 
+
+
+
+
+
+    'Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    currentStartDate = DateTime.Now
+    '    CarregarReservasDaSemana(currentStartDate)
+
+    '    Dim iconButton As New IconButton()
+
+    '    iconButton.IconFont = IconFont.Auto
+    '    iconButton.Text = "Adicionar Reunião"
+    '    iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
+    '    iconButton.Size = New Size(227, 33)
+    '    iconButton.Location = New Point(801, 358) ' Define a posição do botão
+
+    '    Me.Controls.Add(iconButton)
+    '    AddHandler iconButton.Click, AddressOf Me.IconButton_Click
+    'End Sub
+
     Private Sub CarregarReservasDaSemana(data As DateTime)
-        Try
-            ' Verifica se a conexão está inicializada
-            If conexao Is Nothing Then
-                Throw New InvalidOperationException("Conexão não inicializada.")
-            End If
+        'Try
+        '    ' Verifica se a conexão está inicializada
+        '    If conexao Is Nothing Then
+        '        Throw New InvalidOperationException("Conexão não inicializada.")
+        '    End If
 
-            Dim parametros As New List(Of SqlParameter)()
-            parametros.Add(New SqlParameter("@Data_DT", data))
-            parametros.Add(New SqlParameter("@Sala_IN", 1))
+        '    Dim parametros As New List(Of SqlParameter)()
+        '    parametros.Add(New SqlParameter("@Data_DT", data))
+        '    parametros.Add(New SqlParameter("@Sala_IN", 1))
 
-            Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarReservasDaSemanaPorData", parametros)
+        '    Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarReservasDaSemanaPorData", parametros)
 
-            If dataTable Is Nothing Then
-                Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
-            End If
+        '    If dataTable Is Nothing Then
+        '        Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
+        '    End If
 
-            If Not dataTable.Columns.Contains("Horario") Then
-                dataTable.Columns.Add("Horario", GetType(String))
-            End If
+        '    If Not dataTable.Columns.Contains("Horario") Then
+        '        dataTable.Columns.Add("Horario", GetType(String))
+        '    End If
 
-            For Each row As DataRow In dataTable.Rows
-                row("Horario") = row("HoraApresentacao_VC")
-            Next
+        '    For Each row As DataRow In dataTable.Rows
+        '        row("Horario") = row("HoraApresentacao_VC")
+        '    Next
 
-            DataGridView1.AutoGenerateColumns = False
+        '    DataGridView1.AutoGenerateColumns = False
 
-            DataGridView1.Columns.Clear()
+        '    DataGridView1.Columns.Clear()
 
-            ' Adiciona manualmente as colunas que você deseja exibir
-            Dim colHorario As New DataGridViewTextBoxColumn()
-            colHorario.DataPropertyName = "Horario"
-            colHorario.HeaderText = "Horario"
-            DataGridView1.Columns.Add(colHorario)
+        '    ' Adiciona manualmente as colunas que você deseja exibir
+        '    Dim colHorario As New DataGridViewTextBoxColumn()
+        '    colHorario.DataPropertyName = "Horario"
+        '    colHorario.HeaderText = "Horario"
+        '    DataGridView1.Columns.Add(colHorario)
 
-            Dim colSegunda As New DataGridViewTextBoxColumn()
-            colSegunda.DataPropertyName = "EventoSegunda_VC"
-            colSegunda.HeaderText = "Segunda"
-            DataGridView1.Columns.Add(colSegunda)
+        '    Dim colSegunda As New DataGridViewTextBoxColumn()
+        '    colSegunda.DataPropertyName = "EventoSegunda_VC"
+        '    colSegunda.HeaderText = "Segunda"
+        '    DataGridView1.Columns.Add(colSegunda)
 
-            Dim colTerca As New DataGridViewTextBoxColumn()
-            colTerca.DataPropertyName = "EventoTerca_VC"
-            colTerca.HeaderText = "Terça"
-            DataGridView1.Columns.Add(colTerca)
+        '    Dim colTerca As New DataGridViewTextBoxColumn()
+        '    colTerca.DataPropertyName = "EventoTerca_VC"
+        '    colTerca.HeaderText = "Terça"
+        '    DataGridView1.Columns.Add(colTerca)
 
-            Dim colQuarta As New DataGridViewTextBoxColumn()
-            colQuarta.DataPropertyName = "EventoQuarta_VC"
-            colQuarta.HeaderText = "Quarta"
-            DataGridView1.Columns.Add(colQuarta)
+        '    Dim colQuarta As New DataGridViewTextBoxColumn()
+        '    colQuarta.DataPropertyName = "EventoQuarta_VC"
+        '    colQuarta.HeaderText = "Quarta"
+        '    DataGridView1.Columns.Add(colQuarta)
 
-            Dim colQuinta As New DataGridViewTextBoxColumn()
-            colQuinta.DataPropertyName = "EventoQuinta_VC"
-            colQuinta.HeaderText = "Quinta"
-            DataGridView1.Columns.Add(colQuinta)
+        '    Dim colQuinta As New DataGridViewTextBoxColumn()
+        '    colQuinta.DataPropertyName = "EventoQuinta_VC"
+        '    colQuinta.HeaderText = "Quinta"
+        '    DataGridView1.Columns.Add(colQuinta)
 
-            Dim colSexta As New DataGridViewTextBoxColumn()
-            colSexta.DataPropertyName = "EventoSexta_VC"
-            colSexta.HeaderText = "Sexta"
-            DataGridView1.Columns.Add(colSexta)
+        '    Dim colSexta As New DataGridViewTextBoxColumn()
+        '    colSexta.DataPropertyName = "EventoSexta_VC"
+        '    colSexta.HeaderText = "Sexta"
+        '    DataGridView1.Columns.Add(colSexta)
 
-            ' Define a fonte de dados do DataGridView
-            DataGridView1.DataSource = dataTable
+        '    ' Define a fonte de dados do DataGridView
+        '    DataGridView1.DataSource = dataTable
 
-            ' Garante que a coluna "Horario" seja a primeira a ser exibida
-            DataGridView1.Columns("Horario").DisplayIndex = 0
-        Catch ex As Exception
-            MessageBox.Show("Erro ao carregar semana: " & ex.Message)
-        End Try
+        '    ' Garante que a coluna "Horario" seja a primeira a ser exibida
+        '    DataGridView1.Columns("Horario").DisplayIndex = 0
+        'Catch ex As Exception
+        '    MessageBox.Show("Erro ao carregar semana: " & ex.Message)
+        'End Try
     End Sub
 
     Private Sub ButtonPrevWeek_Click(sender As Object, e As EventArgs) Handles ButtonPrevWeek.Click
