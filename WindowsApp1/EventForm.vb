@@ -19,27 +19,41 @@ Public Class EventForm
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
     End Sub
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Qualquer lógica adicional durante o carregamento do formulário
+    Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        DateTimePickerInicio.Format = DateTimePickerFormat.Custom
+        DateTimePickerInicio.CustomFormat = "dd/MM/yyyy HH:mm"
+
+        DateTimePickerFim.Format = DateTimePickerFormat.Custom
+        DateTimePickerFim.CustomFormat = "dd/MM/yyyy HH:mm"
     End Sub
 
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
-        ' Qualquer lógica adicional durante a alteração do texto
-    End Sub
+
 
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+
+
         Dim parametros As New List(Of SqlParameter)()
-        parametros.Add(New SqlParameter("@reserva_sala_id", 1))
-        parametros.Add(New SqlParameter("@reserva_usuario_id", 1))
-        parametros.Add(New SqlParameter("@reserva_usuario_nome", TextBoxUsuarioNome.Text))
-        parametros.Add(New SqlParameter("@reserva_data_hora_inicio", DateTimePickerInicio.Value))
-        parametros.Add(New SqlParameter("@reserva_data_hora_fim", DateTimePickerFim.Value))
+
+        'estou aqui
+        'tenho que passar  :    Data_DT e Sala_IN
+        '                       parametros.Add(New SqlParameter("@Data_DT", data))
+        '                       parametros.Add(New SqlParameter("@Sala_IN", salaId))
+
+
+        parametros.Add(New SqlParameter("@Data_DT", 1))
+        parametros.Add(New SqlParameter("@Sala_IN", 1))
+
 
         Try
-            conexao.ExecutarConsulta(CommandType.StoredProcedure, "sp_ReservaInserir", parametros)
+            conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ReservaInserir", parametros)
             Me.DialogResult = DialogResult.OK
         Catch ex As Exception
-            MessageBox.Show("Erro! " & ex.Message)
+            MessageBox.Show("Erro ao salvar a reserva! " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
+        Me.Close()
     End Sub
 End Class

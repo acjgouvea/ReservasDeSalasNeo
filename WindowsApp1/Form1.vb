@@ -17,19 +17,44 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Limpar colunas existentes
+        DataGridView1.Columns.Clear()
+
+        ' Adicionar colunas específicas ao DataGridView
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Horário",
+        .DataPropertyName = "HoraApresentacao_VC"
+    })
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Segunda-Feira",
+        .DataPropertyName = "EventoSegunda_VC"
+    })
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Terça-Feira",
+        .DataPropertyName = "EventoTerca_VC"
+    })
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Quarta-Feira",
+        .DataPropertyName = "EventoQuarta_VC"
+    })
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Quinta-Feira",
+        .DataPropertyName = "EventoQuinta_VC"
+    })
+        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+        .HeaderText = "Sexta-Feira",
+        .DataPropertyName = "EventoSexta_VC"
+    })
+
+        ' Configurar o DataSource do DataGridView
+        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+        ' Carregar reservas da semana atual
         currentStartDate = DateTime.Now
         CarregarReservasDaSemana(currentStartDate)
-
-        Dim iconButton As New IconButton()
-        iconButton.IconFont = IconFont.Auto
-        iconButton.Text = "Adicionar Reunião"
-        iconButton.TextImageRelation = TextImageRelation.ImageBeforeText
-        iconButton.Size = New Size(227, 33)
-        iconButton.Location = New Point(801, 358) ' Define a posição do botão
-
-        Me.Controls.Add(iconButton)
-        AddHandler iconButton.Click, AddressOf Me.IconButton_Click
     End Sub
+
+
 
     Private Sub CarregarReservasDaSemana(data As DateTime)
         Try
@@ -44,57 +69,54 @@ Public Class Form1
 
             Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarReservasDaSemanaPorData", parametros)
 
-            If dataTable Is Nothing Then
+            If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
                 Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
             End If
 
-            ' Adiciona as colunas manualmente
-            Dim colHorario As New DataGridViewTextBoxColumn()
-            colHorario.DataPropertyName = "HoraApresentacao_VC"
-            colHorario.HeaderText = "Horário"
-            DataGridView1.Columns.Add(colHorario)
+            ' Configurar o DataGridView para preencher as colunas manualmente
+            DataGridView1.Columns.Clear()
 
-            Dim colSegunda As New DataGridViewTextBoxColumn()
-            colSegunda.DataPropertyName = "IdSegunda_IN"
-            colSegunda.HeaderText = "Segunda"
-            DataGridView1.Columns.Add(colSegunda)
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Horário",
+            .DataPropertyName = "HoraApresentacao_VC"
+        })
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Segunda-Feira",
+            .DataPropertyName = "IdSegunda_IN"
+        })
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Teça-Feira",
+            .DataPropertyName = "IdTerca_IN"
+        })
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Quarta-Feira",
+            .DataPropertyName = "IdSegunda_IN"
+        })
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Quintaa-Feira",
+            .DataPropertyName = "IdQuinta_IN"
+        })
+            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
+            .HeaderText = "Sexta-Feira",
+            .DataPropertyName = "IdSexta_IN"
+        })
 
-            Dim colTerca As New DataGridViewTextBoxColumn()
-            colTerca.DataPropertyName = "IdTerca_IN"
-            colTerca.HeaderText = "Terça"
-            DataGridView1.Columns.Add(colTerca)
 
-            Dim colQuarta As New DataGridViewTextBoxColumn()
-            colQuarta.DataPropertyName = "IdQuarta_IN"
-            colQuarta.HeaderText = "Quarta"
-            DataGridView1.Columns.Add(colQuarta)
-
-            Dim colQuinta As New DataGridViewTextBoxColumn()
-            colQuinta.DataPropertyName = "IdQuinta_IN"
-            colQuinta.HeaderText = "Quinta"
-            DataGridView1.Columns.Add(colQuinta)
-
-            Dim colSexta As New DataGridViewTextBoxColumn()
-            colSexta.DataPropertyName = "IdSexta_IN"
-            colSexta.HeaderText = "Sexta"
-            DataGridView1.Columns.Add(colSexta)
-
-            ' Preenche o DataGridView com os dados
-            'For Each row As DataRow In dataTable.Rows
-            '    DataGridView1.Rows.Add(
-            '        row("HoraApresentacao_VC").ToString(),
-            '        row("EventoSegunda_VC").ToString(),
-            '        row("EventoTerca_VC").ToString(),
-            '        row("EventoQuarta_VC").ToString(),
-            '        row("EventoQuinta_VC").ToString(),
-            '        row("EventoSexta_VC").ToString()
-            '    )
-            'Next
+            'Preenche o DataGridView com os dados
+            For Each row As DataRow In dataTable.Rows
+                DataGridView1.Rows.Add(
+                row("HoraApresentacao_VC").ToString(),
+                row("IdSegunda_IN").ToString(),
+                row("IdTerca_IN").ToString(),
+                row("IdQuarta_IN").ToString(),
+                row("IdQuinta_IN").ToString(),
+                row("IdSexta_IN").ToString()
+                )
+            Next
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar semana: " & ex.Message)
         End Try
     End Sub
-
     Private Sub ButtonPrevWeek_Click(sender As Object, e As EventArgs) Handles ButtonPrevWeek.Click
         currentStartDate = currentStartDate.AddDays(-7)
         CarregarReservasDaSemana(currentStartDate)
@@ -113,6 +135,13 @@ Public Class Form1
     Private Sub IconButton_Click(sender As Object, e As EventArgs)
         Dim eventForm As New EventForm(Me.username, Me.password)
         eventForm.Show()
+    End Sub
+
+
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+        Dim eventForm As New EventForm(Me.username, Me.password)
+        eventForm.Show()
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
