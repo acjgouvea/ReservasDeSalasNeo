@@ -3,6 +3,7 @@ Imports System.Security.Cryptography.X509Certificates
 
 Public Class ConexaoComOBancoDeDados
     Public Property ConnectionString As String
+    Private connection As SqlConnection
 
 
     Public Sub ConectarComBanco(username As String, password As String)
@@ -11,12 +12,25 @@ Public Class ConexaoComOBancoDeDados
         Dim databaseName As String = "MASERP_HML"
 
         ConnectionString = $"Server={serverName};Database={databaseName};User Id={username}; Password={password};"
+        connection = New SqlConnection(ConnectionString)
+        connection.Open()
 
     End Sub
 
     Public Function CriarConexao() As SqlConnection
+
         Return New SqlConnection(ConnectionString)
 
+    End Function
+    Public Function ObterUsuarioId(login As String) As Integer
+        Dim query As String = "SELECT usu_usuario_ID FROM usuario_T WHERE usu_login_VC = @login"
+        Using connection = CriarConexao()
+            connection.Open()
+            Using cmd As New SqlCommand(query, connection)
+                cmd.Parameters.AddWithValue("@login", login)
+                Return Convert.ToInt32(cmd.ExecuteScalar())
+            End Using
+        End Using
     End Function
 
     Public Function ExecutarSelect(commandType As CommandType,

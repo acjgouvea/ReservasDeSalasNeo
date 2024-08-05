@@ -16,6 +16,8 @@ Public Class Form1
         conexao.ConectarComBanco(username, password)
     End Sub
 
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Limpar colunas existentes
         DataGridView1.Columns.Clear()

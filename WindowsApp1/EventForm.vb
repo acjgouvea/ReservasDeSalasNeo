@@ -20,7 +20,6 @@ Public Class EventForm
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         DateTimePickerInicio.Format = DateTimePickerFormat.Custom
         DateTimePickerInicio.CustomFormat = "dd/MM/yyyy HH:mm"
 
@@ -28,23 +27,47 @@ Public Class EventForm
         DateTimePickerFim.CustomFormat = "dd/MM/yyyy HH:mm"
     End Sub
 
+    Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
+        If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
+            DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
+        End If
+    End Sub
 
+    Private Sub DateTimePickerFim_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFim.ValueChanged
+        If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
+            MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
+        End If
+    End Sub
 
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+        If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
+            MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
 
+        ' Obter o ID do usuário com base no login 
+        Dim reservaUsuarioId As Integer
+        Try
+            reservaUsuarioId = conexao.ObterUsuarioId(username)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao obter o ID do usuário! " & ex.Message)
+            Return
+        End Try
 
+        ' Certifique-se de que todos os parâmetros esperados sejam fornecidos
         Dim parametros As New List(Of SqlParameter)()
 
-        'estou aqui
-        'tenho que passar  :    Data_DT e Sala_IN
-        '                       parametros.Add(New SqlParameter("@Data_DT", data))
-        '                       parametros.Add(New SqlParameter("@Sala_IN", salaId))
 
+        parametros.Add(New SqlParameter("@reserva_sala_id", 2)) ' Atualize conforme necessário
 
-        parametros.Add(New SqlParameter("@Data_DT", 1))
-        parametros.Add(New SqlParameter("@Sala_IN", 1))
+        'ID USUARIA TA COM ERRO 
+        parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
+        parametros.Add(New SqlParameter("@reserva_data_hora_inicio", DateTimePickerInicio.Value))
+        parametros.Add(New SqlParameter("@reserva_data_hora_fim", DateTimePickerFim.Value))
 
-
+        'PRECISO COLOCAR O EVENTO TAMBEM 
+        'parametros.Add(New SqlParameter("@reserva_evento", DateTimePickerFim.Value))
         Try
             conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ReservaInserir", parametros)
             Me.DialogResult = DialogResult.OK
@@ -55,5 +78,13 @@ Public Class EventForm
 
     Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+
+
+
+
+
     End Sub
 End Class
