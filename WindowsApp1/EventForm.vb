@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports DocumentFormat.OpenXml.Math
+Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class EventForm
     Private conexao As ConexaoComOBancoDeDados
@@ -57,23 +59,21 @@ Public Class EventForm
 
         ' Certifique-se de que todos os parâmetros esperados sejam fornecidos
         Dim parametros As New List(Of SqlParameter)()
-
-
         parametros.Add(New SqlParameter("@reserva_sala_id", 2)) ' Atualize conforme necessário
-
-        'ID USUARIA TA COM ERRO 
         parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
         parametros.Add(New SqlParameter("@reserva_data_hora_inicio", DateTimePickerInicio.Value))
         parametros.Add(New SqlParameter("@reserva_data_hora_fim", DateTimePickerFim.Value))
+        parametros.Add(New SqlParameter("@reserva_evento", TextBoxUsuarioNome.Text)) ' Adiciona o evento
 
-        'PRECISO COLOCAR O EVENTO TAMBEM 
-        'parametros.Add(New SqlParameter("@reserva_evento", DateTimePickerFim.Value))
+
         Try
-            conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ReservaInserir", parametros)
+            conexao.ExecutarConsulta(CommandType.StoredProcedure, "sp_InserirReserva", parametros)
             Me.DialogResult = DialogResult.OK
         Catch ex As Exception
             MessageBox.Show("Erro ao salvar a reserva! " & ex.Message)
         End Try
+        MessageBox.Show("Agendamento feito com sucesso! ")
+        Me.Close()
     End Sub
 
     Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
@@ -83,8 +83,7 @@ Public Class EventForm
     Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
 
 
-
-
+        Dim ReservaEvento As String = TextBoxUsuarioNome.Text
 
     End Sub
 End Class

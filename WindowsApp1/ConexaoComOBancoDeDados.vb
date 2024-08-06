@@ -23,7 +23,7 @@ Public Class ConexaoComOBancoDeDados
 
     End Function
     Public Function ObterUsuarioId(login As String) As Integer
-        Dim query As String = "SELECT usu_usuario_ID FROM usuario_T WHERE usu_login_VC = @login"
+        Dim query As String = "SELECT usu_usuario_IN FROM usuario_T WHERE usu_login_VC = @login"
         Using connection = CriarConexao()
             connection.Open()
             Using cmd As New SqlCommand(query, connection)
