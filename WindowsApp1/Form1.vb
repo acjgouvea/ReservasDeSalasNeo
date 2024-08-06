@@ -7,6 +7,7 @@ Public Class Form1
     Private currentStartDate As DateTime
     Private username As String
     Private password As String
+    Public formAberto As Boolean
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
@@ -19,41 +20,10 @@ Public Class Form1
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Limpar colunas existentes
-        DataGridView1.Columns.Clear()
 
-        ' Adicionar colunas específicas ao DataGridView
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Horário",
-        .DataPropertyName = "HoraApresentacao_VC"
-    })
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Segunda-Feira",
-        .DataPropertyName = "EventoSegunda_VC"
-    })
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Terça-Feira",
-        .DataPropertyName = "EventoTerca_VC"
-    })
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Quarta-Feira",
-        .DataPropertyName = "EventoQuarta_VC"
-    })
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Quinta-Feira",
-        .DataPropertyName = "EventoQuinta_VC"
-    })
-        DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-        .HeaderText = "Sexta-Feira",
-        .DataPropertyName = "EventoSexta_VC"
-    })
+        formAberto = False
 
-        ' Configurar o DataSource do DataGridView
-        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-        ' Carregar reservas da semana atual
-        currentStartDate = DateTime.Now
-        CarregarReservasDaSemana(currentStartDate)
     End Sub
 
 
@@ -67,58 +37,23 @@ Public Class Form1
 
             Dim parametros As New List(Of SqlParameter)()
             parametros.Add(New SqlParameter("@Data_DT", data))
-            parametros.Add(New SqlParameter("@Sala_IN", 1))
+            parametros.Add(New SqlParameter("@Sala_IN", 2))
 
             Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarReservasDaSemanaPorData", parametros)
 
             If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
                 Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
             End If
-
-            ' Configurar o DataGridView para preencher as colunas manualmente
-            DataGridView1.Columns.Clear()
-
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Horário",
-            .DataPropertyName = "HoraApresentacao_VC"
-        })
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Segunda-Feira",
-            .DataPropertyName = "IdSegunda_IN"
-        })
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Teça-Feira",
-            .DataPropertyName = "IdTerca_IN"
-        })
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Quarta-Feira",
-            .DataPropertyName = "IdSegunda_IN"
-        })
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Quintaa-Feira",
-            .DataPropertyName = "IdQuinta_IN"
-        })
-            DataGridView1.Columns.Add(New DataGridViewTextBoxColumn() With {
-            .HeaderText = "Sexta-Feira",
-            .DataPropertyName = "IdSexta_IN"
-        })
+            dgvGridReserva.AutoGenerateColumns = False
+            dgvGridReserva.DataSource = dataTable
 
 
-            'Preenche o DataGridView com os dados
-            For Each row As DataRow In dataTable.Rows
-                DataGridView1.Rows.Add(
-                row("HoraApresentacao_VC").ToString(),
-                row("IdSegunda_IN").ToString(),
-                row("IdTerca_IN").ToString(),
-                row("IdQuarta_IN").ToString(),
-                row("IdQuinta_IN").ToString(),
-                row("IdSexta_IN").ToString()
-                )
-            Next
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar semana: " & ex.Message)
         End Try
     End Sub
+
+
     Private Sub ButtonPrevWeek_Click(sender As Object, e As EventArgs) Handles ButtonPrevWeek.Click
         currentStartDate = currentStartDate.AddDays(-7)
         CarregarReservasDaSemana(currentStartDate)
@@ -140,13 +75,18 @@ Public Class Form1
     End Sub
 
 
-    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+    Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellDoubleClick
         Dim eventForm As New EventForm(Me.username, Me.password)
         eventForm.Show()
 
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
 
+    Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
+
+        If formAberto = False Then
+            CarregarReservasDaSemana(DateTime.Now())
+        End If
     End Sub
 End Class
