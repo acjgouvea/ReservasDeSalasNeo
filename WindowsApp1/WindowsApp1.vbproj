@@ -111,6 +111,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MASERP_HMLDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MASERP_HMLDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reserva.vb" />
     <Compile Include="ConexaoComOBancoDeDados.vb" />
     <Compile Include="Form1.vb">
@@ -168,6 +173,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+    <None Include="MASERP_HMLDataSet.xsc">
+      <DependentUpon>MASERP_HMLDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MASERP_HMLDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MASERP_HMLDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MASERP_HMLDataSet.xss">
+      <DependentUpon>MASERP_HMLDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
