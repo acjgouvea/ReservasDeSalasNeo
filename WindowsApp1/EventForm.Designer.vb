@@ -33,7 +33,7 @@ Partial Class EventForm
         'TextBoxUsuarioNome
         '
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(12, 95)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(10, 105)
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
         Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(337, 22)
         Me.TextBoxUsuarioNome.TabIndex = 4

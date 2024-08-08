@@ -32,8 +32,8 @@ Partial Class Form1
         Me.IdQuarta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdQuinta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.SelecaoDeSalas = New System.Windows.Forms.ComboBox()
+        Me.SelecaoDeEmpresa = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -61,7 +61,6 @@ Partial Class Form1
         'dgvGridReserva
         '
         Me.dgvGridReserva.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
-        Me.dgvGridReserva.AutoGenerateColumns = False
         Me.dgvGridReserva.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
@@ -73,7 +72,6 @@ Partial Class Form1
         Me.dgvGridReserva.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvGridReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGridReserva.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HoraApresentacao_VC, Me.IdSegunda_IN, Me.IdTerca_IN, Me.IdQuarta_IN, Me.IdQuinta_IN, Me.Sexta})
-        Me.dgvGridReserva.DataSource = Me.MASERP_HMLDataSet
         Me.dgvGridReserva.GridColor = System.Drawing.SystemColors.ActiveCaption
         Me.dgvGridReserva.Location = New System.Drawing.Point(14, 18)
         Me.dgvGridReserva.Margin = New System.Windows.Forms.Padding(5)
@@ -141,23 +139,23 @@ Partial Class Form1
         Me.Sexta.Name = "Sexta"
         Me.Sexta.Width = 120
         '
-        'ComboBox1
+        'SelecaoDeSalas
         '
-        Me.ComboBox1.BackColor = System.Drawing.SystemColors.Info
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(7, 19)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(214, 24)
-        Me.ComboBox1.TabIndex = 7
+        Me.SelecaoDeSalas.BackColor = System.Drawing.SystemColors.Info
+        Me.SelecaoDeSalas.FormattingEnabled = True
+        Me.SelecaoDeSalas.Location = New System.Drawing.Point(7, 19)
+        Me.SelecaoDeSalas.Name = "SelecaoDeSalas"
+        Me.SelecaoDeSalas.Size = New System.Drawing.Size(214, 24)
+        Me.SelecaoDeSalas.TabIndex = 7
         '
-        'ComboBox2
+        'SelecaoDeEmpresa
         '
-        Me.ComboBox2.BackColor = System.Drawing.SystemColors.Info
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(7, 19)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(214, 24)
-        Me.ComboBox2.TabIndex = 8
+        Me.SelecaoDeEmpresa.BackColor = System.Drawing.SystemColors.Info
+        Me.SelecaoDeEmpresa.FormattingEnabled = True
+        Me.SelecaoDeEmpresa.Location = New System.Drawing.Point(7, 19)
+        Me.SelecaoDeEmpresa.Name = "SelecaoDeEmpresa"
+        Me.SelecaoDeEmpresa.Size = New System.Drawing.Size(214, 24)
+        Me.SelecaoDeEmpresa.TabIndex = 8
         '
         'Label1
         '
@@ -185,7 +183,7 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
+        Me.GroupBox2.Controls.Add(Me.SelecaoDeEmpresa)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(840, 265)
         Me.GroupBox2.Name = "GroupBox2"
@@ -197,7 +195,7 @@ Partial Class Form1
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GroupBox3.Controls.Add(Me.ComboBox1)
+        Me.GroupBox3.Controls.Add(Me.SelecaoDeSalas)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(840, 339)
         Me.GroupBox3.Name = "GroupBox3"
@@ -240,8 +238,8 @@ Partial Class Form1
 
     End Sub
     Friend WithEvents MonthCalendar1 As MonthCalendar
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents SelecaoDeSalas As ComboBox
+    Friend WithEvents SelecaoDeEmpresa As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox

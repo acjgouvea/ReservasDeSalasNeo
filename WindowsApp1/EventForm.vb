@@ -5,16 +5,20 @@ Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class EventForm
     Private conexao As ConexaoComOBancoDeDados
-    Private username As String
+    Private userName As String
     Private password As String
     Public idDaSala As Integer
 
-    Public Sub New(username As String, password As String)
+    Public Sub New(username As String, password As String, sala As String)
+        'Public Sub New(username As String, password As String)
         InitializeComponent()
-        Me.username = username
+        Me.userName = username
         Me.password = password
+        Me.idDaSala = sala
+
         conexao = New ConexaoComOBancoDeDados()
         conexao.ConectarComBanco(username, password)
+
     End Sub
 
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
@@ -61,7 +65,7 @@ Public Class EventForm
 
         ' Certifique-se de que todos os parâmetros esperados sejam fornecidos
         Dim parametros As New List(Of SqlParameter)()
-        parametros.Add(New SqlParameter("@reserva_sala_id", idDaSala)) ' Atualize conforme necessário
+        parametros.Add(New SqlParameter("@reserva_sala_id", Me.idDaSala)) ' Atualize conforme necessário
         parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
         parametros.Add(New SqlParameter("@reserva_data_hora_inicio", DateTimePickerInicio.Value))
         parametros.Add(New SqlParameter("@reserva_data_hora_fim", DateTimePickerFim.Value))
