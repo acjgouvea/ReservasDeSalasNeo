@@ -28,6 +28,7 @@ Partial Class EventForm
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
         Me.usu_login_VC = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'TextBoxUsuarioNome
@@ -49,7 +50,7 @@ Partial Class EventForm
         'DateTimePickerFim
         '
         Me.DateTimePickerFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerFim.Location = New System.Drawing.Point(10, 67)
+        Me.DateTimePickerFim.Location = New System.Drawing.Point(12, 70)
         Me.DateTimePickerFim.Name = "DateTimePickerFim"
         Me.DateTimePickerFim.Size = New System.Drawing.Size(339, 22)
         Me.DateTimePickerFim.TabIndex = 6
@@ -82,11 +83,20 @@ Partial Class EventForm
         Me.usu_login_VC.TabIndex = 9
         Me.usu_login_VC.Text = "Nome Usuario"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(66, 133)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(183, 21)
+        Me.ComboBox1.TabIndex = 10
+        '
         'EventForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(373, 236)
+        Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.usu_login_VC)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
@@ -104,4 +114,5 @@ Partial Class EventForm
     Friend WithEvents ButtonSave As Button
     Friend WithEvents ButtonCancel As Button
     Friend WithEvents usu_login_VC As Label
+    Friend WithEvents ComboBox1 As ComboBox
 End Class
