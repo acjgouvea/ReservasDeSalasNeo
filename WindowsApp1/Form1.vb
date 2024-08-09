@@ -1,5 +1,4 @@
-﻿Imports System.Collections.ObjectModel
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports FontAwesome.Sharp
 
 Public Class Form1
@@ -8,9 +7,9 @@ Public Class Form1
     Private currentStartDate As DateTime
     Private username As String
     Private password As String
-    Public formAberto As Boolean
-    Public idDaSala As Integer
-    Public idDaEmpresa As Integer
+    Private formAberto As Boolean
+    Private idDaSala As Integer
+    Private idDaEmpresa As Integer
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
@@ -26,26 +25,28 @@ Public Class Form1
                 Throw New InvalidOperationException("Conexão não inicializada.")
             End If
 
-            Dim parametros As New List(Of SqlParameter)()
-            parametros.Add(New SqlParameter("@empresaspermitidas_BT", True))
-
-            ' Carregar a lista de empresas no ComboBox2
-            Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarEmpresas", parametros)
-
-            If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
-                Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
-            End If
-
-            SelecaoDeEmpresa.DataSource = dataTable
-            SelecaoDeEmpresa.DisplayMember = "emp_fantasia_VC"
-            SelecaoDeEmpresa.ValueMember = "emp_id"
+            CarregarEmpresas()
+            formAberto = False
+            AtualizarSemana(MonthCalendar1.SelectionStart)
 
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar empresas: " & ex.Message)
         End Try
+    End Sub
 
-        formAberto = False
-        AtualizarSemana(MonthCalendar1.SelectionStart)
+    Private Sub CarregarEmpresas()
+        Dim parametros As New List(Of SqlParameter) From {
+            New SqlParameter("@empresaspermitidas_BT", True)
+        }
+
+        Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarEmpresas", parametros)
+
+        If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
+            Throw New InvalidOperationException("Falha ao carregar dados do banco de dados.")
+        End If
+
+        SelecaoDeEmpresa.DataSource = dataTable
+        SelecaoDeEmpresa.DisplayMember = "emp_fantasia_VC"
     End Sub
 
     Private Sub CarregarReservasDaSemana(data As DateTime)
@@ -54,9 +55,10 @@ Public Class Form1
                 Throw New InvalidOperationException("Conexão não inicializada.")
             End If
 
-            Dim parametros As New List(Of SqlParameter)()
-            parametros.Add(New SqlParameter("@Data_DT", data))
-            parametros.Add(New SqlParameter("@Sala_IN", idDaSala))
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@Data_DT", data),
+                New SqlParameter("@Sala_IN", idDaSala)
+            }
 
             Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarReservasDaSemanaPorData", parametros)
 
@@ -75,33 +77,40 @@ Public Class Form1
     Private Sub SelecaoDeEmpresa_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SelecaoDeEmpresa.SelectedIndexChanged
         If SelecaoDeEmpresa.SelectedIndex = -1 Then Return
 
-        idDaEmpresa = Convert.ToInt32(SelecaoDeEmpresa.SelectedValue)
-        SelecaoDeSalas.Items.Clear()
-
         Try
-            Dim parametros As New List(Of SqlParameter)()
-            parametros.Add(New SqlParameter("@emp_empresa_IN", idDaEmpresa))
-
-            ' Carregar a lista de salas associadas à empresa selecionada no ComboBox1
-            Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarSalasPorEmpresa", parametros)
-
-            If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
-                Throw New InvalidOperationException("Falha ao carregar salas.")
-            End If
-
-            SelecaoDeSalas.DataSource = dataTable
-            SelecaoDeSalas.DisplayMember = "sala_nome"
-            SelecaoDeSalas.ValueMember = "sala_id"
+            Dim selectedRow As DataRowView = CType(SelecaoDeEmpresa.SelectedItem, DataRowView)
+            idDaEmpresa = Convert.ToInt32(selectedRow("emp_empresa_IN"))
+            CarregarSalas(idDaEmpresa)
 
         Catch ex As Exception
-            MessageBox.Show("Erro ao carregar salas: " & ex.Message)
+            MessageBox.Show("Erro ao selecionar empresa: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub CarregarSalas(empId As Integer)
+        SelecaoDeSalas.DataSource = Nothing
+        SelecaoDeSalas.Items.Clear()
+
+        Dim parametros As New List(Of SqlParameter) From {
+            New SqlParameter("@emp_empresa_IN", empId)
+        }
+
+        Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarSalasPorEmpresa", parametros)
+
+        If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
+            'Throw New InvalidOperationException("Falha ao carregar salas.")
+            Exit Sub
+        End If
+
+        SelecaoDeSalas.DataSource = dataTable
+        SelecaoDeSalas.DisplayMember = "sala_nome"
+        'SelecaoDeSalas.ValueMember = "sala_id"
     End Sub
 
     Private Sub SelecaoDeSalas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SelecaoDeSalas.SelectedIndexChanged
         If SelecaoDeSalas.SelectedIndex = -1 Then Return
 
-        idDaSala = Convert.ToInt32(SelecaoDeSalas.SelectedValue)
+        idDaSala = Convert.ToInt32(SelecaoDeSalas.SelectedValue(0))
         CarregarReservasDaSemana(currentStartDate)
     End Sub
 
@@ -125,16 +134,16 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
-        If formAberto = False Then
+        If Not formAberto Then
             CarregarReservasDaSemana(DateTime.Now())
         End If
     End Sub
 
     Private Sub dgvGridReserva_CellMouseUp(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvGridReserva.CellMouseUp
-        dgvGridReserva.SelectionMode = DataGridViewSelectionMode.CellSelect
-        dgvGridReserva.MultiSelect = True
+        'dgvGridReserva.SelectionMode = DataGridViewSelectionMode.CellSelect
+        'dgvGridReserva.MultiSelect = True
 
-        CarregarReservasDaSemana(currentStartDate)
+        'CarregarReservasDaSemana(currentStartDate)
     End Sub
 
 End Class

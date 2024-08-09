@@ -27,7 +27,7 @@ Partial Class EventForm
         Me.DateTimePickerFim = New System.Windows.Forms.DateTimePicker()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
-        Me.NomeUsuario = New System.Windows.Forms.Label()
+        Me.usu_login_VC = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'TextBoxUsuarioNome
@@ -72,22 +72,22 @@ Partial Class EventForm
         Me.ButtonCancel.Text = "Cancelar"
         Me.ButtonCancel.UseVisualStyleBackColor = True
         '
-        'NomeUsuario
+        'usu_login_VC
         '
-        Me.NomeUsuario.AutoSize = True
-        Me.NomeUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NomeUsuario.Location = New System.Drawing.Point(9, 9)
-        Me.NomeUsuario.Name = "NomeUsuario"
-        Me.NomeUsuario.Size = New System.Drawing.Size(94, 16)
-        Me.NomeUsuario.TabIndex = 9
-        Me.NomeUsuario.Text = "Nome Usuario"
+        Me.usu_login_VC.AutoSize = True
+        Me.usu_login_VC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.usu_login_VC.Location = New System.Drawing.Point(9, 9)
+        Me.usu_login_VC.Name = "usu_login_VC"
+        Me.usu_login_VC.Size = New System.Drawing.Size(94, 16)
+        Me.usu_login_VC.TabIndex = 9
+        Me.usu_login_VC.Text = "Nome Usuario"
         '
         'EventForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(373, 236)
-        Me.Controls.Add(Me.NomeUsuario)
+        Me.Controls.Add(Me.usu_login_VC)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.DateTimePickerFim)
@@ -103,5 +103,5 @@ Partial Class EventForm
     Friend WithEvents DateTimePickerFim As DateTimePicker
     Friend WithEvents ButtonSave As Button
     Friend WithEvents ButtonCancel As Button
-    Friend WithEvents NomeUsuario As Label
+    Friend WithEvents usu_login_VC As Label
 End Class

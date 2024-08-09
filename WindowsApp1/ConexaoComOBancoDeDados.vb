@@ -13,6 +13,7 @@ Public Class ConexaoComOBancoDeDados
 
         ConnectionString = $"Server={serverName};Database={databaseName};User Id={username}; Password={password};"
         connection = New SqlConnection(ConnectionString)
+
         connection.Open()
 
     End Sub

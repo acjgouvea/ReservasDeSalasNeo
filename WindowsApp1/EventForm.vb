@@ -8,9 +8,10 @@ Public Class EventForm
     Private userName As String
     Private password As String
     Public idDaSala As Integer
+    Public reservaUsuarioId As String
 
     Public Sub New(username As String, password As String, sala As String)
-        'Public Sub New(username As String, password As String)
+
         InitializeComponent()
         Me.userName = username
         Me.password = password
@@ -22,17 +23,18 @@ Public Class EventForm
     End Sub
 
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
-        TextBoxUsuarioNome.Text = currentRow.Cells("reserva_usuario_nome").Value.ToString()
+        TextBoxUsuarioNome.Text = currentRow.Cells(userName).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
+
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DateTimePickerInicio.Format = DateTimePickerFormat.Custom
-        DateTimePickerInicio.CustomFormat = "dd/MM/yyyy HH:mm"
+        DateTimePickerInicio.CustomFormat = "dd/MM HH:mm"
 
         DateTimePickerFim.Format = DateTimePickerFormat.Custom
-        DateTimePickerFim.CustomFormat = "dd/MM/yyyy HH:mm"
+        DateTimePickerFim.CustomFormat = "dd/MM HH:mm"
     End Sub
 
     Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
@@ -88,10 +90,10 @@ Public Class EventForm
 
     Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
 
-
-        Dim ReservaEvento As String = TextBoxUsuarioNome.Text
+        Dim reservaUsuarioId As String = userName
 
     End Sub
+
 
 
 
