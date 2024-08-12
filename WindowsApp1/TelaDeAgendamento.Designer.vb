@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class EventForm
+Partial Class TelaDeAgendamento
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -32,16 +32,22 @@ Partial Class EventForm
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.IdSalaAtual = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBoxUsuarioNome
         '
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(12, 176)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(7, 176)
+        Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
-        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(326, 22)
+        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(328, 46)
         Me.TextBoxUsuarioNome.TabIndex = 4
         '
         'DateTimePickerInicio
@@ -64,16 +70,16 @@ Partial Class EventForm
         '
         'ButtonSave
         '
-        Me.ButtonSave.Location = New System.Drawing.Point(180, 216)
+        Me.ButtonSave.Location = New System.Drawing.Point(179, 240)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSave.TabIndex = 7
-        Me.ButtonSave.Text = "Save"
+        Me.ButtonSave.Text = "Salvar"
         Me.ButtonSave.UseVisualStyleBackColor = True
         '
         'ButtonCancel
         '
-        Me.ButtonCancel.Location = New System.Drawing.Point(261, 216)
+        Me.ButtonCancel.Location = New System.Drawing.Point(260, 240)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(75, 23)
         Me.ButtonCancel.TabIndex = 8
@@ -84,7 +90,7 @@ Partial Class EventForm
         '
         Me.usu_login_VC.AutoSize = True
         Me.usu_login_VC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usu_login_VC.Location = New System.Drawing.Point(9, 19)
+        Me.usu_login_VC.Location = New System.Drawing.Point(6, 16)
         Me.usu_login_VC.Name = "usu_login_VC"
         Me.usu_login_VC.Size = New System.Drawing.Size(94, 16)
         Me.usu_login_VC.TabIndex = 9
@@ -93,7 +99,7 @@ Partial Class EventForm
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(6, 60)
+        Me.ComboBox1.Location = New System.Drawing.Point(5, 60)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox1.TabIndex = 10
@@ -110,7 +116,7 @@ Partial Class EventForm
         '
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerInicio)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 59)
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 71)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(160, 99)
         Me.GroupBox1.TabIndex = 12
@@ -122,27 +128,61 @@ Partial Class EventForm
         Me.GroupBox2.Controls.Add(Me.ComboBox2)
         Me.GroupBox2.Controls.Add(Me.DateTimePickerFim)
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox2.Location = New System.Drawing.Point(178, 59)
+        Me.GroupBox2.Location = New System.Drawing.Point(175, 71)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(160, 99)
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Data/Hora Fim"
         '
-        'EventForm
+        'IdSalaAtual
+        '
+        Me.IdSalaAtual.AutoSize = True
+        Me.IdSalaAtual.Location = New System.Drawing.Point(6, 19)
+        Me.IdSalaAtual.Name = "IdSalaAtual"
+        Me.IdSalaAtual.Size = New System.Drawing.Size(61, 13)
+        Me.IdSalaAtual.TabIndex = 13
+        Me.IdSalaAtual.Text = "IdSalaAtual"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.usu_login_VC)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(109, 38)
+        Me.GroupBox3.TabIndex = 11
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Nome Usuario"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.IdSalaAtual)
+        Me.GroupBox4.Location = New System.Drawing.Point(127, 12)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(71, 38)
+        Me.GroupBox4.TabIndex = 14
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Id da Sala"
+        '
+        'TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(348, 269)
-        Me.Controls.Add(Me.usu_login_VC)
+        Me.ClientSize = New System.Drawing.Size(345, 275)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.TextBoxUsuarioNome)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Name = "EventForm"
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox4)
+        Me.Name = "TelaDeAgendamento"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -157,4 +197,7 @@ Partial Class EventForm
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents IdSalaAtual As Label
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
 End Class

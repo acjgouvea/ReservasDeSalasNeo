@@ -111,6 +111,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TelaDeAlteracao.Designer.vb">
+      <DependentUpon>TelaDeAlteracao.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TelaDeAlteracao.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MASERP_HMLDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -118,23 +124,23 @@
     </Compile>
     <Compile Include="Reserva.vb" />
     <Compile Include="ConexaoComOBancoDeDados.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="TelaDeReservas.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="TelaDeReservas.Designer.vb">
+      <DependentUpon>TelaDeReservas.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForm.Designer.vb">
-      <DependentUpon>EventForm.vb</DependentUpon>
+    <Compile Include="TelaDeAgendamento.Designer.vb">
+      <DependentUpon>TelaDeAgendamento.vb</DependentUpon>
     </Compile>
-    <Compile Include="EventForm.vb">
+    <Compile Include="TelaDeAgendamento.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.vb">
-      <DependentUpon>LoginForm.vb</DependentUpon>
+    <Compile Include="TelaDeLogin.Designer.vb">
+      <DependentUpon>TelaDeLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.vb">
+    <Compile Include="TelaDeLogin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -153,17 +159,19 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TextBoxUser.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="TelaDeReservas.resx">
+      <DependentUpon>TelaDeReservas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForm.resx">
-      <DependentUpon>EventForm.vb</DependentUpon>
+    <EmbeddedResource Include="TelaDeAgendamento.resx">
+      <DependentUpon>TelaDeAgendamento.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.vb</DependentUpon>
+    <EmbeddedResource Include="TelaDeAlteracao.resx">
+      <DependentUpon>TelaDeAlteracao.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaDeLogin.resx">
+      <DependentUpon>TelaDeLogin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -198,7 +206,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Logo.ico" />
+    <Content Include="LogoNeobetel.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

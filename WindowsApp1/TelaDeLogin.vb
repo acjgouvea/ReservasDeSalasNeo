@@ -1,7 +1,7 @@
 Imports System.Data
 Imports System.Data.SqlClient
 
-Public Class LoginForm
+Public Class TelaDeLogin
     Private Sub ButtonLogin_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLogin.Click
         Dim conexao As New ConexaoComOBancoDeDados()
         conexao.ConectarComBanco(TextBoxUser.Text, TextBoxPassword.Text)
@@ -11,7 +11,7 @@ Public Class LoginForm
             Using conn As New SqlConnection(conexao.ConnectionString)
 
                 conn.Open()
-                Dim mainForm As New Form1(TextBoxUser.Text, TextBoxPassword.Text)
+                Dim mainForm As New TelaDeReservas(TextBoxUser.Text, TextBoxPassword.Text)
 
                 mainForm.Show()
 

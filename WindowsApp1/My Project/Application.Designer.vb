@@ -32,7 +32,8 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WindowsApp1.LoginForm
+            Me.MainForm = Global.WindowsApp1.TelaDeLogin
+
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

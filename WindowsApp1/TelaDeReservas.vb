@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports FontAwesome.Sharp
 
-Public Class Form1
+Public Class TelaDeReservas
 
     Private conexao As ConexaoComOBancoDeDados
     Private currentStartDate As DateTime
@@ -129,8 +129,7 @@ Public Class Form1
     End Sub
 
     Private Sub dgvGridReserva_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellDoubleClick
-        Dim eventForm As New EventForm(Me.username, Me.password, Me.idDaSala)
-        eventForm.Show()
+
     End Sub
 
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
@@ -139,11 +138,14 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub dgvGridReserva_CellMouseUp(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dgvGridReserva.CellMouseUp
-        'dgvGridReserva.SelectionMode = DataGridViewSelectionMode.CellSelect
-        'dgvGridReserva.MultiSelect = True
 
-        'CarregarReservasDaSemana(currentStartDate)
+
+    Private Sub Agendar_Click(sender As Object, e As EventArgs) Handles Agendar.Click
+        Dim eventForm As New TelaDeAgendamento(Me.username, Me.password, Me.idDaSala)
+        eventForm.Show()
     End Sub
 
+    Private Sub dgvGridReserva_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentDoubleClick
+
+    End Sub
 End Class
