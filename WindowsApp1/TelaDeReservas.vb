@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports DocumentFormat.OpenXml.Spreadsheet
 Imports FontAwesome.Sharp
 
 Public Class TelaDeReservas
@@ -10,6 +11,10 @@ Public Class TelaDeReservas
     Private formAberto As Boolean
     Private idDaSala As Integer
     Private idDaEmpresa As Integer
+
+
+    'testando 
+    'Private originalDataTable As DataTable
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
@@ -32,6 +37,9 @@ Public Class TelaDeReservas
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar empresas: " & ex.Message)
         End Try
+
+
+
     End Sub
 
     Private Sub CarregarEmpresas()
@@ -72,6 +80,22 @@ Public Class TelaDeReservas
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar reservas da semana: " & ex.Message)
         End Try
+
+
+        dgvGridReserva.Columns(0).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.Columns(1).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.Columns(2).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.Columns(3).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.Columns(4).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.Columns(5).DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+
+        dgvGridReserva.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+
+
+
     End Sub
 
     Private Sub SelecaoDeEmpresa_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SelecaoDeEmpresa.SelectedIndexChanged
@@ -127,11 +151,6 @@ Public Class TelaDeReservas
         currentStartDate = startOfWeek
         CarregarReservasDaSemana(currentStartDate)
     End Sub
-
-    Private Sub dgvGridReserva_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellDoubleClick
-
-    End Sub
-
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         If Not formAberto Then
             CarregarReservasDaSemana(DateTime.Now())
@@ -141,11 +160,41 @@ Public Class TelaDeReservas
 
 
     Private Sub Agendar_Click(sender As Object, e As EventArgs) Handles Agendar.Click
+
         Dim eventForm As New TelaDeAgendamento(Me.username, Me.password, Me.idDaSala)
+
         eventForm.Show()
     End Sub
 
-    Private Sub dgvGridReserva_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentDoubleClick
+
+
+
+
+
+    Private Sub Excluir_Reserva_Click(sender As Object, e As EventArgs) Handles Excluir_Reserva.Click
+
+
+        Dim reservaUsuarioId As Integer
+        Try
+            reservaUsuarioId = conexao.ObterUsuarioId(username)
+        Catch ex As Exception
+            MessageBox.Show("Erro ao obter o ID do usuário! " & ex.Message)
+            Return
+        End Try
+
+
+        Dim result As DialogResult = MessageBox.Show("Tem certeza que deseja excluir todas as suas reservas para esta sala?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If result = DialogResult.No Then
+            Return
+        End If
+
+
+        Dim parametros As New List(Of SqlParameter)()
+        parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
+        parametros.Add(New SqlParameter("@reserva_sala_id", Me.idDaSala))
+
+        conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ExcluirReservasPorUsuarioESala", parametros)
+        MessageBox.Show("Reservas na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 End Class

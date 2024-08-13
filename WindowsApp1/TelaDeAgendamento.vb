@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports DocumentFormat.OpenXml.Math
-Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class TelaDeAgendamento
     Private conexao As ConexaoComOBancoDeDados
@@ -28,6 +26,9 @@ Public Class TelaDeAgendamento
         IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
+
+
+
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -125,18 +126,8 @@ Public Class TelaDeAgendamento
         Dim selectedDateTime As DateTime = DateTimePickerFim.Value.Date.Add(TimeSpan.Parse(selectedTime))
         DateTimePickerFim.Value = selectedDateTime
     End Sub
-    Private Sub IdSalaAtual_Click(sender As Object, e As EventArgs) Handles IdSalaAtual.Click
 
-
-
-
-    End Sub
-
-    Private Sub usu_login_VC_Click(sender As Object, e As EventArgs) Handles usu_login_VC.Click
-
-    End Sub
-
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+    Private Sub ComboBox2_MouseClick(sender As Object, e As MouseEventArgs) Handles ComboBox2.MouseClick
 
     End Sub
 End Class

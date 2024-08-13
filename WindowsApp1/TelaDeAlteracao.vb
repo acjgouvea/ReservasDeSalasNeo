@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports DocumentFormat.OpenXml.Math
-Imports DocumentFormat.OpenXml.Spreadsheet
 
 Public Class TelaDeAlteracao
     Private conexao As ConexaoComOBancoDeDados
@@ -19,16 +17,18 @@ Public Class TelaDeAlteracao
         conexao.ConectarComBanco(username, password)
 
         usu_login_VC.Text = Me.userName
+        IdSalaAtual.Text = Me.idDaSala
 
     End Sub
 
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
-        usu_login_VC.Text = currentRow.Cells(userName).Value.ToString().Replace(".", "  ")
+        usu_login_VC.Text = currentRow.Cells(userName).Value.oString()
+        IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
     End Sub
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Preenche o ComboBox1 e ComboBox2 com horários
 
 
@@ -124,19 +124,4 @@ Public Class TelaDeAlteracao
         DateTimePickerFim.Value = selectedDateTime
     End Sub
 
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub usu_login_VC_Click(sender As Object, e As EventArgs) Handles usu_login_VC.Click
-
-    End Sub
-
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
-
-    End Sub
 End Class
