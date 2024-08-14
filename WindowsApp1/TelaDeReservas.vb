@@ -174,27 +174,36 @@ Public Class TelaDeReservas
     Private Sub Excluir_Reserva_Click(sender As Object, e As EventArgs) Handles Excluir_Reserva.Click
 
 
-        Dim reservaUsuarioId As Integer
-        Try
-            reservaUsuarioId = conexao.ObterUsuarioId(username)
-        Catch ex As Exception
-            MessageBox.Show("Erro ao obter o ID do usuário! " & ex.Message)
-            Return
-        End Try
+        Dim eventForm As New TelaDeAlteracao(Me.username, Me.password, Me.idDaSala)
 
 
-        Dim result As DialogResult = MessageBox.Show("Tem certeza que deseja excluir todas as suas reservas para esta sala?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If result = DialogResult.No Then
-            Return
-        End If
+        eventForm.Show()
+
+        'Dim reservaUsuarioId As Integer
+        'Try
+        '    reservaUsuarioId = conexao.ObterUsuarioId(username)
+        'Catch ex As Exception
+        '    MessageBox.Show("Erro ao obter o ID do usuário! " & ex.Message)
+        '    Return
+        'End Try
 
 
-        Dim parametros As New List(Of SqlParameter)()
-        parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
-        parametros.Add(New SqlParameter("@reserva_sala_id", Me.idDaSala))
+        'Dim result As DialogResult = MessageBox.Show("Tem certeza que deseja excluir todas as suas reservas para esta sala?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        'If result = DialogResult.No Then
+        '    Return
+        'End If
 
-        conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ExcluirReservasPorUsuarioESala", parametros)
-        MessageBox.Show("Reservas na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        'Dim parametros As New List(Of SqlParameter)()
+        'parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
+        'parametros.Add(New SqlParameter("@reserva_sala_id", Me.idDaSala))
+
+        'conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ExcluirReservasPorUsuarioESala", parametros)
+        'MessageBox.Show("Reservas na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+    End Sub
+
+    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
 
     End Sub
 End Class

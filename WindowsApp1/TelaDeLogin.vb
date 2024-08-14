@@ -31,4 +31,8 @@ Public Class TelaDeLogin
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub TextBoxUser_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUser.TextChanged
+
+    End Sub
 End Class

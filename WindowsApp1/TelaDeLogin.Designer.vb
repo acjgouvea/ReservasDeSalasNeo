@@ -100,7 +100,7 @@ Partial Class TelaDeLogin
         Me.ButtonCancel.TabIndex = 5
         Me.ButtonCancel.Text = "&Cancelar"
         '
-        'LoginForm
+        'TelaDeLogin
         '
         Me.AcceptButton = Me.ButtonLogin
         Me.AccessibleName = "tela teste"
@@ -118,7 +118,7 @@ Partial Class TelaDeLogin
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "LoginForm"
+        Me.Name = "TelaDeLogin"
         Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "LoginForm1"

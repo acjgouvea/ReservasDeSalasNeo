@@ -22,55 +22,28 @@ Partial Class TelaDeAgendamento
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TextBoxUsuarioNome = New System.Windows.Forms.TextBox()
-        Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePickerFim = New System.Windows.Forms.DateTimePicker()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.ButtonCancel = New System.Windows.Forms.Button()
         Me.usu_login_VC = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.IdSalaAtual = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePickerFim = New System.Windows.Forms.DateTimePicker()
+        Me.TextBoxUsuarioNome = New System.Windows.Forms.TextBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TextBoxUsuarioNome
-        '
-        Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(7, 204)
-        Me.TextBoxUsuarioNome.Multiline = True
-        Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
-        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(328, 46)
-        Me.TextBoxUsuarioNome.TabIndex = 4
-        '
-        'DateTimePickerInicio
-        '
-        Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerInicio.Location = New System.Drawing.Point(6, 25)
-        Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
-        Me.DateTimePickerInicio.Size = New System.Drawing.Size(148, 22)
-        Me.DateTimePickerInicio.TabIndex = 5
-        '
-        'DateTimePickerFim
-        '
-        Me.DateTimePickerFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePickerFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePickerFim.Location = New System.Drawing.Point(6, 25)
-        Me.DateTimePickerFim.Name = "DateTimePickerFim"
-        Me.DateTimePickerFim.Size = New System.Drawing.Size(148, 22)
-        Me.DateTimePickerFim.TabIndex = 6
         '
         'ButtonSave
         '
-        Me.ButtonSave.Location = New System.Drawing.Point(179, 268)
+        Me.ButtonSave.Location = New System.Drawing.Point(173, 230)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(75, 23)
         Me.ButtonSave.TabIndex = 7
@@ -79,7 +52,7 @@ Partial Class TelaDeAgendamento
         '
         'ButtonCancel
         '
-        Me.ButtonCancel.Location = New System.Drawing.Point(260, 268)
+        Me.ButtonCancel.Location = New System.Drawing.Point(258, 230)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(75, 23)
         Me.ButtonCancel.TabIndex = 8
@@ -95,45 +68,6 @@ Partial Class TelaDeAgendamento
         Me.usu_login_VC.Size = New System.Drawing.Size(94, 16)
         Me.usu_login_VC.TabIndex = 9
         Me.usu_login_VC.Text = "Nome Usuario"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(5, 60)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
-        Me.ComboBox1.TabIndex = 10
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(6, 60)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(148, 21)
-        Me.ComboBox2.TabIndex = 11
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.DateTimePickerInicio)
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 76)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(160, 99)
-        Me.GroupBox1.TabIndex = 12
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Data/Hora Inicio"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
-        Me.GroupBox2.Controls.Add(Me.DateTimePickerFim)
-        Me.GroupBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox2.Location = New System.Drawing.Point(175, 76)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(160, 99)
-        Me.GroupBox2.TabIndex = 11
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Data/Hora Fim"
         '
         'IdSalaAtual
         '
@@ -164,40 +98,106 @@ Partial Class TelaDeAgendamento
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Id da Sala"
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.ComboBox2)
+        Me.GroupBox5.Controls.Add(Me.DateTimePickerFim)
+        Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.GroupBox5.Location = New System.Drawing.Point(173, 56)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(160, 99)
+        Me.GroupBox5.TabIndex = 22
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Data/Hora Fim"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(6, 60)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox2.TabIndex = 11
+        '
+        'DateTimePickerFim
+        '
+        Me.DateTimePickerFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePickerFim.Location = New System.Drawing.Point(6, 25)
+        Me.DateTimePickerFim.Name = "DateTimePickerFim"
+        Me.DateTimePickerFim.Size = New System.Drawing.Size(148, 22)
+        Me.DateTimePickerFim.TabIndex = 6
+        '
+        'TextBoxUsuarioNome
+        '
+        Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(7, 161)
+        Me.TextBoxUsuarioNome.Multiline = True
+        Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
+        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(326, 46)
+        Me.TextBoxUsuarioNome.TabIndex = 21
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.ComboBox1)
+        Me.GroupBox6.Controls.Add(Me.DateTimePickerInicio)
+        Me.GroupBox6.Location = New System.Drawing.Point(7, 56)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(160, 99)
+        Me.GroupBox6.TabIndex = 23
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Data/Hora Inicio"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(6, 60)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox1.TabIndex = 10
+        '
+        'DateTimePickerInicio
+        '
+        Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePickerInicio.Location = New System.Drawing.Point(6, 25)
+        Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
+        Me.DateTimePickerInicio.Size = New System.Drawing.Size(148, 22)
+        Me.DateTimePickerInicio.TabIndex = 5
+        '
         'TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(346, 320)
-        Me.Controls.Add(Me.ButtonCancel)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.ButtonSave)
+        Me.ClientSize = New System.Drawing.Size(341, 257)
+        Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.TextBoxUsuarioNome)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.ButtonCancel)
+        Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
         Me.Name = "TelaDeAgendamento"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBoxUsuarioNome As TextBox
-    Friend WithEvents DateTimePickerInicio As DateTimePicker
-    Friend WithEvents DateTimePickerFim As DateTimePicker
     Friend WithEvents ButtonSave As Button
     Friend WithEvents ButtonCancel As Button
     Friend WithEvents usu_login_VC As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents IdSalaAtual As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents DateTimePickerFim As DateTimePicker
+    Friend WithEvents TextBoxUsuarioNome As TextBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents DateTimePickerInicio As DateTimePicker
 End Class
