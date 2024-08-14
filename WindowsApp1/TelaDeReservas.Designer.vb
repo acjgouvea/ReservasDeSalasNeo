@@ -54,7 +54,7 @@ Partial Class TelaDeReservas
         '
         Me.MonthCalendar1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.MonthCalendar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar1.Location = New System.Drawing.Point(840, 18)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(829, 22)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 6
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.Wheat
@@ -68,14 +68,14 @@ Partial Class TelaDeReservas
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvGridReserva.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvGridReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGridReserva.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HoraApresentacao_VC, Me.IdSegunda_IN, Me.IdTerca_IN, Me.IdQuarta_IN, Me.IdQuinta_IN, Me.Sexta})
         Me.dgvGridReserva.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvGridReserva.Location = New System.Drawing.Point(14, 18)
+        Me.dgvGridReserva.Location = New System.Drawing.Point(28, 22)
         Me.dgvGridReserva.Margin = New System.Windows.Forms.Padding(5)
         Me.dgvGridReserva.MultiSelect = False
         Me.dgvGridReserva.Name = "dgvGridReserva"
@@ -84,7 +84,7 @@ Partial Class TelaDeReservas
         Me.dgvGridReserva.RowHeadersVisible = False
         Me.dgvGridReserva.RowHeadersWidth = 50
         Me.dgvGridReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dgvGridReserva.Size = New System.Drawing.Size(812, 572)
+        Me.dgvGridReserva.Size = New System.Drawing.Size(768, 572)
         Me.dgvGridReserva.TabIndex = 0
         '
         'HoraApresentacao_VC
@@ -175,7 +175,7 @@ Partial Class TelaDeReservas
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(840, 203)
+        Me.GroupBox1.Location = New System.Drawing.Point(828, 196)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(227, 43)
         Me.GroupBox1.TabIndex = 12
@@ -187,7 +187,7 @@ Partial Class TelaDeReservas
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox2.Controls.Add(Me.SelecaoDeEmpresa)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(840, 265)
+        Me.GroupBox2.Location = New System.Drawing.Point(828, 258)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox2.TabIndex = 13
@@ -199,7 +199,7 @@ Partial Class TelaDeReservas
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.GroupBox3.Controls.Add(Me.SelecaoDeSalas)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(840, 339)
+        Me.GroupBox3.Location = New System.Drawing.Point(828, 332)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox3.TabIndex = 13
@@ -219,7 +219,7 @@ Partial Class TelaDeReservas
         'Agendar
         '
         Me.Agendar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agendar.Location = New System.Drawing.Point(840, 545)
+        Me.Agendar.Location = New System.Drawing.Point(827, 557)
         Me.Agendar.Name = "Agendar"
         Me.Agendar.Size = New System.Drawing.Size(227, 27)
         Me.Agendar.TabIndex = 12
@@ -229,7 +229,7 @@ Partial Class TelaDeReservas
         'Excluir_Reserva
         '
         Me.Excluir_Reserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Excluir_Reserva.Location = New System.Drawing.Point(841, 512)
+        Me.Excluir_Reserva.Location = New System.Drawing.Point(828, 524)
         Me.Excluir_Reserva.Name = "Excluir_Reserva"
         Me.Excluir_Reserva.Size = New System.Drawing.Size(227, 27)
         Me.Excluir_Reserva.TabIndex = 14

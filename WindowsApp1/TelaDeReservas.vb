@@ -157,19 +157,12 @@ Public Class TelaDeReservas
         End If
     End Sub
 
-
-
     Private Sub Agendar_Click(sender As Object, e As EventArgs) Handles Agendar.Click
 
         Dim eventForm As New TelaDeAgendamento(Me.username, Me.password, Me.idDaSala)
 
         eventForm.Show()
     End Sub
-
-
-
-
-
 
     Private Sub Excluir_Reserva_Click(sender As Object, e As EventArgs) Handles Excluir_Reserva.Click
 
@@ -179,27 +172,6 @@ Public Class TelaDeReservas
 
         eventForm.Show()
 
-        'Dim reservaUsuarioId As Integer
-        'Try
-        '    reservaUsuarioId = conexao.ObterUsuarioId(username)
-        'Catch ex As Exception
-        '    MessageBox.Show("Erro ao obter o ID do usuário! " & ex.Message)
-        '    Return
-        'End Try
-
-
-        'Dim result As DialogResult = MessageBox.Show("Tem certeza que deseja excluir todas as suas reservas para esta sala?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        'If result = DialogResult.No Then
-        '    Return
-        'End If
-
-
-        'Dim parametros As New List(Of SqlParameter)()
-        'parametros.Add(New SqlParameter("@reserva_usuario_id", reservaUsuarioId))
-        'parametros.Add(New SqlParameter("@reserva_sala_id", Me.idDaSala))
-
-        'conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ExcluirReservasPorUsuarioESala", parametros)
-        'MessageBox.Show("Reservas na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
     End Sub
 

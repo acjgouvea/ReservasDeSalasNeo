@@ -43,18 +43,18 @@ Partial Class TelaDeAgendamento
         '
         'ButtonSave
         '
-        Me.ButtonSave.Location = New System.Drawing.Point(173, 230)
+        Me.ButtonSave.Location = New System.Drawing.Point(152, 259)
         Me.ButtonSave.Name = "ButtonSave"
-        Me.ButtonSave.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonSave.Size = New System.Drawing.Size(88, 32)
         Me.ButtonSave.TabIndex = 7
         Me.ButtonSave.Text = "Salvar"
         Me.ButtonSave.UseVisualStyleBackColor = True
         '
         'ButtonCancel
         '
-        Me.ButtonCancel.Location = New System.Drawing.Point(258, 230)
+        Me.ButtonCancel.Location = New System.Drawing.Point(246, 259)
         Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonCancel.Size = New System.Drawing.Size(88, 32)
         Me.ButtonCancel.TabIndex = 8
         Me.ButtonCancel.Text = "Cancelar"
         Me.ButtonCancel.UseVisualStyleBackColor = True
@@ -74,16 +74,17 @@ Partial Class TelaDeAgendamento
         Me.IdSalaAtual.AutoSize = True
         Me.IdSalaAtual.Location = New System.Drawing.Point(6, 19)
         Me.IdSalaAtual.Name = "IdSalaAtual"
-        Me.IdSalaAtual.Size = New System.Drawing.Size(61, 13)
+        Me.IdSalaAtual.Size = New System.Drawing.Size(76, 16)
         Me.IdSalaAtual.TabIndex = 13
         Me.IdSalaAtual.Text = "IdSalaAtual"
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.usu_login_VC)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(7, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(109, 38)
+        Me.GroupBox3.Size = New System.Drawing.Size(160, 38)
         Me.GroupBox3.TabIndex = 11
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Nome Usuario"
@@ -91,9 +92,10 @@ Partial Class TelaDeAgendamento
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.IdSalaAtual)
-        Me.GroupBox4.Location = New System.Drawing.Point(122, 12)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(173, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(71, 38)
+        Me.GroupBox4.Size = New System.Drawing.Size(104, 38)
         Me.GroupBox4.TabIndex = 14
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Id da Sala"
@@ -102,6 +104,7 @@ Partial Class TelaDeAgendamento
         '
         Me.GroupBox5.Controls.Add(Me.ComboBox2)
         Me.GroupBox5.Controls.Add(Me.DateTimePickerFim)
+        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.GroupBox5.Location = New System.Drawing.Point(173, 56)
         Me.GroupBox5.Name = "GroupBox5"
@@ -112,14 +115,16 @@ Partial Class TelaDeAgendamento
         '
         'ComboBox2
         '
+        Me.ComboBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(6, 60)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(148, 24)
         Me.ComboBox2.TabIndex = 11
         '
         'DateTimePickerFim
         '
+        Me.DateTimePickerFim.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePickerFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePickerFim.Location = New System.Drawing.Point(6, 25)
@@ -133,13 +138,14 @@ Partial Class TelaDeAgendamento
         Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(7, 161)
         Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
-        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(326, 46)
+        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(326, 70)
         Me.TextBoxUsuarioNome.TabIndex = 21
         '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.ComboBox1)
         Me.GroupBox6.Controls.Add(Me.DateTimePickerInicio)
+        Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(7, 56)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(160, 99)
@@ -149,17 +155,21 @@ Partial Class TelaDeAgendamento
         '
         'ComboBox1
         '
+        Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(6, 60)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 24)
         Me.ComboBox1.TabIndex = 10
         '
         'DateTimePickerInicio
         '
+        Me.DateTimePickerInicio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerInicio.Location = New System.Drawing.Point(6, 25)
+        Me.DateTimePickerInicio.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePickerInicio.MinDate = New Date(2024, 1, 1, 0, 0, 0, 0)
         Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
         Me.DateTimePickerInicio.Size = New System.Drawing.Size(148, 22)
         Me.DateTimePickerInicio.TabIndex = 5
@@ -168,7 +178,7 @@ Partial Class TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(341, 257)
+        Me.ClientSize = New System.Drawing.Size(341, 303)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.TextBoxUsuarioNome)
         Me.Controls.Add(Me.GroupBox6)

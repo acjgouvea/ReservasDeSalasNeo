@@ -31,10 +31,6 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Preenche o ComboBox1 e ComboBox2 com horários
-
-
-
 
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
@@ -56,8 +52,10 @@ Public Class TelaDeAgendamento
         DateTimePickerFim.Format = DateTimePickerFormat.Custom
         DateTimePickerFim.CustomFormat = "dd/MMMM/yy"
 
-        TextBoxUsuarioNome.Text = usu_login_VC.Text
 
+        TextBoxUsuarioNome.Multiline = True
+        TextBoxUsuarioNome.Text = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
 
 
     End Sub
@@ -128,8 +126,40 @@ Public Class TelaDeAgendamento
         DateTimePickerFim.Value = selectedDateTime
     End Sub
 
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+    Private Sub TextBoxUsuarioNome_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxUsuarioNome.KeyPress
+        Dim fixedText As String = "Usuario: " & usu_login_VC.Text & Environment.NewLine
 
+
+        If TextBoxUsuarioNome.SelectionStart < fixedText.Length AndAlso e.KeyChar = ChrW(Keys.Back) Then
+            e.Handled = True
+            Return
+        End If
+
+
+        If TextBoxUsuarioNome.Text.Length >= fixedText.Length + 20 AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+            e.Handled = True
+        End If
+    End Sub
+
+
+    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+        Dim fixedText As String = "nome do usuario: " & usu_login_VC.Text & Environment.NewLine
+
+        If Not TextBoxUsuarioNome.Text.StartsWith(fixedText) Then
+            TextBoxUsuarioNome.Text = fixedText
+            TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        End If
+    End Sub
+
+    Public Sub New(username As String)
+        InitializeComponent()
+        Me.userName = username
+
+        ' Substitui o ponto por um espaço no nome do usuário
+        Dim nomeFormatado As String = username.Replace(".", " ")
+
+        ' Exibe o nome formatado em um TextBox ou Label
+        TextBoxUsuarioNome.Text = nomeFormatado
     End Sub
 End Class
 
