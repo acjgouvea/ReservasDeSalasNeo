@@ -11,6 +11,7 @@ Public Class TelaDeReservas
     Private formAberto As Boolean
     Private idDaSala As Integer
     Private idDaEmpresa As Integer
+    Private selectedDate As Object
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
@@ -20,7 +21,7 @@ Public Class TelaDeReservas
         conexao.ConectarComBanco(username, password)
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, dgvGridReserva.Click, lblNomeProprietario.Click
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, dgvGridReserva.Click
 
         Me.StartPosition = FormStartPosition.CenterScreen
 
@@ -91,10 +92,9 @@ Public Class TelaDeReservas
         dgvGridReserva.Columns(4).DefaultCellStyle.WrapMode = DataGridViewTriState.True
         dgvGridReserva.Columns(5).DefaultCellStyle.WrapMode = DataGridViewTriState.True
 
-
         dgvGridReserva.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         dgvGridReserva.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
-        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
 
 
@@ -152,6 +152,13 @@ Public Class TelaDeReservas
         Label1.Text = "Semana de " & startOfWeek.ToString("dd/MM") & " a " & endOfWeek.ToString("dd/MM")
         currentStartDate = startOfWeek
         CarregarReservasDaSemana(currentStartDate)
+
+        ' Atualizar os cabeçalhos com os dias da semana e datas
+        dgvGridReserva.Columns(1).HeaderText = "Segunda " & startOfWeek.ToString("dd/MM")
+        dgvGridReserva.Columns(2).HeaderText = "Terça " & startOfWeek.AddDays(1).ToString("dd/MM")
+        dgvGridReserva.Columns(3).HeaderText = "Quarta " & startOfWeek.AddDays(2).ToString("dd/MM")
+        dgvGridReserva.Columns(4).HeaderText = "Quinta " & startOfWeek.AddDays(3).ToString("dd/MM")
+        dgvGridReserva.Columns(5).HeaderText = "Sexta " & startOfWeek.AddDays(4).ToString("dd/MM")
     End Sub
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         If Not formAberto Then
@@ -177,7 +184,7 @@ Public Class TelaDeReservas
 
     End Sub
 
-    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
+    Private Sub dgvGridReserva_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellClick
 
     End Sub
 End Class
