@@ -12,10 +12,6 @@ Public Class TelaDeReservas
     Private idDaSala As Integer
     Private idDaEmpresa As Integer
 
-
-    'testando 
-    'Private originalDataTable As DataTable
-
     Public Sub New(username As String, password As String)
         InitializeComponent()
         Me.username = username
@@ -24,7 +20,13 @@ Public Class TelaDeReservas
         conexao.ConectarComBanco(username, password)
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, dgvGridReserva.Click, lblNomeProprietario.Click
+
+        Me.StartPosition = FormStartPosition.CenterScreen
+
+        'Me.StartPosition = FormStartPosition.Manual
+        'Me.Location = New Point(500, 400)
+
         Try
             If conexao Is Nothing Then
                 Throw New InvalidOperationException("Conexão não inicializada.")
@@ -122,13 +124,13 @@ Public Class TelaDeReservas
         Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarSalasPorEmpresa", parametros)
 
         If dataTable Is Nothing OrElse dataTable.Rows.Count = 0 Then
-            'Throw New InvalidOperationException("Falha ao carregar salas.")
+
             Exit Sub
         End If
 
         SelecaoDeSalas.DataSource = dataTable
         SelecaoDeSalas.DisplayMember = "sala_nome"
-        'SelecaoDeSalas.ValueMember = "sala_id"
+
     End Sub
 
     Private Sub SelecaoDeSalas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SelecaoDeSalas.SelectedIndexChanged

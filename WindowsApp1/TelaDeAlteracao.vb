@@ -28,6 +28,9 @@ Public Class TelaDeAlteracao
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Me.StartPosition = FormStartPosition.Manual
+        Me.Location = New Point(700, 400)
+
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
                 Dim time As DateTime = New DateTime(1, 1, 1, hora, minuto, 0)

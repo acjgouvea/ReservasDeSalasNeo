@@ -29,6 +29,8 @@ Public Class TelaDeLogin
     End Sub
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.StartPosition = FormStartPosition.Manual
+        Me.Location = New Point(700, 400)
 
     End Sub
 

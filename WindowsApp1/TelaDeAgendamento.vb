@@ -32,6 +32,9 @@ Public Class TelaDeAgendamento
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        'Me.StartPosition = FormStartPosition.Manual
+        'Me.Location = New Point(700, 400)
+
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
                 Dim time As DateTime = New DateTime(1, 1, 1, hora, minuto, 0)
@@ -53,9 +56,9 @@ Public Class TelaDeAgendamento
         DateTimePickerFim.CustomFormat = "dd/MMMM/yy"
 
 
-        TextBoxUsuarioNome.Multiline = True
-        TextBoxUsuarioNome.Text = "Usuario: " & usu_login_VC.Text & Environment.NewLine
-        TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        'TextBoxUsuarioNome.Multiline = True
+        'TextBoxUsuarioNome.Text = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        'TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
 
 
     End Sub
@@ -69,13 +72,31 @@ Public Class TelaDeAgendamento
 
     Private Sub DateTimePickerFim_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFim.ValueChanged
         ComboBox2.Text = DateTimePickerFim.Value.ToString("HH:mm")
-        If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
-            MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        ' Verifica se o horário de fim é menor ou igual ao horário de início
+        ' ou se o intervalo de tempo é menor que 30 minutos
+        If DateTimePickerFim.Value <= DateTimePickerInicio.Value OrElse DateTimePickerFim.Value.Subtract(DateTimePickerInicio.Value).TotalMinutes < 30 Then
+            MessageBox.Show("A hora de fim deve ser maior que a hora de início por pelo menos 30 minutos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+            ' Ajusta o tempo de fim para ser 30 minutos após o início
             DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
         End If
     End Sub
 
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+
+        Dim fixedText As String = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        If TextBoxUsuarioNome.Text.Trim() = fixedText Then
+            MessageBox.Show("Por favor, adicione uma descrição para o evento.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        If DateTimePickerFim.Value.Subtract(DateTimePickerInicio.Value).TotalMinutes < 30 Then
+            MessageBox.Show("O intervalo entre a hora de início e fim deve ser igual ou maior 30 minutos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Return
+        End If
+
+        ' Verificar se a hora de fim é maior que a hora de início
         If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
             MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -127,7 +148,8 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub TextBoxUsuarioNome_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxUsuarioNome.KeyPress
-        Dim fixedText As String = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        ' Dim fixedText As String = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        Dim fixedText As String = usu_login_VC.Text & Environment.NewLine
 
 
         If TextBoxUsuarioNome.SelectionStart < fixedText.Length AndAlso e.KeyChar = ChrW(Keys.Back) Then
@@ -136,14 +158,15 @@ Public Class TelaDeAgendamento
         End If
 
 
-        If TextBoxUsuarioNome.Text.Length >= fixedText.Length + 20 AndAlso e.KeyChar <> ChrW(Keys.Back) Then
+        If TextBoxUsuarioNome.Text.Length >= fixedText.Length + 45 AndAlso e.KeyChar <> ChrW(Keys.Back) Then
             e.Handled = True
         End If
     End Sub
 
 
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
-        Dim fixedText As String = "nome do usuario: " & usu_login_VC.Text & Environment.NewLine
+    Private Sub UsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+
+        Dim fixedText As String = usu_login_VC.Text & Environment.NewLine
 
         If Not TextBoxUsuarioNome.Text.StartsWith(fixedText) Then
             TextBoxUsuarioNome.Text = fixedText
@@ -155,10 +178,10 @@ Public Class TelaDeAgendamento
         InitializeComponent()
         Me.userName = username
 
-        ' Substitui o ponto por um espaço no nome do usuário
+
         Dim nomeFormatado As String = username.Replace(".", " ")
 
-        ' Exibe o nome formatado em um TextBox ou Label
+
         TextBoxUsuarioNome.Text = nomeFormatado
     End Sub
 End Class
