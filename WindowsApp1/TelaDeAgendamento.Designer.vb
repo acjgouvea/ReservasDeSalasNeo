@@ -45,6 +45,7 @@ Partial Class TelaDeAgendamento
         '
         'ButtonSave
         '
+        Me.ButtonSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonSave.Location = New System.Drawing.Point(151, 296)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(88, 32)
@@ -54,6 +55,7 @@ Partial Class TelaDeAgendamento
         '
         'ButtonCancel
         '
+        Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCancel.Location = New System.Drawing.Point(245, 296)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(88, 32)
@@ -137,10 +139,10 @@ Partial Class TelaDeAgendamento
         'TextBoxUsuarioNome
         '
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(5, 19)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(6, 19)
         Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
-        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(315, 70)
+        Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(314, 54)
         Me.TextBoxUsuarioNome.TabIndex = 21
         '
         'GroupBox6
@@ -179,9 +181,10 @@ Partial Class TelaDeAgendamento
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TextBoxUsuarioNome)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(7, 195)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(326, 95)
+        Me.GroupBox1.Size = New System.Drawing.Size(326, 86)
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Descrição do Evento"
@@ -190,6 +193,7 @@ Partial Class TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(343, 346)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox6)

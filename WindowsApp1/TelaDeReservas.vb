@@ -21,8 +21,7 @@ Public Class TelaDeReservas
         conexao.ConectarComBanco(username, password)
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load, dgvGridReserva.Click
-
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
 
         'Me.StartPosition = FormStartPosition.Manual
@@ -145,6 +144,8 @@ Public Class TelaDeReservas
     End Sub
 
     Private Sub AtualizarSemana(selectedDate As DateTime)
+
+
         Dim dayOfWeek As Integer = CInt(selectedDate.DayOfWeek)
         Dim startOfWeek As DateTime = selectedDate.AddDays(-dayOfWeek + If(dayOfWeek = 0, -6, 1))
         Dim endOfWeek As DateTime = startOfWeek.AddDays(6)
@@ -159,11 +160,15 @@ Public Class TelaDeReservas
         dgvGridReserva.Columns(3).HeaderText = "Quarta " & startOfWeek.AddDays(2).ToString("dd/MM")
         dgvGridReserva.Columns(4).HeaderText = "Quinta " & startOfWeek.AddDays(3).ToString("dd/MM")
         dgvGridReserva.Columns(5).HeaderText = "Sexta " & startOfWeek.AddDays(4).ToString("dd/MM")
+
+
     End Sub
     Private Sub Form1_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+
         If Not formAberto Then
             CarregarReservasDaSemana(DateTime.Now())
         End If
+
     End Sub
 
     Private Sub Agendar_Click(sender As Object, e As EventArgs) Handles Agendar.Click
@@ -184,7 +189,49 @@ Public Class TelaDeReservas
 
     End Sub
 
+
     Private Sub dgvGridReserva_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellClick
+
+        If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
+            ' Obter a data e hora da célula clicada
+            Dim horario As String = dgvGridReserva.Rows(e.RowIndex).Cells(0).Value.ToString()
+            Dim diaDaSemana As String = dgvGridReserva.Columns(e.ColumnIndex).HeaderText
+
+            ' Extrair a data do cabeçalho da coluna (assumindo que está no formato "Dia DD/MM")
+            Dim dataTexto As String = diaDaSemana.Split(" "c)(1)
+            Dim data As DateTime = DateTime.ParseExact(dataTexto, "dd/MM", Nothing)
+
+            ' Combinar a data e o horário
+            Dim dataHoraInicio As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(0)}")
+            Dim dataHoraFim As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(2)}")
+
+            ' Consultar o banco de dados para obter os detalhes da reserva
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@Sala_IN", idDaSala),
+                New SqlParameter("@DataHoraInicio", dataHoraInicio),
+                New SqlParameter("@DataHoraFim", dataHoraFim)
+            }
+
+            Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarDetalhesReserva", parametros)
+
+            If dataTable IsNot Nothing AndAlso dataTable.Rows.Count > 0 Then
+                ' Exibir os detalhes da reserva no formulário
+                Dim detalhesReserva As DataRow = dataTable.Rows(0)
+                GroupBox4.Text = "Detalhes da Reserva"
+                lblUsuarioNome.Text = detalhesReserva("reserva_usuario_nome").ToString()
+                lblReservadoEm.Text = detalhesReserva("data_reservado").ToString()
+                lblDataHoraInicio.Text = detalhesReserva("reserva_data_hora_inicio").ToString()
+                lblDataHoraFim.Text = detalhesReserva("reserva_data_hora_fim").ToString()
+                lblEvento.Text = detalhesReserva("reserva_evento").ToString()
+            Else
+                MessageBox.Show("Nenhuma reserva encontrada para o horário selecionado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+
+    End Sub
+
+
+    Private Sub dgvGridReserva_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellDoubleClick
 
     End Sub
 End Class

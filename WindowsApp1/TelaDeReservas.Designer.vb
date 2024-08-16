@@ -42,19 +42,36 @@ Partial Class TelaDeReservas
         Me.MASERPHMLDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Agendar = New System.Windows.Forms.Button()
         Me.Excluir_Reserva = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.lblDataHoraInicio = New System.Windows.Forms.Label()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.lblUsuarioNome = New System.Windows.Forms.Label()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.lblDataHoraFim = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.lblEvento = New System.Windows.Forms.Label()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.lblReservadoEm = New System.Windows.Forms.Label()
         CType(Me.dgvGridReserva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
         Me.SuspendLayout()
         '
         'MonthCalendar1
         '
         Me.MonthCalendar1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.MonthCalendar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar1.Location = New System.Drawing.Point(897, 22)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(848, 7)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 6
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.Wheat
@@ -64,9 +81,8 @@ Partial Class TelaDeReservas
         '
         Me.dgvGridReserva.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
         Me.dgvGridReserva.AllowUserToDeleteRows = False
-        Me.dgvGridReserva.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvGridReserva.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvGridReserva.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        Me.dgvGridReserva.BackgroundColor = System.Drawing.SystemColors.InactiveCaption
+        Me.dgvGridReserva.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -78,7 +94,7 @@ Partial Class TelaDeReservas
         Me.dgvGridReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGridReserva.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HoraApresentacao_VC, Me.IdSegunda_IN, Me.IdTerca_IN, Me.IdQuarta_IN, Me.IdQuinta_IN, Me.Sexta})
         Me.dgvGridReserva.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvGridReserva.Location = New System.Drawing.Point(25, 22)
+        Me.dgvGridReserva.Location = New System.Drawing.Point(14, 7)
         Me.dgvGridReserva.Margin = New System.Windows.Forms.Padding(5)
         Me.dgvGridReserva.MultiSelect = False
         Me.dgvGridReserva.Name = "dgvGridReserva"
@@ -146,7 +162,7 @@ Partial Class TelaDeReservas
         '
         'SelecaoDeSalas
         '
-        Me.SelecaoDeSalas.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SelecaoDeSalas.BackColor = System.Drawing.SystemColors.Control
         Me.SelecaoDeSalas.FormattingEnabled = True
         Me.SelecaoDeSalas.Location = New System.Drawing.Point(7, 19)
         Me.SelecaoDeSalas.Name = "SelecaoDeSalas"
@@ -155,7 +171,7 @@ Partial Class TelaDeReservas
         '
         'SelecaoDeEmpresa
         '
-        Me.SelecaoDeEmpresa.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SelecaoDeEmpresa.BackColor = System.Drawing.SystemColors.Control
         Me.SelecaoDeEmpresa.FormattingEnabled = True
         Me.SelecaoDeEmpresa.Location = New System.Drawing.Point(7, 19)
         Me.SelecaoDeEmpresa.Name = "SelecaoDeEmpresa"
@@ -165,7 +181,7 @@ Partial Class TelaDeReservas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label1.BackColor = System.Drawing.SystemColors.Control
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
@@ -175,10 +191,10 @@ Partial Class TelaDeReservas
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(896, 196)
+        Me.GroupBox1.Location = New System.Drawing.Point(848, 171)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(227, 43)
         Me.GroupBox1.TabIndex = 12
@@ -187,10 +203,10 @@ Partial Class TelaDeReservas
         '
         'GroupBox2
         '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox2.Controls.Add(Me.SelecaoDeEmpresa)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(896, 258)
+        Me.GroupBox2.Location = New System.Drawing.Point(847, 220)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox2.TabIndex = 13
@@ -199,10 +215,10 @@ Partial Class TelaDeReservas
         '
         'GroupBox3
         '
-        Me.GroupBox3.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox3.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox3.Controls.Add(Me.SelecaoDeSalas)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(896, 332)
+        Me.GroupBox3.Location = New System.Drawing.Point(847, 279)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox3.TabIndex = 13
@@ -221,30 +237,137 @@ Partial Class TelaDeReservas
         '
         'Agendar
         '
-        Me.Agendar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agendar.Location = New System.Drawing.Point(896, 475)
+        Me.Agendar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Agendar.Location = New System.Drawing.Point(878, 655)
         Me.Agendar.Name = "Agendar"
-        Me.Agendar.Size = New System.Drawing.Size(228, 25)
+        Me.Agendar.Size = New System.Drawing.Size(105, 25)
         Me.Agendar.TabIndex = 12
         Me.Agendar.Text = "Agendar"
         Me.Agendar.UseVisualStyleBackColor = True
         '
         'Excluir_Reserva
         '
-        Me.Excluir_Reserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Excluir_Reserva.Location = New System.Drawing.Point(897, 442)
+        Me.Excluir_Reserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Excluir_Reserva.Location = New System.Drawing.Point(1000, 655)
         Me.Excluir_Reserva.Name = "Excluir_Reserva"
-        Me.Excluir_Reserva.Size = New System.Drawing.Size(228, 25)
+        Me.Excluir_Reserva.Size = New System.Drawing.Size(105, 25)
         Me.Excluir_Reserva.TabIndex = 14
         Me.Excluir_Reserva.Text = "Excluir Reserva"
         Me.Excluir_Reserva.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.GroupBox7)
+        Me.GroupBox4.Controls.Add(Me.GroupBox5)
+        Me.GroupBox4.Controls.Add(Me.GroupBox9)
+        Me.GroupBox4.Controls.Add(Me.GroupBox6)
+        Me.GroupBox4.Controls.Add(Me.GroupBox8)
+        Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GroupBox4.Location = New System.Drawing.Point(848, 338)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(227, 289)
+        Me.GroupBox4.TabIndex = 15
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Detalhes Reserva"
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.lblDataHoraInicio)
+        Me.GroupBox7.Location = New System.Drawing.Point(6, 157)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(214, 40)
+        Me.GroupBox7.TabIndex = 17
+        Me.GroupBox7.TabStop = False
+        Me.GroupBox7.Text = "Data/Hora Inicio"
+        '
+        'lblDataHoraInicio
+        '
+        Me.lblDataHoraInicio.AutoSize = True
+        Me.lblDataHoraInicio.Location = New System.Drawing.Point(6, 16)
+        Me.lblDataHoraInicio.Name = "lblDataHoraInicio"
+        Me.lblDataHoraInicio.Size = New System.Drawing.Size(0, 13)
+        Me.lblDataHoraInicio.TabIndex = 1
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.lblUsuarioNome)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 19)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(214, 40)
+        Me.GroupBox5.TabIndex = 16
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Usuario "
+        '
+        'lblUsuarioNome
+        '
+        Me.lblUsuarioNome.AutoSize = True
+        Me.lblUsuarioNome.Location = New System.Drawing.Point(6, 16)
+        Me.lblUsuarioNome.Name = "lblUsuarioNome"
+        Me.lblUsuarioNome.Size = New System.Drawing.Size(0, 13)
+        Me.lblUsuarioNome.TabIndex = 0
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.lblDataHoraFim)
+        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox9.Location = New System.Drawing.Point(6, 111)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Size = New System.Drawing.Size(214, 40)
+        Me.GroupBox9.TabIndex = 17
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Data/Hora Fim"
+        '
+        'lblDataHoraFim
+        '
+        Me.lblDataHoraFim.AutoSize = True
+        Me.lblDataHoraFim.Location = New System.Drawing.Point(6, 16)
+        Me.lblDataHoraFim.Name = "lblDataHoraFim"
+        Me.lblDataHoraFim.Size = New System.Drawing.Size(0, 13)
+        Me.lblDataHoraFim.TabIndex = 2
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.lblEvento)
+        Me.GroupBox6.Location = New System.Drawing.Point(6, 203)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(214, 70)
+        Me.GroupBox6.TabIndex = 17
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Descrição do Evento"
+        '
+        'lblEvento
+        '
+        Me.lblEvento.AutoSize = True
+        Me.lblEvento.Location = New System.Drawing.Point(6, 16)
+        Me.lblEvento.Name = "lblEvento"
+        Me.lblEvento.Size = New System.Drawing.Size(0, 13)
+        Me.lblEvento.TabIndex = 3
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.lblReservadoEm)
+        Me.GroupBox8.Location = New System.Drawing.Point(6, 65)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(214, 40)
+        Me.GroupBox8.TabIndex = 17
+        Me.GroupBox8.TabStop = False
+        Me.GroupBox8.Text = "Reservado Em"
+        '
+        'lblReservadoEm
+        '
+        Me.lblReservadoEm.AutoSize = True
+        Me.lblReservadoEm.Location = New System.Drawing.Point(6, 16)
+        Me.lblReservadoEm.Name = "lblReservadoEm"
+        Me.lblReservadoEm.Size = New System.Drawing.Size(0, 13)
+        Me.lblReservadoEm.TabIndex = 4
         '
         'TelaDeReservas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(1154, 729)
+        Me.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.ClientSize = New System.Drawing.Size(1144, 741)
+        Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Excluir_Reserva)
         Me.Controls.Add(Me.Agendar)
         Me.Controls.Add(Me.GroupBox2)
@@ -261,6 +384,17 @@ Partial Class TelaDeReservas
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox7.ResumeLayout(False)
+        Me.GroupBox7.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox9.ResumeLayout(False)
+        Me.GroupBox9.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        Me.GroupBox8.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -282,4 +416,15 @@ Partial Class TelaDeReservas
     Friend WithEvents MASERPHMLDataSetBindingSource As BindingSource
     Friend WithEvents Agendar As Button
     Friend WithEvents Excluir_Reserva As Button
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents lblReservadoEm As Label
+    Friend WithEvents lblDataHoraFim As Label
+    Friend WithEvents lblDataHoraInicio As Label
+    Friend WithEvents lblUsuarioNome As Label
+    Friend WithEvents lblEvento As Label
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents GroupBox9 As GroupBox
 End Class

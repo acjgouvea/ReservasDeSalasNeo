@@ -24,10 +24,12 @@ Public Class TelaDeAlteracao
         usu_login_VC.Text = currentRow.Cells(userName).Value.ToString()
         IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
+
+
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
         Me.StartPosition = FormStartPosition.Manual
         Me.Location = New Point(700, 400)
 

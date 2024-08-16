@@ -22,9 +22,22 @@ Public Class TelaDeAgendamento
         IdSalaAtual.Text = Me.idDaSala
 
     End Sub
+    Public Sub New(username As String)
+        InitializeComponent()
+        Me.userName = username
+
+        ' Substitui o ponto por espaço no nome do usuário
+        Dim nomeFormatado As String = username.Replace(".", " ")
+
+        ' Exibe o nome formatado no controle
+        TextBoxUsuarioNome.Text = "Usuario: " & nomeFormatado & Environment.NewLine
+    End Sub
+
 
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
-        usu_login_VC.Text = currentRow.Cells(userName).Value.oString()
+        Dim sUserName As String = currentRow.Cells(userName).Value.ToString().Replace(".", " ")
+        'usu_login_VC.Text = currentRow.Cells(userName).Value.oString()
+        usu_login_VC.Text = sUserName
         IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
@@ -32,8 +45,11 @@ Public Class TelaDeAgendamento
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Me.StartPosition = FormStartPosition.Manual
-        'Me.Location = New Point(700, 400)
+        usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
+
+        Me.StartPosition = FormStartPosition.CenterParent
+
+
 
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
@@ -56,9 +72,9 @@ Public Class TelaDeAgendamento
         DateTimePickerFim.CustomFormat = "dd/MMMM/yy"
 
 
-        'TextBoxUsuarioNome.Multiline = True
-        'TextBoxUsuarioNome.Text = "Usuario: " & usu_login_VC.Text & Environment.NewLine
-        'TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        TextBoxUsuarioNome.Multiline = True
+        TextBoxUsuarioNome.Text = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+        TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
 
 
     End Sub
@@ -174,15 +190,6 @@ Public Class TelaDeAgendamento
         End If
     End Sub
 
-    Public Sub New(username As String)
-        InitializeComponent()
-        Me.userName = username
 
-
-        Dim nomeFormatado As String = username.Replace(".", " ")
-
-
-        TextBoxUsuarioNome.Text = nomeFormatado
-    End Sub
 End Class
 
