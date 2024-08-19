@@ -46,6 +46,7 @@ Public Class TelaDeAlteracao
 
         DateTimePickerInicio.Format = DateTimePickerFormat.Custom
         DateTimePickerInicio.CustomFormat = "dd/MMMM/yy "
+        ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
     End Sub
 
     Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
@@ -92,7 +93,7 @@ Public Class TelaDeAlteracao
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        ' Atualiza o DateTimePickerInicio com o horário selecionado no ComboBox
+
         Dim selectedTime As String = ComboBox1.SelectedItem.ToString()
         Dim selectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(selectedTime))
         DateTimePickerInicio.Value = selectedDateTime

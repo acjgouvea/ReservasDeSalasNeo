@@ -26,12 +26,6 @@ Partial Class TelaDeReservas
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.dgvGridReserva = New System.Windows.Forms.DataGridView()
-        Me.HoraApresentacao_VC = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdSegunda_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdTerca_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdQuarta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IdQuinta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SelecaoDeSalas = New System.Windows.Forms.ComboBox()
         Me.SelecaoDeEmpresa = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -53,6 +47,12 @@ Partial Class TelaDeReservas
         Me.lblEvento = New System.Windows.Forms.Label()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
         Me.lblReservadoEm = New System.Windows.Forms.Label()
+        Me.HoraApresentacao_VC = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdSegunda_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdTerca_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdQuarta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IdQuinta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvGridReserva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -71,7 +71,7 @@ Partial Class TelaDeReservas
         '
         Me.MonthCalendar1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.MonthCalendar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MonthCalendar1.Location = New System.Drawing.Point(848, 7)
+        Me.MonthCalendar1.Location = New System.Drawing.Point(986, 7)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 6
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.Wheat
@@ -81,6 +81,7 @@ Partial Class TelaDeReservas
         '
         Me.dgvGridReserva.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
         Me.dgvGridReserva.AllowUserToDeleteRows = False
+        Me.dgvGridReserva.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.dgvGridReserva.BackgroundColor = System.Drawing.SystemColors.InactiveCaption
         Me.dgvGridReserva.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -94,7 +95,7 @@ Partial Class TelaDeReservas
         Me.dgvGridReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGridReserva.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HoraApresentacao_VC, Me.IdSegunda_IN, Me.IdTerca_IN, Me.IdQuarta_IN, Me.IdQuinta_IN, Me.Sexta})
         Me.dgvGridReserva.GridColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgvGridReserva.Location = New System.Drawing.Point(14, 7)
+        Me.dgvGridReserva.Location = New System.Drawing.Point(4, 7)
         Me.dgvGridReserva.Margin = New System.Windows.Forms.Padding(5)
         Me.dgvGridReserva.MultiSelect = False
         Me.dgvGridReserva.Name = "dgvGridReserva"
@@ -103,62 +104,8 @@ Partial Class TelaDeReservas
         Me.dgvGridReserva.RowHeadersVisible = False
         Me.dgvGridReserva.RowHeadersWidth = 50
         Me.dgvGridReserva.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.dgvGridReserva.Size = New System.Drawing.Size(836, 682)
+        Me.dgvGridReserva.Size = New System.Drawing.Size(968, 775)
         Me.dgvGridReserva.TabIndex = 0
-        '
-        'HoraApresentacao_VC
-        '
-        Me.HoraApresentacao_VC.DataPropertyName = "HoraApresentacao_VC"
-        Me.HoraApresentacao_VC.FillWeight = 120.0!
-        Me.HoraApresentacao_VC.HeaderText = "Horário"
-        Me.HoraApresentacao_VC.MinimumWidth = 120
-        Me.HoraApresentacao_VC.Name = "HoraApresentacao_VC"
-        Me.HoraApresentacao_VC.Width = 120
-        '
-        'IdSegunda_IN
-        '
-        Me.IdSegunda_IN.DataPropertyName = "EventoSegunda_VC"
-        Me.IdSegunda_IN.FillWeight = 120.0!
-        Me.IdSegunda_IN.HeaderText = "Segunda"
-        Me.IdSegunda_IN.MinimumWidth = 120
-        Me.IdSegunda_IN.Name = "IdSegunda_IN"
-        Me.IdSegunda_IN.Width = 120
-        '
-        'IdTerca_IN
-        '
-        Me.IdTerca_IN.DataPropertyName = "EventoTerca_VC"
-        Me.IdTerca_IN.FillWeight = 120.0!
-        Me.IdTerca_IN.HeaderText = "Terça"
-        Me.IdTerca_IN.MinimumWidth = 120
-        Me.IdTerca_IN.Name = "IdTerca_IN"
-        Me.IdTerca_IN.Width = 120
-        '
-        'IdQuarta_IN
-        '
-        Me.IdQuarta_IN.DataPropertyName = "EventoQuarta_VC"
-        Me.IdQuarta_IN.FillWeight = 120.0!
-        Me.IdQuarta_IN.HeaderText = "Quarta"
-        Me.IdQuarta_IN.MinimumWidth = 120
-        Me.IdQuarta_IN.Name = "IdQuarta_IN"
-        Me.IdQuarta_IN.Width = 120
-        '
-        'IdQuinta_IN
-        '
-        Me.IdQuinta_IN.DataPropertyName = "EventoQuinta_VC"
-        Me.IdQuinta_IN.FillWeight = 120.0!
-        Me.IdQuinta_IN.HeaderText = "Quinta"
-        Me.IdQuinta_IN.MinimumWidth = 120
-        Me.IdQuinta_IN.Name = "IdQuinta_IN"
-        Me.IdQuinta_IN.Width = 120
-        '
-        'Sexta
-        '
-        Me.Sexta.DataPropertyName = "EventoSexta_VC"
-        Me.Sexta.FillWeight = 120.0!
-        Me.Sexta.HeaderText = "Sexta"
-        Me.Sexta.MinimumWidth = 120
-        Me.Sexta.Name = "Sexta"
-        Me.Sexta.Width = 120
         '
         'SelecaoDeSalas
         '
@@ -181,7 +128,7 @@ Partial Class TelaDeReservas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.SystemColors.Control
+        Me.Label1.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 18)
         Me.Label1.Name = "Label1"
@@ -193,8 +140,8 @@ Partial Class TelaDeReservas
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(848, 171)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(986, 181)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(227, 43)
         Me.GroupBox1.TabIndex = 12
@@ -205,8 +152,8 @@ Partial Class TelaDeReservas
         '
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox2.Controls.Add(Me.SelecaoDeEmpresa)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(847, 220)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(985, 230)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox2.TabIndex = 13
@@ -217,8 +164,8 @@ Partial Class TelaDeReservas
         '
         Me.GroupBox3.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.GroupBox3.Controls.Add(Me.SelecaoDeSalas)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(847, 279)
+        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Location = New System.Drawing.Point(985, 289)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(227, 53)
         Me.GroupBox3.TabIndex = 13
@@ -238,7 +185,7 @@ Partial Class TelaDeReservas
         'Agendar
         '
         Me.Agendar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Agendar.Location = New System.Drawing.Point(878, 655)
+        Me.Agendar.Location = New System.Drawing.Point(986, 664)
         Me.Agendar.Name = "Agendar"
         Me.Agendar.Size = New System.Drawing.Size(105, 25)
         Me.Agendar.TabIndex = 12
@@ -248,7 +195,7 @@ Partial Class TelaDeReservas
         'Excluir_Reserva
         '
         Me.Excluir_Reserva.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Excluir_Reserva.Location = New System.Drawing.Point(1000, 655)
+        Me.Excluir_Reserva.Location = New System.Drawing.Point(1108, 664)
         Me.Excluir_Reserva.Name = "Excluir_Reserva"
         Me.Excluir_Reserva.Size = New System.Drawing.Size(105, 25)
         Me.Excluir_Reserva.TabIndex = 14
@@ -262,10 +209,11 @@ Partial Class TelaDeReservas
         Me.GroupBox4.Controls.Add(Me.GroupBox9)
         Me.GroupBox4.Controls.Add(Me.GroupBox6)
         Me.GroupBox4.Controls.Add(Me.GroupBox8)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBox4.Location = New System.Drawing.Point(848, 338)
+        Me.GroupBox4.Location = New System.Drawing.Point(986, 359)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(227, 289)
+        Me.GroupBox4.Size = New System.Drawing.Size(226, 262)
         Me.GroupBox4.TabIndex = 15
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Detalhes Reserva"
@@ -309,7 +257,7 @@ Partial Class TelaDeReservas
         'GroupBox9
         '
         Me.GroupBox9.Controls.Add(Me.lblDataHoraFim)
-        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox9.Location = New System.Drawing.Point(6, 111)
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.Size = New System.Drawing.Size(214, 40)
@@ -330,7 +278,7 @@ Partial Class TelaDeReservas
         Me.GroupBox6.Controls.Add(Me.lblEvento)
         Me.GroupBox6.Location = New System.Drawing.Point(6, 203)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(214, 70)
+        Me.GroupBox6.Size = New System.Drawing.Size(214, 51)
         Me.GroupBox6.TabIndex = 17
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Descrição do Evento"
@@ -361,12 +309,66 @@ Partial Class TelaDeReservas
         Me.lblReservadoEm.Size = New System.Drawing.Size(0, 13)
         Me.lblReservadoEm.TabIndex = 4
         '
+        'HoraApresentacao_VC
+        '
+        Me.HoraApresentacao_VC.DataPropertyName = "HoraApresentacao_VC"
+        Me.HoraApresentacao_VC.FillWeight = 120.0!
+        Me.HoraApresentacao_VC.HeaderText = "Horário"
+        Me.HoraApresentacao_VC.MinimumWidth = 120
+        Me.HoraApresentacao_VC.Name = "HoraApresentacao_VC"
+        Me.HoraApresentacao_VC.Width = 120
+        '
+        'IdSegunda_IN
+        '
+        Me.IdSegunda_IN.DataPropertyName = "EventoSegunda_VC"
+        Me.IdSegunda_IN.FillWeight = 120.0!
+        Me.IdSegunda_IN.HeaderText = "Segunda"
+        Me.IdSegunda_IN.MinimumWidth = 170
+        Me.IdSegunda_IN.Name = "IdSegunda_IN"
+        Me.IdSegunda_IN.Width = 170
+        '
+        'IdTerca_IN
+        '
+        Me.IdTerca_IN.DataPropertyName = "EventoTerca_VC"
+        Me.IdTerca_IN.FillWeight = 120.0!
+        Me.IdTerca_IN.HeaderText = "Terça"
+        Me.IdTerca_IN.MinimumWidth = 170
+        Me.IdTerca_IN.Name = "IdTerca_IN"
+        Me.IdTerca_IN.Width = 170
+        '
+        'IdQuarta_IN
+        '
+        Me.IdQuarta_IN.DataPropertyName = "EventoQuarta_VC"
+        Me.IdQuarta_IN.FillWeight = 120.0!
+        Me.IdQuarta_IN.HeaderText = "Quarta"
+        Me.IdQuarta_IN.MinimumWidth = 170
+        Me.IdQuarta_IN.Name = "IdQuarta_IN"
+        Me.IdQuarta_IN.Width = 170
+        '
+        'IdQuinta_IN
+        '
+        Me.IdQuinta_IN.DataPropertyName = "EventoQuinta_VC"
+        Me.IdQuinta_IN.FillWeight = 120.0!
+        Me.IdQuinta_IN.HeaderText = "Quinta"
+        Me.IdQuinta_IN.MinimumWidth = 170
+        Me.IdQuinta_IN.Name = "IdQuinta_IN"
+        Me.IdQuinta_IN.Width = 170
+        '
+        'Sexta
+        '
+        Me.Sexta.DataPropertyName = "EventoSexta_VC"
+        Me.Sexta.FillWeight = 120.0!
+        Me.Sexta.HeaderText = "Sexta"
+        Me.Sexta.MinimumWidth = 170
+        Me.Sexta.Name = "Sexta"
+        Me.Sexta.Width = 170
+        '
         'TelaDeReservas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(1144, 741)
+        Me.ClientSize = New System.Drawing.Size(1220, 796)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Excluir_Reserva)
         Me.Controls.Add(Me.Agendar)
@@ -376,7 +378,7 @@ Partial Class TelaDeReservas
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.dgvGridReserva)
         Me.Name = "TelaDeReservas"
-        Me.Text = "Reservas de Salas"
+        Me.Text = " "
         CType(Me.dgvGridReserva, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -405,12 +407,6 @@ Partial Class TelaDeReservas
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents HoraApresentacao_VC As DataGridViewTextBoxColumn
-    Friend WithEvents IdSegunda_IN As DataGridViewTextBoxColumn
-    Friend WithEvents IdTerca_IN As DataGridViewTextBoxColumn
-    Friend WithEvents IdQuarta_IN As DataGridViewTextBoxColumn
-    Friend WithEvents IdQuinta_IN As DataGridViewTextBoxColumn
-    Friend WithEvents Sexta As DataGridViewTextBoxColumn
     Friend WithEvents dgvGridReserva As DataGridView
     Friend WithEvents MASERP_HMLDataSet As MASERP_HMLDataSet
     Friend WithEvents MASERPHMLDataSetBindingSource As BindingSource
@@ -427,4 +423,10 @@ Partial Class TelaDeReservas
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents GroupBox8 As GroupBox
     Friend WithEvents GroupBox9 As GroupBox
+    Friend WithEvents HoraApresentacao_VC As DataGridViewTextBoxColumn
+    Friend WithEvents IdSegunda_IN As DataGridViewTextBoxColumn
+    Friend WithEvents IdTerca_IN As DataGridViewTextBoxColumn
+    Friend WithEvents IdQuarta_IN As DataGridViewTextBoxColumn
+    Friend WithEvents IdQuinta_IN As DataGridViewTextBoxColumn
+    Friend WithEvents Sexta As DataGridViewTextBoxColumn
 End Class

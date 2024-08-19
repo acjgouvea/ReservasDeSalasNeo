@@ -28,18 +28,18 @@ Partial Class TelaDeAgendamento
         Me.IdSalaAtual = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.DataHoraFim = New System.Windows.Forms.GroupBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFim = New System.Windows.Forms.DateTimePicker()
         Me.TextBoxUsuarioNome = New System.Windows.Forms.TextBox()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.DataHoraInicio = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.DataHoraFim.SuspendLayout()
+        Me.DataHoraInicio.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -104,18 +104,18 @@ Partial Class TelaDeAgendamento
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Id da Sala"
         '
-        'GroupBox5
+        'DataHoraFim
         '
-        Me.GroupBox5.Controls.Add(Me.ComboBox2)
-        Me.GroupBox5.Controls.Add(Me.DateTimePickerFim)
-        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.GroupBox5.Location = New System.Drawing.Point(173, 76)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(160, 99)
-        Me.GroupBox5.TabIndex = 22
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Data/Hora Fim"
+        Me.DataHoraFim.Controls.Add(Me.ComboBox2)
+        Me.DataHoraFim.Controls.Add(Me.DateTimePickerFim)
+        Me.DataHoraFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataHoraFim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.DataHoraFim.Location = New System.Drawing.Point(173, 76)
+        Me.DataHoraFim.Name = "DataHoraFim"
+        Me.DataHoraFim.Size = New System.Drawing.Size(160, 99)
+        Me.DataHoraFim.TabIndex = 22
+        Me.DataHoraFim.TabStop = False
+        Me.DataHoraFim.Text = "Data/Hora Fim"
         '
         'ComboBox2
         '
@@ -145,17 +145,17 @@ Partial Class TelaDeAgendamento
         Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(314, 54)
         Me.TextBoxUsuarioNome.TabIndex = 21
         '
-        'GroupBox6
+        'DataHoraInicio
         '
-        Me.GroupBox6.Controls.Add(Me.ComboBox1)
-        Me.GroupBox6.Controls.Add(Me.DateTimePickerInicio)
-        Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.Location = New System.Drawing.Point(7, 76)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(160, 99)
-        Me.GroupBox6.TabIndex = 23
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Data/Hora Inicio"
+        Me.DataHoraInicio.Controls.Add(Me.ComboBox1)
+        Me.DataHoraInicio.Controls.Add(Me.DateTimePickerInicio)
+        Me.DataHoraInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataHoraInicio.Location = New System.Drawing.Point(7, 76)
+        Me.DataHoraInicio.Name = "DataHoraInicio"
+        Me.DataHoraInicio.Size = New System.Drawing.Size(160, 99)
+        Me.DataHoraInicio.TabIndex = 23
+        Me.DataHoraInicio.TabStop = False
+        Me.DataHoraInicio.Text = "Data/Hora Inicio"
         '
         'ComboBox1
         '
@@ -195,8 +195,8 @@ Partial Class TelaDeAgendamento
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(343, 346)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.DataHoraFim)
+        Me.Controls.Add(Me.DataHoraInicio)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
         Me.Controls.Add(Me.GroupBox3)
@@ -207,8 +207,8 @@ Partial Class TelaDeAgendamento
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
+        Me.DataHoraFim.ResumeLayout(False)
+        Me.DataHoraInicio.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -220,11 +220,11 @@ Partial Class TelaDeAgendamento
     Friend WithEvents IdSalaAtual As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents DataHoraFim As GroupBox
     Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents DateTimePickerFim As DateTimePicker
     Friend WithEvents TextBoxUsuarioNome As TextBox
-    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents DataHoraInicio As GroupBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DateTimePickerInicio As DateTimePicker
     Friend WithEvents GroupBox1 As GroupBox
