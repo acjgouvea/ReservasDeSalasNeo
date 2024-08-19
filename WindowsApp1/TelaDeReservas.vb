@@ -23,6 +23,10 @@ Public Class TelaDeReservas
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.StartPosition = FormStartPosition.CenterScreen
+        dgvGridReserva.ColumnHeadersHeight = 40
+
+
+        dgvGridReserva.RowTemplate.Height = 15
 
         'Me.StartPosition = FormStartPosition.Manual
         'Me.Location = New Point(500, 400)
@@ -87,6 +91,12 @@ Public Class TelaDeReservas
             AjustarLarguraDasColunas()
 
 
+            'dgvGridReserva.Columns(1).Width = 300
+            dgvGridReserva.ColumnHeadersHeight = 40
+
+
+            dgvGridReserva.RowTemplate.Height = 15
+
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar reservas da semana: " & ex.Message)
         End Try
@@ -137,6 +147,7 @@ Public Class TelaDeReservas
 
         SelecaoDeSalas.DataSource = dataTable
         SelecaoDeSalas.DisplayMember = "sala_nome"
+        EstilizarGrid()
 
     End Sub
 
@@ -238,15 +249,13 @@ Public Class TelaDeReservas
 
     End Sub
 
-    Private Sub GroupBox9_Enter(sender As Object, e As EventArgs) Handles GroupBox9.Enter
 
-    End Sub
 
 
     Private Sub EstilizarGrid()
         ' Definir fonte para as células e cabeçalhos
         dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 10, FontStyle.Regular)
-        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Arial", 10, FontStyle.Bold)
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Arial", 12, FontStyle.Bold)
 
         ' Cor de fundo para o cabeçalho
         dgvGridReserva.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Black
@@ -261,12 +270,9 @@ Public Class TelaDeReservas
         ' Cor do texto para as células
         dgvGridReserva.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
 
-        ' Cor de fundo para as células
         dgvGridReserva.DefaultCellStyle.BackColor = System.Drawing.Color.White
 
-        ' Cor do grid
         dgvGridReserva.GridColor = System.Drawing.Color.Gray
-
     End Sub
 
     Private Sub AjustarLarguraDasColunas()
@@ -274,12 +280,28 @@ Public Class TelaDeReservas
         For Each col As DataGridViewColumn In dgvGridReserva.Columns
             col.MinimumWidth = 170
             col.Width = 170
-            col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+            'col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
             col.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         Next
     End Sub
 
-    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
+    Private Sub GroupBox9_Enter(sender As Object, e As EventArgs) Handles GroupBox9.Enter
+
+    End Sub
+
+    Private Sub GroupBox8_Enter(sender As Object, e As EventArgs) Handles GroupBox8.Enter
+
+    End Sub
+
+    Private Sub GroupBox5_Enter(sender As Object, e As EventArgs) Handles GroupBox5.Enter
+
+    End Sub
+
+    Private Sub GroupBox7_Enter(sender As Object, e As EventArgs) Handles GroupBox7.Enter
+
+    End Sub
+
+    Private Sub GroupBox6_Enter(sender As Object, e As EventArgs) Handles GroupBox6.Enter
 
     End Sub
 End Class

@@ -44,7 +44,7 @@ Partial Class TelaDeAlteracao
         'ButtonCancel
         '
         Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(191, 163)
+        Me.ButtonCancel.Location = New System.Drawing.Point(191, 135)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(79, 25)
         Me.ButtonCancel.TabIndex = 15
@@ -55,7 +55,7 @@ Partial Class TelaDeAlteracao
         '
         Me.ButtonSave.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ButtonSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSave.Location = New System.Drawing.Point(99, 163)
+        Me.ButtonSave.Location = New System.Drawing.Point(106, 135)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(79, 25)
         Me.ButtonSave.TabIndex = 14
@@ -77,13 +77,14 @@ Partial Class TelaDeAlteracao
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(174, 19)
+        Me.ComboBox1.Location = New System.Drawing.Point(174, 21)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(60, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(77, 24)
         Me.ComboBox1.TabIndex = 10
         '
         'DateTimePickerInicio
         '
+        Me.DateTimePickerInicio.CalendarMonthBackground = System.Drawing.SystemColors.Info
         Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerInicio.Location = New System.Drawing.Point(8, 21)
@@ -148,7 +149,8 @@ Partial Class TelaDeAlteracao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(285, 216)
+        Me.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.ClientSize = New System.Drawing.Size(280, 170)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.ButtonCancel)

@@ -52,7 +52,8 @@ Partial Class TelaDeLogin
         '
         'LabelUser
         '
-        Me.LabelUser.Location = New System.Drawing.Point(226, 18)
+        Me.LabelUser.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUser.Location = New System.Drawing.Point(201, 21)
         Me.LabelUser.Name = "LabelUser"
         Me.LabelUser.Size = New System.Drawing.Size(52, 23)
         Me.LabelUser.TabIndex = 0
@@ -61,7 +62,8 @@ Partial Class TelaDeLogin
         '
         'LabelPassword
         '
-        Me.LabelPassword.Location = New System.Drawing.Point(226, 67)
+        Me.LabelPassword.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelPassword.Location = New System.Drawing.Point(201, 82)
         Me.LabelPassword.Name = "LabelPassword"
         Me.LabelPassword.Size = New System.Drawing.Size(55, 23)
         Me.LabelPassword.TabIndex = 2
@@ -70,33 +72,37 @@ Partial Class TelaDeLogin
         '
         'TextBoxUser
         '
-        Me.TextBoxUser.Location = New System.Drawing.Point(229, 44)
+        Me.TextBoxUser.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxUser.Location = New System.Drawing.Point(204, 47)
         Me.TextBoxUser.Name = "TextBoxUser"
-        Me.TextBoxUser.Size = New System.Drawing.Size(165, 20)
+        Me.TextBoxUser.Size = New System.Drawing.Size(165, 22)
         Me.TextBoxUser.TabIndex = 1
         '
         'TextBoxPassword
         '
-        Me.TextBoxPassword.Location = New System.Drawing.Point(229, 93)
+        Me.TextBoxPassword.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxPassword.Location = New System.Drawing.Point(204, 108)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBoxPassword.Size = New System.Drawing.Size(165, 20)
+        Me.TextBoxPassword.Size = New System.Drawing.Size(165, 22)
         Me.TextBoxPassword.TabIndex = 3
         '
         'ButtonLogin
         '
-        Me.ButtonLogin.Location = New System.Drawing.Point(229, 128)
+        Me.ButtonLogin.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonLogin.Location = New System.Drawing.Point(204, 157)
         Me.ButtonLogin.Name = "ButtonLogin"
-        Me.ButtonLogin.Size = New System.Drawing.Size(95, 23)
+        Me.ButtonLogin.Size = New System.Drawing.Size(77, 24)
         Me.ButtonLogin.TabIndex = 4
         Me.ButtonLogin.Text = "&Login"
         '
         'ButtonCancel
         '
         Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.ButtonCancel.Location = New System.Drawing.Point(229, 157)
+        Me.ButtonCancel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.Location = New System.Drawing.Point(292, 157)
         Me.ButtonCancel.Name = "ButtonCancel"
-        Me.ButtonCancel.Size = New System.Drawing.Size(95, 23)
+        Me.ButtonCancel.Size = New System.Drawing.Size(77, 24)
         Me.ButtonCancel.TabIndex = 5
         Me.ButtonCancel.Text = "&Cancelar"
         '
@@ -106,8 +112,9 @@ Partial Class TelaDeLogin
         Me.AccessibleName = "tela teste"
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.CancelButton = Me.ButtonCancel
-        Me.ClientSize = New System.Drawing.Size(407, 192)
+        Me.ClientSize = New System.Drawing.Size(378, 189)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonLogin)
         Me.Controls.Add(Me.TextBoxPassword)

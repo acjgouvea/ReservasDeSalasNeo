@@ -45,8 +45,8 @@ Partial Class TelaDeAgendamento
         '
         'ButtonSave
         '
-        Me.ButtonSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSave.Location = New System.Drawing.Point(151, 296)
+        Me.ButtonSave.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonSave.Location = New System.Drawing.Point(150, 294)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(88, 32)
         Me.ButtonSave.TabIndex = 7
@@ -55,8 +55,8 @@ Partial Class TelaDeAgendamento
         '
         'ButtonCancel
         '
-        Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(245, 296)
+        Me.ButtonCancel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCancel.Location = New System.Drawing.Point(244, 294)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(88, 32)
         Me.ButtonCancel.TabIndex = 8
@@ -78,14 +78,14 @@ Partial Class TelaDeAgendamento
         Me.IdSalaAtual.AutoSize = True
         Me.IdSalaAtual.Location = New System.Drawing.Point(22, 19)
         Me.IdSalaAtual.Name = "IdSalaAtual"
-        Me.IdSalaAtual.Size = New System.Drawing.Size(76, 16)
+        Me.IdSalaAtual.Size = New System.Drawing.Size(73, 16)
         Me.IdSalaAtual.TabIndex = 13
         Me.IdSalaAtual.Text = "IdSalaAtual"
         '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.usu_login_VC)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(7, 12)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(160, 45)
@@ -96,7 +96,7 @@ Partial Class TelaDeAgendamento
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.IdSalaAtual)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(173, 12)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(104, 45)
@@ -108,9 +108,9 @@ Partial Class TelaDeAgendamento
         '
         Me.DataHoraFim.Controls.Add(Me.ComboBox2)
         Me.DataHoraFim.Controls.Add(Me.DateTimePickerFim)
-        Me.DataHoraFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataHoraFim.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataHoraFim.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.DataHoraFim.Location = New System.Drawing.Point(173, 76)
+        Me.DataHoraFim.Location = New System.Drawing.Point(173, 72)
         Me.DataHoraFim.Name = "DataHoraFim"
         Me.DataHoraFim.Size = New System.Drawing.Size(160, 99)
         Me.DataHoraFim.TabIndex = 22
@@ -119,6 +119,7 @@ Partial Class TelaDeAgendamento
         '
         'ComboBox2
         '
+        Me.ComboBox2.BackColor = System.Drawing.SystemColors.Info
         Me.ComboBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(6, 60)
@@ -128,6 +129,7 @@ Partial Class TelaDeAgendamento
         '
         'DateTimePickerFim
         '
+        Me.DateTimePickerFim.CalendarMonthBackground = System.Drawing.SystemColors.Info
         Me.DateTimePickerFim.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePickerFim.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerFim.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
@@ -138,8 +140,9 @@ Partial Class TelaDeAgendamento
         '
         'TextBoxUsuarioNome
         '
+        Me.TextBoxUsuarioNome.BackColor = System.Drawing.SystemColors.Window
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(6, 19)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(6, 21)
         Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
         Me.TextBoxUsuarioNome.Size = New System.Drawing.Size(314, 54)
@@ -149,8 +152,8 @@ Partial Class TelaDeAgendamento
         '
         Me.DataHoraInicio.Controls.Add(Me.ComboBox1)
         Me.DataHoraInicio.Controls.Add(Me.DateTimePickerInicio)
-        Me.DataHoraInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DataHoraInicio.Location = New System.Drawing.Point(7, 76)
+        Me.DataHoraInicio.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataHoraInicio.Location = New System.Drawing.Point(7, 72)
         Me.DataHoraInicio.Name = "DataHoraInicio"
         Me.DataHoraInicio.Size = New System.Drawing.Size(160, 99)
         Me.DataHoraInicio.TabIndex = 23
@@ -159,6 +162,7 @@ Partial Class TelaDeAgendamento
         '
         'ComboBox1
         '
+        Me.ComboBox1.BackColor = System.Drawing.SystemColors.Info
         Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(6, 60)
@@ -168,6 +172,7 @@ Partial Class TelaDeAgendamento
         '
         'DateTimePickerInicio
         '
+        Me.DateTimePickerInicio.CalendarMonthBackground = System.Drawing.SystemColors.Info
         Me.DateTimePickerInicio.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
@@ -181,8 +186,8 @@ Partial Class TelaDeAgendamento
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.TextBoxUsuarioNome)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(7, 195)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(7, 191)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(326, 86)
         Me.GroupBox1.TabIndex = 24
@@ -193,8 +198,8 @@ Partial Class TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(343, 346)
+        Me.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.ClientSize = New System.Drawing.Size(339, 335)
         Me.Controls.Add(Me.DataHoraFim)
         Me.Controls.Add(Me.DataHoraInicio)
         Me.Controls.Add(Me.ButtonCancel)
