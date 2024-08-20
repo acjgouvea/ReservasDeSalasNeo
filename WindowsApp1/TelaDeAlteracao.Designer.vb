@@ -28,23 +28,22 @@ Partial Class TelaDeAlteracao
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerInicio = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.usu_login_VC = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.IdSalaAtual = New System.Windows.Forms.Label()
         Me.MASERP_HMLDataSet = New WindowsApp1.MASERP_HMLDataSet()
         Me.MASERPHMLDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonCancel
         '
         Me.ButtonCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonCancel.Location = New System.Drawing.Point(191, 135)
+        Me.ButtonCancel.Location = New System.Drawing.Point(189, 80)
         Me.ButtonCancel.Name = "ButtonCancel"
         Me.ButtonCancel.Size = New System.Drawing.Size(79, 25)
         Me.ButtonCancel.TabIndex = 15
@@ -55,7 +54,7 @@ Partial Class TelaDeAlteracao
         '
         Me.ButtonSave.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ButtonSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSave.Location = New System.Drawing.Point(106, 135)
+        Me.ButtonSave.Location = New System.Drawing.Point(104, 80)
         Me.ButtonSave.Name = "ButtonSave"
         Me.ButtonSave.Size = New System.Drawing.Size(79, 25)
         Me.ButtonSave.TabIndex = 14
@@ -66,18 +65,22 @@ Partial Class TelaDeAlteracao
         '
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.DateTimePickerInicio)
-        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(13, 67)
+        Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 35)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(257, 62)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(5)
+        Me.GroupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.GroupBox1.Size = New System.Drawing.Size(275, 58)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Data/Hora "
         '
         'ComboBox1
         '
+        Me.ComboBox1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(174, 21)
+        Me.ComboBox1.Location = New System.Drawing.Point(152, 21)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(77, 24)
         Me.ComboBox1.TabIndex = 10
@@ -85,55 +88,14 @@ Partial Class TelaDeAlteracao
         'DateTimePickerInicio
         '
         Me.DateTimePickerInicio.CalendarMonthBackground = System.Drawing.SystemColors.Info
-        Me.DateTimePickerInicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePickerInicio.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerInicio.Location = New System.Drawing.Point(8, 21)
         Me.DateTimePickerInicio.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
         Me.DateTimePickerInicio.MinDate = New Date(2024, 1, 1, 0, 0, 0, 0)
         Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
-        Me.DateTimePickerInicio.Size = New System.Drawing.Size(139, 22)
+        Me.DateTimePickerInicio.Size = New System.Drawing.Size(126, 22)
         Me.DateTimePickerInicio.TabIndex = 5
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.usu_login_VC)
-        Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(160, 38)
-        Me.GroupBox3.TabIndex = 19
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Nome Usuario"
-        '
-        'usu_login_VC
-        '
-        Me.usu_login_VC.AutoSize = True
-        Me.usu_login_VC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.usu_login_VC.Location = New System.Drawing.Point(6, 16)
-        Me.usu_login_VC.Name = "usu_login_VC"
-        Me.usu_login_VC.Size = New System.Drawing.Size(94, 16)
-        Me.usu_login_VC.TabIndex = 9
-        Me.usu_login_VC.Text = "Nome Usuario"
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.IdSalaAtual)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(187, 12)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(83, 38)
-        Me.GroupBox4.TabIndex = 20
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Id da Sala"
-        '
-        'IdSalaAtual
-        '
-        Me.IdSalaAtual.AutoSize = True
-        Me.IdSalaAtual.Location = New System.Drawing.Point(4, 18)
-        Me.IdSalaAtual.Name = "IdSalaAtual"
-        Me.IdSalaAtual.Size = New System.Drawing.Size(76, 16)
-        Me.IdSalaAtual.TabIndex = 13
-        Me.IdSalaAtual.Text = "IdSalaAtual"
         '
         'MASERP_HMLDataSet
         '
@@ -145,26 +107,85 @@ Partial Class TelaDeAlteracao
         Me.MASERPHMLDataSetBindingSource.DataSource = Me.MASERP_HMLDataSet
         Me.MASERPHMLDataSetBindingSource.Position = 0
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Label1)
+        Me.Panel2.Controls.Add(Me.GroupBox1)
+        Me.Panel2.Location = New System.Drawing.Point(12, 12)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Padding = New System.Windows.Forms.Padding(5)
+        Me.Panel2.Size = New System.Drawing.Size(298, 121)
+        Me.Panel2.TabIndex = 31
+        '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(-1, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(305, 30)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Horario"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'IconButton1
+        '
+        Me.IconButton1.BackColor = System.Drawing.Color.Red
+        Me.IconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton1.ForeColor = System.Drawing.Color.White
+        Me.IconButton1.IconChar = FontAwesome.Sharp.IconChar.PersonWalkingDashedLineArrowRight
+        Me.IconButton1.IconColor = System.Drawing.Color.White
+        Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton1.IconSize = 24
+        Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.IconButton1.Location = New System.Drawing.Point(190, 141)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton1.TabIndex = 30
+        Me.IconButton1.Text = "&Sair"
+        Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton1.UseVisualStyleBackColor = False
+        '
+        'IconButton2
+        '
+        Me.IconButton2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.IconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.IconButton2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.IconButton2.ForeColor = System.Drawing.Color.White
+        Me.IconButton2.IconChar = FontAwesome.Sharp.IconChar.Trash
+        Me.IconButton2.IconColor = System.Drawing.Color.White
+        Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.IconButton2.IconSize = 24
+        Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.IconButton2.Location = New System.Drawing.Point(63, 141)
+        Me.IconButton2.Name = "IconButton2"
+        Me.IconButton2.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton2.TabIndex = 29
+        Me.IconButton2.Text = "&Excluir Reserva"
+        Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.IconButton2.UseVisualStyleBackColor = False
+        '
         'TelaDeAlteracao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(280, 170)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox4)
+        Me.ClientSize = New System.Drawing.Size(323, 197)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.IconButton1)
+        Me.Controls.Add(Me.IconButton2)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
-        Me.Controls.Add(Me.GroupBox1)
         Me.Name = "TelaDeAlteracao"
-        Me.Text = "Tela de Exclusão"
+        Me.Text = "Excluir reserva"
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -173,10 +194,10 @@ Partial Class TelaDeAlteracao
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents DateTimePickerInicio As DateTimePicker
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents usu_login_VC As Label
-    Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents IdSalaAtual As Label
     Friend WithEvents MASERP_HMLDataSet As MASERP_HMLDataSet
     Friend WithEvents MASERPHMLDataSetBindingSource As BindingSource
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
 End Class

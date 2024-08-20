@@ -22,9 +22,11 @@ Public Class TelaDeReservas
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
         Me.StartPosition = FormStartPosition.CenterScreen
         dgvGridReserva.ColumnHeadersHeight = 40
-
 
         dgvGridReserva.RowTemplate.Height = 15
 
@@ -44,6 +46,10 @@ Public Class TelaDeReservas
             EstilizarGrid()
             AjustarLarguraDasColunas()
 
+            UtilsNeobetel.UtilGeral.carregaVisualComponente(pnlDetalhesReserva)
+            UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel1)
+            UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
+            'UtilsNeobetel.UtilGeral.carregaVisualComponente(dgvGridReserva)
 
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar empresas: " & ex.Message)
@@ -188,26 +194,6 @@ Public Class TelaDeReservas
         End If
 
     End Sub
-
-    Private Sub Agendar_Click(sender As Object, e As EventArgs) Handles Agendar.Click
-
-        Dim eventForm As New TelaDeAgendamento(Me.username, Me.password, Me.idDaSala)
-
-        eventForm.Show()
-    End Sub
-
-    Private Sub Excluir_Reserva_Click(sender As Object, e As EventArgs) Handles Excluir_Reserva.Click
-
-
-        Dim eventForm As New TelaDeAlteracao(Me.username, Me.password, Me.idDaSala)
-
-
-        eventForm.Show()
-
-
-    End Sub
-
-
     Private Sub dgvGridReserva_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellClick
 
         If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
@@ -236,14 +222,14 @@ Public Class TelaDeReservas
 
                 Dim detalhesReserva As DataRow = dataTable.Rows(0)
 
-                GroupBox4.Text = "Detalhes da Reserva"
+                'GroupBox4.Text = "Detalhes da Reserva"
                 lblUsuarioNome.Text = detalhesReserva("reserva_usuario_nome").ToString()
-                lblReservadoEm.Text = Convert.ToDateTime(detalhesReserva("data_reservado")).ToString("dd/MMMM/yy HH:mm")
-                lblDataHoraInicio.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_inicio")).ToString("dd/MMMM/yy HH:mm")
-                lblDataHoraFim.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_fim")).ToString("dd/MMMM/yy HH:mm")
+                lblReservadoEm.Text = Convert.ToDateTime(detalhesReserva("data_reservado")).ToString("dd/MM/yy HH:mm")
+                lblDataHoraInicio.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_inicio")).ToString("dd/MM/yy HH:mm")
+                lblDataHoraFim.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_fim")).ToString("dd/MM/yy HH:mm")
                 lblEvento.Text = detalhesReserva("reserva_evento").ToString()
             Else
-                'MessageBox.Show("Nenhuma reserva encontrada para o horário selecionado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Nenhuma reserva encontrada para o horário selecionado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
 
@@ -254,25 +240,34 @@ Public Class TelaDeReservas
 
     Private Sub EstilizarGrid()
         ' Definir fonte para as células e cabeçalhos
-        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Arial", 10, FontStyle.Regular)
-        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Arial", 12, FontStyle.Bold)
+        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 10, FontStyle.Regular)
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 12, FontStyle.Bold)
 
         ' Cor de fundo para o cabeçalho
-        dgvGridReserva.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.Black
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 29, 63)
         dgvGridReserva.EnableHeadersVisualStyles = False
 
         ' Cor do texto no cabeçalho
-        dgvGridReserva.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.LightGray
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
 
         ' Cor de fundo alternada para as linhas
-        dgvGridReserva.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.LightGray
+        'dgvGridReserva.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.
 
         ' Cor do texto para as células
         dgvGridReserva.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
 
+        ' Cor de fundo padrão para todas as células
         dgvGridReserva.DefaultCellStyle.BackColor = System.Drawing.Color.White
 
+        ' Cor do grid
         dgvGridReserva.GridColor = System.Drawing.Color.Gray
+
+        ' Alterar cor de fundo para a primeira coluna
+        dgvGridReserva.Columns(0).DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 29, 63)
+
+        ' Alterar cor de texto para a primeira coluna, se necessário
+        dgvGridReserva.Columns(0).DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
+
     End Sub
 
     Private Sub AjustarLarguraDasColunas()
@@ -285,23 +280,19 @@ Public Class TelaDeReservas
         Next
     End Sub
 
-    Private Sub GroupBox9_Enter(sender As Object, e As EventArgs) Handles GroupBox9.Enter
 
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+
+        Dim eventForm As New TelaDeAgendamento(Me.username, Me.password, Me.idDaSala)
+
+        eventForm.Show()
     End Sub
 
-    Private Sub GroupBox8_Enter(sender As Object, e As EventArgs) Handles GroupBox8.Enter
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
 
+        Dim eventForm As New TelaDeAlteracao(Me.username, Me.password, Me.idDaSala)
+
+        eventForm.Show()
     End Sub
 
-    Private Sub GroupBox5_Enter(sender As Object, e As EventArgs) Handles GroupBox5.Enter
-
-    End Sub
-
-    Private Sub GroupBox7_Enter(sender As Object, e As EventArgs) Handles GroupBox7.Enter
-
-    End Sub
-
-    Private Sub GroupBox6_Enter(sender As Object, e As EventArgs) Handles GroupBox6.Enter
-
-    End Sub
 End Class

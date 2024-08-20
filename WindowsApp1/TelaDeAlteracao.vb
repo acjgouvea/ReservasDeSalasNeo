@@ -16,22 +16,24 @@ Public Class TelaDeAlteracao
         conexao = New ConexaoComOBancoDeDados()
         conexao.ConectarComBanco(username, password)
 
-        usu_login_VC.Text = Me.userName
-        IdSalaAtual.Text = Me.idDaSala
+        '       usu_login_VC.Text = Me.userName
+        '      IdSalaAtual.Text = Me.idDaSala
     End Sub
 
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
-        usu_login_VC.Text = currentRow.Cells(userName).Value.ToString()
-        IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
-        DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
+        '     usu_login_VC.Text = currentRow.Cells(userName).Value.ToString()
+        '   IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
+        '  DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
 
 
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
+        '   usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
         Me.StartPosition = FormStartPosition.Manual
         Me.Location = New Point(700, 400)
+
+        UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
 
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
@@ -54,6 +56,18 @@ Public Class TelaDeAlteracao
     End Sub
 
     Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+
+    End Sub
+
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+        Dim selectedTime As String = ComboBox1.SelectedItem.ToString()
+        Dim selectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(selectedTime))
+        DateTimePickerInicio.Value = selectedDateTime
+    End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
         Dim reservaUsuarioId As Integer
         Try
             reservaUsuarioId = conexao.ObterUsuarioId(userName)
@@ -88,16 +102,7 @@ Public Class TelaDeAlteracao
         Me.Close()
     End Sub
 
-    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         Me.Close()
     End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-        Dim selectedTime As String = ComboBox1.SelectedItem.ToString()
-        Dim selectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(selectedTime))
-        DateTimePickerInicio.Value = selectedDateTime
-    End Sub
-
-
 End Class

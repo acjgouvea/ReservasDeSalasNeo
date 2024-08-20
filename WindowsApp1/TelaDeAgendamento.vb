@@ -18,8 +18,8 @@ Public Class TelaDeAgendamento
         conexao = New ConexaoComOBancoDeDados()
         conexao.ConectarComBanco(username, password)
 
-        usu_login_VC.Text = Me.userName
-        IdSalaAtual.Text = Me.idDaSala
+        ' usu_login_VC.Text = Me.userName
+        'IdSalaAtual.Text = Me.idDaSala
 
     End Sub
     Public Sub New(username As String)
@@ -35,19 +35,22 @@ Public Class TelaDeAgendamento
     Friend Sub LoadEvent(currentRow As DataGridViewRow)
         Dim sUserName As String = currentRow.Cells(userName).Value.ToString().Replace(".", " ")
         'usu_login_VC.Text = currentRow.Cells(userName).Value.oString()
-        usu_login_VC.Text = sUserName
-        IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
+        ' usu_login_VC.Text = sUserName
+        ' IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
+        ' usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
 
-        Me.StartPosition = FormStartPosition.CenterParent
+        Me.StartPosition = FormStartPosition.Manual
+        Me.Top = 400
+        Me.Left = 1200
 
-
+        UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel1)
+        UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
 
         For hora As Integer = 8 To 18
             For minuto As Integer = 0 To 30 Step 30
@@ -101,9 +104,50 @@ Public Class TelaDeAgendamento
         End If
     End Sub
 
-    Private Sub ButtonSave_Click(sender As Object, e As EventArgs) Handles ButtonSave.Click
+    Private Sub ButtonSave_Click(sender As Object, e As EventArgs)
 
-        Dim fixedText As String = "Usuario: " & usu_login_VC.Text & Environment.NewLine
+
+    End Sub
+
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+
+        Dim selectedTime As String = ComboBox1.SelectedItem.ToString()
+        Dim selectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(selectedTime))
+        DateTimePickerInicio.Value = selectedDateTime
+    End Sub
+
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+
+        Dim selectedTime As String = ComboBox2.SelectedItem.ToString()
+        Dim selectedDateTime As DateTime = DateTimePickerFim.Value.Date.Add(TimeSpan.Parse(selectedTime))
+        DateTimePickerFim.Value = selectedDateTime
+    End Sub
+
+    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
+
+        TextBoxUsuarioNome.Text = TextBoxUsuarioNome.Text.ToUpper()
+
+
+        TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+
+
+        If TextBoxUsuarioNome.Text.Length > 25 Then
+            TextBoxUsuarioNome.Text = TextBoxUsuarioNome.Text.Substring(0, 25)
+            TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        End If
+    End Sub
+
+    Private Sub TextBoxUsuarioNome_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles TextBoxUsuarioNome.Validating
+
+        If String.IsNullOrWhiteSpace(TextBoxUsuarioNome.Text) Then
+            MessageBox.Show("O motivo não pode ficar em branco.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+        Dim fixedText As String = "Usuario: " '& usu_login_VC.Text & Environment.NewLine
         If TextBoxUsuarioNome.Text.Trim() = fixedText Then
             MessageBox.Show("Por favor, adicione uma descrição para o evento.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Return
@@ -140,37 +184,22 @@ Public Class TelaDeAgendamento
             conexao.ExecutarConsulta(CommandType.StoredProcedure, "sp_InserirReserva", parametros)
             Me.DialogResult = DialogResult.OK
         Catch ex As Exception
-            MessageBox.Show("Erro ao salvar a reserva! " & ex.Message)
+            MessageBox.Show("Erro ao salvar a reserva! ")
         End Try
         MessageBox.Show("Agendamento feito com sucesso! ")
         Me.Close()
     End Sub
 
-    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
         Me.Close()
     End Sub
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
-        Dim selectedTime As String = ComboBox1.SelectedItem.ToString()
-        Dim selectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(selectedTime))
-        DateTimePickerInicio.Value = selectedDateTime
     End Sub
 
-    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+    Private Sub DataHoraFim_Enter(sender As Object, e As EventArgs) Handles DataHoraFim.Enter
 
-        Dim selectedTime As String = ComboBox2.SelectedItem.ToString()
-        Dim selectedDateTime As DateTime = DateTimePickerFim.Value.Date.Add(TimeSpan.Parse(selectedTime))
-        DateTimePickerFim.Value = selectedDateTime
-    End Sub
-
-    Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
-        If TextBoxUsuarioNome.Text.Length > 25 Then
-
-            TextBoxUsuarioNome.Text = TextBoxUsuarioNome.Text.Substring(0, 25)
-
-            TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
-        End If
     End Sub
 End Class
 

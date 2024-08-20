@@ -89,15 +89,18 @@ Partial Class TelaDeLogin
         '
         'ButtonLogin
         '
+        Me.ButtonLogin.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ButtonLogin.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonLogin.Location = New System.Drawing.Point(204, 157)
         Me.ButtonLogin.Name = "ButtonLogin"
         Me.ButtonLogin.Size = New System.Drawing.Size(77, 24)
         Me.ButtonLogin.TabIndex = 4
         Me.ButtonLogin.Text = "&Login"
+        Me.ButtonLogin.UseVisualStyleBackColor = False
         '
         'ButtonCancel
         '
+        Me.ButtonCancel.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ButtonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.ButtonCancel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonCancel.Location = New System.Drawing.Point(292, 157)
@@ -105,6 +108,7 @@ Partial Class TelaDeLogin
         Me.ButtonCancel.Size = New System.Drawing.Size(77, 24)
         Me.ButtonCancel.TabIndex = 5
         Me.ButtonCancel.Text = "&Cancelar"
+        Me.ButtonCancel.UseVisualStyleBackColor = False
         '
         'TelaDeLogin
         '
