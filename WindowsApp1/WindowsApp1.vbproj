@@ -161,6 +161,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="TelaDeReservas.pt-BR.resx">
+      <DependentUpon>TelaDeReservas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaDeReservas.resx">
       <DependentUpon>TelaDeReservas.vb</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoNeobetel.ico" />
+    <None Include="Resources\2886665.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

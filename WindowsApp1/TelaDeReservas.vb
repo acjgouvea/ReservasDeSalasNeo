@@ -12,6 +12,7 @@ Public Class TelaDeReservas
     Private idDaSala As Integer
     Private idDaEmpresa As Integer
     Private selectedDate As Object
+    'Private WithEvents timerEsconderPainel As New Timer
 
     Public Sub New(username As String, password As String)
         InitializeComponent()
@@ -30,8 +31,8 @@ Public Class TelaDeReservas
 
         dgvGridReserva.RowTemplate.Height = 15
 
-        'Me.StartPosition = FormStartPosition.Manual
-        'Me.Location = New Point(500, 400)
+        Me.StartPosition = FormStartPosition.Manual
+        Me.Location = New Point(300, 100)
 
         dgvGridReserva.ReadOnly = True
 
@@ -194,7 +195,21 @@ Public Class TelaDeReservas
         End If
 
     End Sub
+
+    'Public Sub New()
+    '    InitializeComponent()
+
+    '    timerEsconderPainel.Interval = 7000
+    'End Sub
+
     Private Sub dgvGridReserva_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellClick
+
+        pnlDetalhesReserva.Visible = True
+
+
+
+        'timerEsconderPainel.Start()
+
 
         If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
 
@@ -233,9 +248,19 @@ Public Class TelaDeReservas
             End If
         End If
 
+
+
     End Sub
 
+    'Private Sub timerEsconderPainel_Tick(sender As Object, e As EventArgs) Handles timerEsconderPainel.Tick
 
+    '    ' Esconde o painel e para o Timer
+    '    pnlDetalhesReserva.Visible = False
+    '    timerEsconderPainel.Stop()
+    'End Sub
+    Private Sub pnlDetalhesReserva_Paint(sender As Object, e As PaintEventArgs) Handles pnlDetalhesReserva.Paint
+
+    End Sub
 
 
     Private Sub EstilizarGrid()
@@ -251,7 +276,8 @@ Public Class TelaDeReservas
         dgvGridReserva.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
 
         ' Cor de fundo alternada para as linhas
-        'dgvGridReserva.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.
+        'dgvGridReserva.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray
+
 
         ' Cor do texto para as células
         dgvGridReserva.DefaultCellStyle.ForeColor = System.Drawing.Color.Black
@@ -260,7 +286,7 @@ Public Class TelaDeReservas
         dgvGridReserva.DefaultCellStyle.BackColor = System.Drawing.Color.White
 
         ' Cor do grid
-        dgvGridReserva.GridColor = System.Drawing.Color.Gray
+        dgvGridReserva.GridColor = System.Drawing.Color.LightGray
 
         ' Alterar cor de fundo para a primeira coluna
         dgvGridReserva.Columns(0).DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 29, 63)
@@ -268,6 +294,14 @@ Public Class TelaDeReservas
         ' Alterar cor de texto para a primeira coluna, se necessário
         dgvGridReserva.Columns(0).DefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
 
+    End Sub
+
+    Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvGridReserva.CellFormatting
+        ' Verifica se estamos formatando uma linha alternada (índice de linha ímpar)
+        If e.RowIndex Mod 2 = 1 AndAlso e.ColumnIndex > 0 Then
+            e.CellStyle.BackColor = System.Drawing.Color.LightGray
+
+        End If
     End Sub
 
     Private Sub AjustarLarguraDasColunas()
@@ -295,11 +329,7 @@ Public Class TelaDeReservas
         eventForm.Show()
     End Sub
 
-    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        pnlDetalhesReserva.Visible = True
     End Sub
 End Class

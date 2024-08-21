@@ -117,13 +117,408 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="MonthCalendar1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt</value>
+  </data>
+  <data name="MonthCalendar1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 38</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MonthCalendar1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>10, 11, 10, 11</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="MonthCalendar1.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Name" xml:space="preserve">
+    <value>MonthCalendar1</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MonthCalendar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;MonthCalendar1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SelecaoDeSalas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 23</value>
+  </data>
+  <data name="SelecaoDeSalas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="SelecaoDeSalas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 21</value>
+  </data>
+  <data name="SelecaoDeSalas.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeSalas.Name" xml:space="preserve">
+    <value>SelecaoDeSalas</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeSalas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeSalas.Parent" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeSalas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SelecaoDeEmpresa.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 23</value>
+  </data>
+  <data name="SelecaoDeEmpresa.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="SelecaoDeEmpresa.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 21</value>
+  </data>
+  <data name="SelecaoDeEmpresa.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeEmpresa.Name" xml:space="preserve">
+    <value>SelecaoDeEmpresa</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeEmpresa.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeEmpresa.Parent" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;SelecaoDeEmpresa.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 19</value>
+  </data>
+  <data name="Label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="Label1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="Label1.Text" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Name" xml:space="preserve">
+    <value>Label1</value>
+  </data>
+  <data name="&gt;&gt;Label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label1.Parent" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;Label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 209</value>
+  </data>
+  <data name="GroupBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox1.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>5, 5</value>
+  </data>
+  <data name="GroupBox1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 41</value>
+  </data>
+  <data name="GroupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="GroupBox1.Text" xml:space="preserve">
+    <value>Semana atual</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Name" xml:space="preserve">
+    <value>GroupBox1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBox2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 38</value>
+  </data>
+  <data name="GroupBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 56</value>
+  </data>
+  <data name="GroupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="GroupBox2.Text" xml:space="preserve">
+    <value>Empresa</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Name" xml:space="preserve">
+    <value>GroupBox2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="GroupBox3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 102</value>
+  </data>
+  <data name="GroupBox3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox3.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 56</value>
+  </data>
+  <data name="GroupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="GroupBox3.Text" xml:space="preserve">
+    <value>Sala</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Name" xml:space="preserve">
+    <value>GroupBox3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="MASERP_HMLDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>174, 17</value>
   </metadata>
   <metadata name="MASERPHMLDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>344, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="IconButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="IconButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="IconButton1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="IconButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 805</value>
+  </data>
+  <data name="IconButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 40</value>
+  </data>
+  <data name="IconButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="IconButton1.Text" xml:space="preserve">
+    <value>&amp;Agendar</value>
+  </data>
+  <data name="IconButton1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;IconButton1.Name" xml:space="preserve">
+    <value>IconButton1</value>
+  </data>
+  <data name="&gt;&gt;IconButton1.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;IconButton1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IconButton1.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="IconButton2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="IconButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="IconButton2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="IconButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1245, 805</value>
+  </data>
+  <data name="IconButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 40</value>
+  </data>
+  <data name="IconButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="IconButton2.Text" xml:space="preserve">
+    <value>&amp;Excluir Reserva</value>
+  </data>
+  <data name="IconButton2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;IconButton2.Name" xml:space="preserve">
+    <value>IconButton2</value>
+  </data>
+  <data name="&gt;&gt;IconButton2.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;IconButton2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IconButton2.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Name" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Name" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Name" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Name" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Name" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="pnlDetalhesReserva.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 481</value>
+  </data>
+  <data name="pnlDetalhesReserva.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="pnlDetalhesReserva.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="pnlDetalhesReserva.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 298</value>
+  </data>
+  <data name="pnlDetalhesReserva.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="pnlDetalhesReserva.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pnlDetalhesReserva.Name" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;pnlDetalhesReserva.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlDetalhesReserva.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlDetalhesReserva.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -531,115 +926,982 @@
         tAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="PictureBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 0</value>
+  </data>
+  <data name="PictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 27</value>
+  </data>
+  <data name="PictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="PictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Name" xml:space="preserve">
+    <value>PictureBox1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;PictureBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 30</value>
+  </data>
+  <data name="Label2.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Label2.Text" xml:space="preserve">
+    <value>Detalhes da Reserva</value>
+  </data>
+  <data name="Label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label2.Name" xml:space="preserve">
+    <value>Label2</value>
+  </data>
+  <data name="&gt;&gt;Label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label2.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;Label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Name" xml:space="preserve">
+    <value>lblDataHoraInicio</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Parent" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 127</value>
+  </data>
+  <data name="GroupBox7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox7.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 40</value>
+  </data>
+  <data name="GroupBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="GroupBox7.Text" xml:space="preserve">
+    <value>Inicio reserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Name" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox7.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblDataHoraInicio.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDataHoraInicio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="lblDataHoraInicio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblDataHoraInicio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblDataHoraInicio.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Name" xml:space="preserve">
+    <value>lblDataHoraInicio</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.Parent" xml:space="preserve">
+    <value>GroupBox7</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraInicio.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Name" xml:space="preserve">
+    <value>lblUsuarioNome</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 35</value>
+  </data>
+  <data name="GroupBox5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox5.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 40</value>
+  </data>
+  <data name="GroupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="GroupBox5.Text" xml:space="preserve">
+    <value>Reserva feita por</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Name" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUsuarioNome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUsuarioNome.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="lblUsuarioNome.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblUsuarioNome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblUsuarioNome.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Name" xml:space="preserve">
+    <value>lblUsuarioNome</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.Parent" xml:space="preserve">
+    <value>GroupBox5</value>
+  </data>
+  <data name="&gt;&gt;lblUsuarioNome.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Name" xml:space="preserve">
+    <value>lblDataHoraFim</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox9.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 173</value>
+  </data>
+  <data name="GroupBox9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox9.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 40</value>
+  </data>
+  <data name="GroupBox9.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="GroupBox9.Text" xml:space="preserve">
+    <value> Fim reserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Name" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox9.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblDataHoraFim.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblDataHoraFim.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="lblDataHoraFim.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblDataHoraFim.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblDataHoraFim.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Name" xml:space="preserve">
+    <value>lblDataHoraFim</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.Parent" xml:space="preserve">
+    <value>GroupBox9</value>
+  </data>
+  <data name="&gt;&gt;lblDataHoraFim.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Name" xml:space="preserve">
+    <value>lblReservadoEm</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Parent" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 81</value>
+  </data>
+  <data name="GroupBox8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox8.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 40</value>
+  </data>
+  <data name="GroupBox8.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="GroupBox8.Text" xml:space="preserve">
+    <value>Data da reserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Name" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox8.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lblReservadoEm.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblReservadoEm.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="lblReservadoEm.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblReservadoEm.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblReservadoEm.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Name" xml:space="preserve">
+    <value>lblReservadoEm</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.Parent" xml:space="preserve">
+    <value>GroupBox8</value>
+  </data>
+  <data name="&gt;&gt;lblReservadoEm.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Name" xml:space="preserve">
+    <value>lblEvento</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Parent" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="GroupBox6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="GroupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 219</value>
+  </data>
+  <data name="GroupBox6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox6.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="GroupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>227, 63</value>
+  </data>
+  <data name="GroupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="GroupBox6.Text" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Name" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.Parent" xml:space="preserve">
+    <value>pnlDetalhesReserva</value>
+  </data>
+  <data name="&gt;&gt;GroupBox6.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblEvento.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblEvento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 20</value>
+  </data>
+  <data name="lblEvento.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
+  </data>
+  <data name="lblEvento.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 13</value>
+  </data>
+  <data name="lblEvento.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Name" xml:space="preserve">
+    <value>lblEvento</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.Parent" xml:space="preserve">
+    <value>GroupBox6</value>
+  </data>
+  <data name="&gt;&gt;lblEvento.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Name" xml:space="preserve">
+    <value>PictureBox3</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 287</value>
+  </data>
+  <data name="Panel1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="Panel1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 173</value>
+  </data>
+  <data name="Panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
+  </data>
+  <data name="PictureBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 3</value>
+  </data>
+  <data name="PictureBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 27</value>
+  </data>
+  <data name="PictureBox3.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="PictureBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Name" xml:space="preserve">
+    <value>PictureBox3</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;PictureBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 30</value>
+  </data>
+  <data name="Label3.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="Label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label3.Name" xml:space="preserve">
+    <value>Label3</value>
+  </data>
+  <data name="&gt;&gt;Label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label3.Parent" xml:space="preserve">
+    <value>Panel1</value>
+  </data>
+  <data name="&gt;&gt;Label3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="Label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 30</value>
+  </data>
+  <data name="Label4.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="Label4.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="Label4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label4.Name" xml:space="preserve">
+    <value>Label4</value>
+  </data>
+  <data name="&gt;&gt;Label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label4.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Label4.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        lwAAAABJRU5ErkJggg==
+        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
+        rkJggg==
 </value>
+  </data>
+  <data name="PictureBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 0</value>
+  </data>
+  <data name="PictureBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 27</value>
+  </data>
+  <data name="PictureBox2.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="PictureBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Name" xml:space="preserve">
+    <value>PictureBox2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.Parent" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;PictureBox2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1116, 12</value>
+  </data>
+  <data name="Panel2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="Panel2.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="Panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 259</value>
+  </data>
+  <data name="Panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Name" xml:space="preserve">
+    <value>Panel2</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <metadata name="HoraApresentacao_VC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="HoraApresentacao_VC.HeaderText" xml:space="preserve">
+    <value>Horário</value>
+  </data>
+  <data name="HoraApresentacao_VC.MinimumWidth" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
+  <data name="HoraApresentacao_VC.Width" type="System.Int32, mscorlib">
+    <value>120</value>
+  </data>
   <metadata name="IdSegunda_IN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="IdSegunda_IN.HeaderText" xml:space="preserve">
+    <value>Segunda</value>
+  </data>
+  <data name="IdSegunda_IN.MinimumWidth" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="IdSegunda_IN.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
   <metadata name="IdTerca_IN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="IdTerca_IN.HeaderText" xml:space="preserve">
+    <value>Terça</value>
+  </data>
+  <data name="IdTerca_IN.MinimumWidth" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="IdTerca_IN.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
   <metadata name="IdQuarta_IN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="IdQuarta_IN.HeaderText" xml:space="preserve">
+    <value>Quarta</value>
+  </data>
+  <data name="IdQuarta_IN.MinimumWidth" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="IdQuarta_IN.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
   <metadata name="IdQuinta_IN.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="IdQuinta_IN.HeaderText" xml:space="preserve">
+    <value>Quinta</value>
+  </data>
+  <data name="IdQuinta_IN.MinimumWidth" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="IdQuinta_IN.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
   <metadata name="Sexta.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Sexta.HeaderText" xml:space="preserve">
+    <value>Sexta</value>
+  </data>
+  <data name="Sexta.MinimumWidth" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="Sexta.Width" type="System.Int32, mscorlib">
+    <value>170</value>
+  </data>
+  <data name="dgvGridReserva.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 12</value>
+  </data>
+  <data name="dgvGridReserva.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="dgvGridReserva.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
+  </data>
+  <data name="dgvGridReserva.RowHeadersWidth" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="dgvGridReserva.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1048, 721</value>
+  </data>
+  <data name="dgvGridReserva.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvGridReserva.Name" xml:space="preserve">
+    <value>dgvGridReserva</value>
+  </data>
+  <data name="&gt;&gt;dgvGridReserva.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvGridReserva.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvGridReserva.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="IconButton4.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="IconButton4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt</value>
+  </data>
+  <data name="IconButton4.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="IconButton4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>34, 805</value>
+  </data>
+  <data name="IconButton4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 40</value>
+  </data>
+  <data name="IconButton4.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="IconButton4.Text" xml:space="preserve">
+    <value>&amp;Sair</value>
+  </data>
+  <data name="IconButton4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;IconButton4.Name" xml:space="preserve">
+    <value>IconButton4</value>
+  </data>
+  <data name="&gt;&gt;IconButton4.Type" xml:space="preserve">
+    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f</value>
+  </data>
+  <data name="&gt;&gt;IconButton4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IconButton4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="Label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="Label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="Label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-3, 799</value>
+  </data>
+  <data name="Label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1393, 59</value>
+  </data>
+  <data name="Label5.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="Label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;Label5.Name" xml:space="preserve">
+    <value>Label5</value>
+  </data>
+  <data name="&gt;&gt;Label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Label5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Label5.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>58</value>
   </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 16</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1390, 851</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Arial, 9.75pt</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>16, 39</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Reservas Salas de Reunião</value>
+  </data>
+  <data name="&gt;&gt;MASERP_HMLDataSet.Name" xml:space="preserve">
+    <value>MASERP_HMLDataSet</value>
+  </data>
+  <data name="&gt;&gt;MASERP_HMLDataSet.Type" xml:space="preserve">
+    <value>WindowsApp1.MASERP_HMLDataSet, MASERP_HMLDataSet.Designer.vb.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;MASERPHMLDataSetBindingSource.Name" xml:space="preserve">
+    <value>MASERPHMLDataSetBindingSource</value>
+  </data>
+  <data name="&gt;&gt;MASERPHMLDataSetBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;HoraApresentacao_VC.Name" xml:space="preserve">
+    <value>HoraApresentacao_VC</value>
+  </data>
+  <data name="&gt;&gt;HoraApresentacao_VC.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IdSegunda_IN.Name" xml:space="preserve">
+    <value>IdSegunda_IN</value>
+  </data>
+  <data name="&gt;&gt;IdSegunda_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IdTerca_IN.Name" xml:space="preserve">
+    <value>IdTerca_IN</value>
+  </data>
+  <data name="&gt;&gt;IdTerca_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IdQuarta_IN.Name" xml:space="preserve">
+    <value>IdQuarta_IN</value>
+  </data>
+  <data name="&gt;&gt;IdQuarta_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IdQuinta_IN.Name" xml:space="preserve">
+    <value>IdQuinta_IN</value>
+  </data>
+  <data name="&gt;&gt;IdQuinta_IN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Sexta.Name" xml:space="preserve">
+    <value>Sexta</value>
+  </data>
+  <data name="&gt;&gt;Sexta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>TelaDeReservas</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

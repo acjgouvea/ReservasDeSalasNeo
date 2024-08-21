@@ -177,6 +177,7 @@ Partial Class TelaDeAlteracao
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.PictureBox2.Location = New System.Drawing.Point(231, 0)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
@@ -195,6 +196,9 @@ Partial Class TelaDeAlteracao
         Me.Controls.Add(Me.IconButton2)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "TelaDeAlteracao"
         Me.Text = "Excluir reserva"
         Me.GroupBox1.ResumeLayout(False)
