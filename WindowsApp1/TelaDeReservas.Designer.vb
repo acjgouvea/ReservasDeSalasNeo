@@ -63,6 +63,7 @@ Partial Class TelaDeReservas
         Me.IdQuinta_IN = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -88,6 +89,8 @@ Partial Class TelaDeReservas
         Me.MonthCalendar1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MonthCalendar1.Location = New System.Drawing.Point(10, 38)
         Me.MonthCalendar1.Margin = New System.Windows.Forms.Padding(10, 11, 10, 11)
+        Me.MonthCalendar1.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
+        Me.MonthCalendar1.MinDate = New Date(2024, 1, 1, 0, 0, 0, 0)
         Me.MonthCalendar1.Name = "MonthCalendar1"
         Me.MonthCalendar1.TabIndex = 6
         Me.MonthCalendar1.TitleBackColor = System.Drawing.Color.Wheat
@@ -100,7 +103,7 @@ Partial Class TelaDeReservas
         Me.SelecaoDeSalas.Location = New System.Drawing.Point(10, 23)
         Me.SelecaoDeSalas.Margin = New System.Windows.Forms.Padding(4)
         Me.SelecaoDeSalas.Name = "SelecaoDeSalas"
-        Me.SelecaoDeSalas.Size = New System.Drawing.Size(179, 21)
+        Me.SelecaoDeSalas.Size = New System.Drawing.Size(209, 21)
         Me.SelecaoDeSalas.TabIndex = 7
         '
         'SelecaoDeEmpresa
@@ -110,7 +113,7 @@ Partial Class TelaDeReservas
         Me.SelecaoDeEmpresa.Location = New System.Drawing.Point(10, 23)
         Me.SelecaoDeEmpresa.Margin = New System.Windows.Forms.Padding(4)
         Me.SelecaoDeEmpresa.Name = "SelecaoDeEmpresa"
-        Me.SelecaoDeEmpresa.Size = New System.Drawing.Size(179, 21)
+        Me.SelecaoDeEmpresa.Size = New System.Drawing.Size(209, 21)
         Me.SelecaoDeEmpresa.TabIndex = 8
         '
         'Label1
@@ -135,7 +138,7 @@ Partial Class TelaDeReservas
         Me.GroupBox1.MinimumSize = New System.Drawing.Size(5, 5)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(212, 41)
+        Me.GroupBox1.Size = New System.Drawing.Size(227, 41)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Semana atual"
@@ -149,7 +152,7 @@ Partial Class TelaDeReservas
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(212, 56)
+        Me.GroupBox2.Size = New System.Drawing.Size(227, 56)
         Me.GroupBox2.TabIndex = 13
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Empresa"
@@ -163,7 +166,7 @@ Partial Class TelaDeReservas
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(212, 56)
+        Me.GroupBox3.Size = New System.Drawing.Size(227, 56)
         Me.GroupBox3.TabIndex = 13
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Sala"
@@ -237,9 +240,9 @@ Partial Class TelaDeReservas
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(214, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(186, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox1.Size = New System.Drawing.Size(25, 27)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
@@ -261,11 +264,11 @@ Partial Class TelaDeReservas
         Me.GroupBox7.Controls.Add(Me.lblDataHoraInicio)
         Me.GroupBox7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox7.Location = New System.Drawing.Point(19, 127)
+        Me.GroupBox7.Location = New System.Drawing.Point(10, 127)
         Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox7.Size = New System.Drawing.Size(203, 40)
+        Me.GroupBox7.Size = New System.Drawing.Size(227, 40)
         Me.GroupBox7.TabIndex = 17
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Inicio reserva"
@@ -284,11 +287,11 @@ Partial Class TelaDeReservas
         Me.GroupBox5.Controls.Add(Me.lblUsuarioNome)
         Me.GroupBox5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox5.Location = New System.Drawing.Point(19, 35)
+        Me.GroupBox5.Location = New System.Drawing.Point(10, 35)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(203, 40)
+        Me.GroupBox5.Size = New System.Drawing.Size(227, 40)
         Me.GroupBox5.TabIndex = 16
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Reserva feita por"
@@ -307,11 +310,11 @@ Partial Class TelaDeReservas
         Me.GroupBox9.Controls.Add(Me.lblDataHoraFim)
         Me.GroupBox9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox9.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox9.Location = New System.Drawing.Point(19, 173)
+        Me.GroupBox9.Location = New System.Drawing.Point(10, 173)
         Me.GroupBox9.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox9.Name = "GroupBox9"
         Me.GroupBox9.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox9.Size = New System.Drawing.Size(203, 40)
+        Me.GroupBox9.Size = New System.Drawing.Size(227, 40)
         Me.GroupBox9.TabIndex = 17
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = " Fim reserva"
@@ -330,11 +333,11 @@ Partial Class TelaDeReservas
         Me.GroupBox8.Controls.Add(Me.lblReservadoEm)
         Me.GroupBox8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox8.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox8.Location = New System.Drawing.Point(19, 81)
+        Me.GroupBox8.Location = New System.Drawing.Point(10, 81)
         Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox8.Size = New System.Drawing.Size(203, 40)
+        Me.GroupBox8.Size = New System.Drawing.Size(227, 40)
         Me.GroupBox8.TabIndex = 17
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Data da reserva"
@@ -353,11 +356,11 @@ Partial Class TelaDeReservas
         Me.GroupBox6.Controls.Add(Me.lblEvento)
         Me.GroupBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox6.Location = New System.Drawing.Point(19, 219)
+        Me.GroupBox6.Location = New System.Drawing.Point(10, 219)
         Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox6.Size = New System.Drawing.Size(203, 63)
+        Me.GroupBox6.Size = New System.Drawing.Size(227, 63)
         Me.GroupBox6.TabIndex = 17
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Motivo"
@@ -389,9 +392,9 @@ Partial Class TelaDeReservas
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(214, 0)
+        Me.PictureBox3.Location = New System.Drawing.Point(186, 0)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(23, 25)
+        Me.PictureBox3.Size = New System.Drawing.Size(25, 27)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 21
         Me.PictureBox3.TabStop = False
@@ -438,9 +441,9 @@ Partial Class TelaDeReservas
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
         Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(214, 3)
+        Me.PictureBox2.Location = New System.Drawing.Point(186, 0)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(25, 25)
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 23
         Me.PictureBox2.TabStop = False
@@ -546,12 +549,22 @@ Partial Class TelaDeReservas
         Me.IconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton4.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(935, 791)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(58, 23)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TelaDeReservas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(1390, 837)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.IconButton4)
         Me.Controls.Add(Me.dgvGridReserva)
         Me.Controls.Add(Me.Panel2)
@@ -628,4 +641,5 @@ Partial Class TelaDeReservas
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents IconButton4 As FontAwesome.Sharp.IconButton
+    Friend WithEvents Button1 As Button
 End Class

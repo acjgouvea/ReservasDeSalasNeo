@@ -23,6 +23,7 @@ Partial Class TelaDeAlteracao
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TelaDeAlteracao))
         Me.ButtonCancel = New System.Windows.Forms.Button()
         Me.ButtonSave = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -34,10 +35,12 @@ Partial Class TelaDeAlteracao
         Me.Label1 = New System.Windows.Forms.Label()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonCancel
@@ -82,7 +85,7 @@ Partial Class TelaDeAlteracao
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(152, 21)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(77, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(94, 24)
         Me.ComboBox1.TabIndex = 10
         '
         'DateTimePickerInicio
@@ -90,11 +93,11 @@ Partial Class TelaDeAlteracao
         Me.DateTimePickerInicio.CalendarMonthBackground = System.Drawing.SystemColors.Info
         Me.DateTimePickerInicio.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePickerInicio.Location = New System.Drawing.Point(8, 21)
+        Me.DateTimePickerInicio.Location = New System.Drawing.Point(8, 23)
         Me.DateTimePickerInicio.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
         Me.DateTimePickerInicio.MinDate = New Date(2024, 1, 1, 0, 0, 0, 0)
         Me.DateTimePickerInicio.Name = "DateTimePickerInicio"
-        Me.DateTimePickerInicio.Size = New System.Drawing.Size(126, 22)
+        Me.DateTimePickerInicio.Size = New System.Drawing.Size(96, 22)
         Me.DateTimePickerInicio.TabIndex = 5
         '
         'MASERP_HMLDataSet
@@ -110,6 +113,7 @@ Partial Class TelaDeAlteracao
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.GroupBox1)
         Me.Panel2.Location = New System.Drawing.Point(12, 12)
@@ -126,7 +130,7 @@ Partial Class TelaDeAlteracao
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(-1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(305, 30)
+        Me.Label1.Size = New System.Drawing.Size(299, 30)
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Horario"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -169,6 +173,17 @@ Partial Class TelaDeAlteracao
         Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton2.UseVisualStyleBackColor = False
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(231, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 24
+        Me.PictureBox2.TabStop = False
+        '
         'TelaDeAlteracao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -186,6 +201,7 @@ Partial Class TelaDeAlteracao
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -200,4 +216,5 @@ Partial Class TelaDeAlteracao
     Friend WithEvents Label1 As Label
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

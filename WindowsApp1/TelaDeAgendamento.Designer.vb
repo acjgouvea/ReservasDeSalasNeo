@@ -22,6 +22,7 @@ Partial Class TelaDeAgendamento
     'Não o modifique usando o editor de códigos.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TelaDeAgendamento))
         Me.DataHoraFim = New System.Windows.Forms.GroupBox()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.DateTimePickerFim = New System.Windows.Forms.DateTimePicker()
@@ -35,10 +36,12 @@ Partial Class TelaDeAgendamento
         Me.Motivo = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.DataHoraFim.SuspendLayout()
         Me.DataHoraInicio.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataHoraFim
@@ -74,6 +77,8 @@ Partial Class TelaDeAgendamento
         Me.DateTimePickerFim.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePickerFim.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DateTimePickerFim.Location = New System.Drawing.Point(6, 25)
+        Me.DateTimePickerFim.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
+        Me.DateTimePickerFim.MinDate = New Date(2024, 1, 1, 0, 0, 0, 0)
         Me.DateTimePickerFim.Name = "DateTimePickerFim"
         Me.DateTimePickerFim.Size = New System.Drawing.Size(148, 22)
         Me.DateTimePickerFim.TabIndex = 6
@@ -192,6 +197,7 @@ Partial Class TelaDeAgendamento
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.DataHoraInicio)
         Me.Panel2.Controls.Add(Me.DataHoraFim)
@@ -214,6 +220,17 @@ Partial Class TelaDeAgendamento
         Me.Label1.Text = "Horario"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(263, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 24
+        Me.PictureBox2.TabStop = False
+        '
         'TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -231,6 +248,7 @@ Partial Class TelaDeAgendamento
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -247,4 +265,5 @@ Partial Class TelaDeAgendamento
     Friend WithEvents Motivo As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

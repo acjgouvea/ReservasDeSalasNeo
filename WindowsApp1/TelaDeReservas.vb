@@ -240,7 +240,7 @@ Public Class TelaDeReservas
 
     Private Sub EstilizarGrid()
         ' Definir fonte para as células e cabeçalhos
-        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 10, FontStyle.Regular)
+        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 9, FontStyle.Regular)
         dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 12, FontStyle.Bold)
 
         ' Cor de fundo para o cabeçalho
@@ -295,4 +295,11 @@ Public Class TelaDeReservas
         eventForm.Show()
     End Sub
 
+    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        pnlDetalhesReserva.Visible = True
+    End Sub
 End Class

@@ -37,6 +37,7 @@ Public Class TelaDeAgendamento
         'usu_login_VC.Text = currentRow.Cells(userName).Value.oString()
         ' usu_login_VC.Text = sUserName
         ' IdSalaAtual.Text = currentRow.Cells(idDaSala).Value.ToString()
+
         DateTimePickerInicio.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_inicio").Value)
         DateTimePickerFim.Value = Convert.ToDateTime(currentRow.Cells("reserva_data_hora_fim").Value)
     End Sub
@@ -194,12 +195,6 @@ Public Class TelaDeAgendamento
         Me.Close()
     End Sub
 
-    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
 
-    End Sub
-
-    Private Sub DataHoraFim_Enter(sender As Object, e As EventArgs) Handles DataHoraFim.Enter
-
-    End Sub
 End Class
 
