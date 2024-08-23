@@ -81,7 +81,7 @@ Public Class TelaDeAlteracao
         End Try
 
 
-        Dim result As DialogResult = MessageBox.Show("Tem certeza que deseja excluir todas as suas reservas para esta sala no horário especificado?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim result As DialogResult = MessageBox.Show("Tem certeza que excluir sua reserva?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If result = DialogResult.No Then
             Return
         End If
@@ -98,7 +98,7 @@ Public Class TelaDeAlteracao
             conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_ExcluirReservasPorUsuarioSalaEData", parametros)
 
 
-            MessageBox.Show("Reservas na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show($"Reserva das {reservaDataHora:HH:mm} na sala especificada foram excluídas com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
             MessageBox.Show("Erro ao excluir as reservas! " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

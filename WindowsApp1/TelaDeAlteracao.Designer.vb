@@ -116,7 +116,7 @@ Partial Class TelaDeAlteracao
         Me.Panel2.Controls.Add(Me.PictureBox2)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Controls.Add(Me.GroupBox1)
-        Me.Panel2.Location = New System.Drawing.Point(12, 12)
+        Me.Panel2.Location = New System.Drawing.Point(5, 1)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Padding = New System.Windows.Forms.Padding(5)
@@ -158,9 +158,9 @@ Partial Class TelaDeAlteracao
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton1.IconSize = 24
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton1.Location = New System.Drawing.Point(160, 141)
+        Me.IconButton1.Location = New System.Drawing.Point(190, 130)
         Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton1.Size = New System.Drawing.Size(113, 30)
         Me.IconButton1.TabIndex = 30
         Me.IconButton1.Text = "&Sair"
         Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -177,9 +177,9 @@ Partial Class TelaDeAlteracao
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton2.IconSize = 24
         Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton2.Location = New System.Drawing.Point(33, 141)
+        Me.IconButton2.Location = New System.Drawing.Point(63, 130)
         Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton2.Size = New System.Drawing.Size(113, 30)
         Me.IconButton2.TabIndex = 29
         Me.IconButton2.Text = "&Excluir Reserva"
         Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -190,7 +190,7 @@ Partial Class TelaDeAlteracao
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(317, 187)
+        Me.ClientSize = New System.Drawing.Size(303, 160)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.IconButton1)
         Me.Controls.Add(Me.IconButton2)

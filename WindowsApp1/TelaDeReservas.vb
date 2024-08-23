@@ -68,7 +68,6 @@ Public Class TelaDeReservas
         End Try
 
 
-
     End Sub
 
     Private Sub CarregarEmpresas()
@@ -183,7 +182,7 @@ Public Class TelaDeReservas
         If SelecaoDeSalas.SelectedIndex = -1 Then Return
 
         idDaSala = Convert.ToInt32(SelecaoDeSalas.SelectedValue(0))
-        Label6.Text = "Sala atual: " & SelecaoDeSalas.Text
+        Label6.Text = "SALA ATUAL - " & SelecaoDeSalas.Text
         CarregarReservasDaSemana(currentStartDate)
     End Sub
 
@@ -376,6 +375,7 @@ Public Class TelaDeReservas
         ' Definir fonte para as células e cabeçalhos
         dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 8, FontStyle.Regular)
         dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 10, FontStyle.Bold)
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
         ' Cor de fundo para o cabeçalho
         dgvGridReserva.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 29, 63)
@@ -383,8 +383,6 @@ Public Class TelaDeReservas
 
         ' Cor do texto no cabeçalho
         dgvGridReserva.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
-
-
 
 
         ' Cor do texto para as células
@@ -404,12 +402,27 @@ Public Class TelaDeReservas
 
     End Sub
 
-    Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
+    'Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
+    '    ' Verifica se estamos formatando uma linha alternada (índice de linha ímpar)
+    '    If e.RowIndex Mod 2 = 1 AndAlso e.ColumnIndex > 0 Then
+    '        e.CellStyle.BackColor = System.Drawing.Color.LightGray
+
+    '    End If
+
+
+    '  End Sub
+
+    Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvGridReserva.CellFormatting
         ' Verifica se estamos formatando uma linha alternada (índice de linha ímpar)
         If e.RowIndex Mod 2 = 1 AndAlso e.ColumnIndex > 0 Then
             e.CellStyle.BackColor = System.Drawing.Color.LightGray
-
         End If
+
+
+        If e.CellStyle.Font Is Nothing Then
+            e.CellStyle.Font = dgvGridReserva.DefaultCellStyle.Font
+        End If
+
     End Sub
 
     Private Sub AjustarLarguraDasColunas()
@@ -439,7 +452,8 @@ Public Class TelaDeReservas
         ' Garantir que a altura das linhas seja ajustada corretamente
         dgvGridReserva.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells)
 
-
+        dgvGridReserva.Columns(0).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
+        dgvGridReserva.Columns(0).Width = 90
     End Sub
 
 
@@ -467,5 +481,17 @@ Public Class TelaDeReservas
 
     Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
         Me.Close()
+    End Sub
+
+    Private Sub dgvGridReserva_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellContentClick
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
     End Sub
 End Class

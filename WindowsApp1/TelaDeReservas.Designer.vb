@@ -24,7 +24,7 @@ Partial Class TelaDeReservas
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TelaDeReservas))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
         Me.SelecaoDeSalas = New System.Windows.Forms.ComboBox()
         Me.SelecaoDeEmpresa = New System.Windows.Forms.ComboBox()
@@ -273,14 +273,14 @@ Partial Class TelaDeReservas
         Me.dgvGridReserva.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
         Me.dgvGridReserva.AllowUserToDeleteRows = False
         Me.dgvGridReserva.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvGridReserva.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvGridReserva.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvGridReserva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvGridReserva.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HoraApresentacao_VC, Me.IdSegunda_IN, Me.IdTerca_IN, Me.IdQuarta_IN, Me.IdQuinta_IN, Me.Sexta, Me.HoraReferencia_VC})
         Me.dgvGridReserva.GridColor = System.Drawing.SystemColors.ActiveCaption
@@ -436,12 +436,12 @@ Partial Class TelaDeReservas
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.pnlDetalhesReserva)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dgvGridReserva)
-        Me.Controls.Add(Me.Panel3)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.HelpButton = True

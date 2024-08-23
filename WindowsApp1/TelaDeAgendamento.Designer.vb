@@ -143,7 +143,7 @@ Partial Class TelaDeAgendamento
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton2.IconSize = 24
         Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton2.Location = New System.Drawing.Point(120, 314)
+        Me.IconButton2.Location = New System.Drawing.Point(114, 302)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Size = New System.Drawing.Size(113, 30)
         Me.IconButton2.TabIndex = 25
@@ -162,7 +162,7 @@ Partial Class TelaDeAgendamento
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton1.IconSize = 24
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton1.Location = New System.Drawing.Point(246, 314)
+        Me.IconButton1.Location = New System.Drawing.Point(240, 302)
         Me.IconButton1.Name = "IconButton1"
         Me.IconButton1.Size = New System.Drawing.Size(113, 30)
         Me.IconButton1.TabIndex = 26
@@ -176,7 +176,7 @@ Partial Class TelaDeAgendamento
         Me.Panel1.Controls.Add(Me.TextBoxUsuarioNome)
         Me.Panel1.Controls.Add(Me.Motivo)
         Me.Panel1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Panel1.Location = New System.Drawing.Point(8, 195)
+        Me.Panel1.Location = New System.Drawing.Point(2, 183)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(351, 111)
@@ -202,7 +202,7 @@ Partial Class TelaDeAgendamento
         Me.Panel2.Controls.Add(Me.DataHoraInicio)
         Me.Panel2.Controls.Add(Me.DataHoraFim)
         Me.Panel2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Panel2.Location = New System.Drawing.Point(8, 14)
+        Me.Panel2.Location = New System.Drawing.Point(2, 2)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(5)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(351, 171)
@@ -237,7 +237,7 @@ Partial Class TelaDeAgendamento
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(364, 347)
+        Me.ClientSize = New System.Drawing.Size(354, 332)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.IconButton1)

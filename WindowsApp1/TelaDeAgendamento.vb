@@ -69,42 +69,71 @@ Public Class TelaDeAgendamento
 
     Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
 
-        'DateTimePickerInicio.MinDate = DateTime.Now
+
+
+        'If DateTimePickerInicio.Value < DateTime.Now Then
+        '    MessageBox.Show("O horário selecionado é anterior ao horário atual.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        '    'DateTimePickerInicio.Value = DateTime.Now
+
+        '    ComboBox1.SelectedIndex = -1
+
+
+        'End If
+
         'ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
+
         'If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
         '    DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
         'End If
-        'DateTimePickerInicio.ShowUpDown = True
+
+        '' DateTimePickerInicio.ShowUpDown = True
+
+
+
 
         If DateTimePickerInicio.Value < DateTime.Now Then
-            MessageBox.Show("O horário selecionado é anterior ao horário atual.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("O horário selecionado é anterior ao horário atual.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             DateTimePickerInicio.Value = DateTime.Now
+            ComboBox1.SelectedIndex = -1
+        Else
+            ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
+            If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
+                DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
+            End If
         End If
-
-        ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
-
-        If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
-            DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
-        End If
-
-        DateTimePickerInicio.ShowUpDown = True
-
 
     End Sub
 
     Private Sub DateTimePickerFim_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFim.ValueChanged
-        ComboBox2.Text = DateTimePickerFim.Value.ToString("HH:mm")
+        'ComboBox2.Text = DateTimePickerFim.Value.ToString("HH:mm")
 
+        'If DateTimePickerFim.Value <= DateTimePickerInicio.Value OrElse DateTimePickerFim.Value.Subtract(DateTimePickerInicio.Value).TotalMinutes < 30 Then
+        '    MessageBox.Show("A hora de fim deve ser maior que a hora de início por pelo menos 30 minutos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
+        'End If
+
+
+        ComboBox2.Text = DateTimePickerFim.Value.ToString("HH:mm")
         If DateTimePickerFim.Value <= DateTimePickerInicio.Value OrElse DateTimePickerFim.Value.Subtract(DateTimePickerInicio.Value).TotalMinutes < 30 Then
-            MessageBox.Show("A hora de fim deve ser maior que a hora de início por pelo menos 30 minutos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("A hora de fim deve ser maior que a hora de início por pelo menos 30 minutos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
         End If
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        Dim sSelectedTime As String = ComboBox1.SelectedItem.ToString()
-        Dim dtSelectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(sSelectedTime))
-        DateTimePickerInicio.Value = dtSelectedDateTime
+        'Dim sSelectedTime As String = ComboBox1.SelectedItem.ToString()
+        'Dim dtSelectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(sSelectedTime))
+        'DateTimePickerInicio.Value = dtSelectedDateTime
+
+        If ComboBox1.SelectedIndex <> -1 Then
+            Dim sSelectedTime As String = ComboBox1.SelectedItem.ToString()
+            Dim dtSelectedDateTime As DateTime = DateTimePickerInicio.Value.Date.Add(TimeSpan.Parse(sSelectedTime))
+            DateTimePickerInicio.Value = dtSelectedDateTime
+        End If
+
+
     End Sub
 
     Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
@@ -152,18 +181,19 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub IconButton2_Click(sender As Object, e As EventArgs) Handles IconButton2.Click
+
         If String.IsNullOrWhiteSpace(TextBoxUsuarioNome.Text.Trim()) Then
-            MessageBox.Show("Por favor, adicione uma descrição para o evento.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Por favor, adicione uma descrição para o evento.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
 
         If DateTimePickerFim.Value.Subtract(DateTimePickerInicio.Value).TotalMinutes < 30 Then
-            MessageBox.Show("O intervalo entre a hora de início e fim deve ser igual ou maior 30 minutos.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("O intervalo entre a hora de início e fim deve ser igual ou maior 30 minutos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
 
         If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
-            MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Erro de Validação", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("A hora de fim deve ser maior que a hora de início.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Return
         End If
 
