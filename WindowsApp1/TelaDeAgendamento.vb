@@ -8,6 +8,7 @@ Public Class TelaDeAgendamento
     Private sPassword As String
     Public iIdDaSala As Integer
     Public sReservaUsuarioId As String
+    Private sTextUpper As Object
 
     Public Sub New(sUsername As String, sPassword As String, iSala As Integer)
         InitializeComponent()
@@ -63,17 +64,32 @@ Public Class TelaDeAgendamento
 
         ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList
         ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList
-        TextBoxUsuarioNome.MaxLength = 25
+        TextBoxUsuarioNome.MaxLength = 45
     End Sub
 
     Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
 
-        DateTimePickerInicio.MinDate = DateTime.Today
+        'DateTimePickerInicio.MinDate = DateTime.Now
+        'ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
+        'If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
+        '    DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
+        'End If
+        'DateTimePickerInicio.ShowUpDown = True
+
+        If DateTimePickerInicio.Value < DateTime.Now Then
+            MessageBox.Show("O horário selecionado é anterior ao horário atual.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            DateTimePickerInicio.Value = DateTime.Now
+        End If
+
         ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
+
         If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
             DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
         End If
+
         DateTimePickerInicio.ShowUpDown = True
+
+
     End Sub
 
     Private Sub DateTimePickerFim_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerFim.ValueChanged
@@ -99,17 +115,32 @@ Public Class TelaDeAgendamento
 
     Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
         ' Converter o texto para maiúsculas
-        Dim textUpper As String = TextBoxUsuarioNome.Text.ToUpper()
+        Dim sTextUpper As String = TextBoxUsuarioNome.Text.ToUpper()
 
-        ' Limitar a 45 caracteres
-        If textUpper.Length > 45 Then
-            textUpper = textUpper.Substring(0, 45)
+        ' Limitar a 45 caracteres e evitar múltiplas linhas
+        If sTextUpper.Length > 45 Then
+            sTextUpper = sTextUpper.Substring(0, 45)
         End If
 
+
+        'Dim result As New System.Text.StringBuilder()
+        'For i As Integer = 0 To sTextUpper.Length - 1 Step 25
+        '    If i + 25 > sTextUpper.Length Then
+        '        result.AppendLine(sTextUpper.Substring(i))
+
+        '    Else
+        '        result.AppendLine(sTextUpper.Substring(i, 25))
+        '    End If
+
+        'Next
+
+
+        sTextUpper = sTextUpper.Replace(Environment.NewLine, "") ' Remove quebras de linha
+
         ' Atualizar o texto na TextBox e manter o cursor no final
-        If TextBoxUsuarioNome.Text <> textUpper Then
-            TextBoxUsuarioNome.Text = textUpper
-            TextBoxUsuarioNome.SelectionStart = textUpper.Length
+        If TextBoxUsuarioNome.Text <> sTextUpper Then
+            TextBoxUsuarioNome.Text = sTextUpper
+            TextBoxUsuarioNome.SelectionStart = sTextUpper.Length
         End If
     End Sub
 

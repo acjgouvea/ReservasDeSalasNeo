@@ -87,7 +87,7 @@ Partial Class TelaDeAgendamento
         '
         Me.TextBoxUsuarioNome.BackColor = System.Drawing.SystemColors.Window
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(2, 35)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(10, 35)
         Me.TextBoxUsuarioNome.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
@@ -247,6 +247,7 @@ Partial Class TelaDeAgendamento
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "TelaDeAgendamento"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agendamento"
         Me.DataHoraFim.ResumeLayout(False)
         Me.DataHoraInicio.ResumeLayout(False)

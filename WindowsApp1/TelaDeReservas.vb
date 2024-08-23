@@ -27,6 +27,11 @@ Public Class TelaDeReservas
         SelecaoDeSalas.DropDownStyle = ComboBoxStyle.DropDownList
 
 
+        dgvGridReserva.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        dgvGridReserva.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
+        dgvGridReserva.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells)
         Me.StartPosition = FormStartPosition.CenterScreen
         dgvGridReserva.ColumnHeadersHeight = 40
 
@@ -55,6 +60,7 @@ Public Class TelaDeReservas
             UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel1)
             UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
             UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel3)
+
 
 
         Catch ex As Exception
@@ -274,6 +280,7 @@ Public Class TelaDeReservas
                     lblDataHoraInicio.Text = ""
                     lblDataHoraFim.Text = ""
                     lblEvento.Text = ""
+                    pnlDetalhesReserva.Visible = False
                 End If
             End If
 
@@ -406,13 +413,33 @@ Public Class TelaDeReservas
     End Sub
 
     Private Sub AjustarLarguraDasColunas()
-        ' Definir largura mínima e máxima para todas as colunas
+        '' Definir largura mínima e máxima para todas as colunas
+        'For Each col As DataGridViewColumn In dgvGridReserva.Columns
+        '    col.MinimumWidth = 170
+        '    col.Width = 170
+        '    'col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+        '    col.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+        'Next
+
+        ' Desativar temporariamente o ajuste automático para garantir que as larguras definidas sejam aplicadas corretamente
+        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
+
+        ' Configura a largura mínima e a largura desejada para todas as colunas e permite quebra de linha
         For Each col As DataGridViewColumn In dgvGridReserva.Columns
             col.MinimumWidth = 170
             col.Width = 170
-            'col.AutoSizeMode = DataGridViewAutoSizeColumnMode.None
             col.DefaultCellStyle.WrapMode = DataGridViewTriState.True
         Next
+
+        ' Reativar o ajuste automático de largura das colunas e das linhas
+        dgvGridReserva.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+        dgvGridReserva.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+        dgvGridReserva.DefaultCellStyle.WrapMode = DataGridViewTriState.True
+
+        ' Garantir que a altura das linhas seja ajustada corretamente
+        dgvGridReserva.AutoResizeRows(DataGridViewAutoSizeRowsMode.AllCells)
+
+
     End Sub
 
 
@@ -435,8 +462,10 @@ Public Class TelaDeReservas
     End Sub
 
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+
+
+    Private Sub IconButton3_Click(sender As Object, e As EventArgs) Handles IconButton3.Click
         Me.Close()
     End Sub
-
 End Class

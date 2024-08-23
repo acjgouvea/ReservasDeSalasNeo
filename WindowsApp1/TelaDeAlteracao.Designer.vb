@@ -200,6 +200,7 @@ Partial Class TelaDeAlteracao
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "TelaDeAlteracao"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Excluir reserva"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).EndInit()

@@ -59,15 +59,14 @@ Partial Class TelaDeReservas
         Me.Sexta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HoraReferencia_VC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.IconButton3 = New FontAwesome.Sharp.IconButton()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.IconButton4 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,10 +83,8 @@ Partial Class TelaDeReservas
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvGridReserva, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MonthCalendar1
@@ -345,19 +342,35 @@ Partial Class TelaDeReservas
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.IconButton3)
         Me.Panel4.Controls.Add(Me.IconPictureBox1)
-        Me.Panel4.Controls.Add(Me.PictureBox1)
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Controls.Add(Me.Label6)
         resources.ApplyResources(Me.Panel4, "Panel4")
         Me.Panel4.Name = "Panel4"
         '
-        'PictureBox1
+        'IconButton3
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
-        resources.ApplyResources(Me.PictureBox1, "PictureBox1")
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.TabStop = False
+        Me.IconButton3.BackColor = System.Drawing.Color.Red
+        Me.IconButton3.IconChar = FontAwesome.Sharp.IconChar.X
+        Me.IconButton3.IconColor = System.Drawing.Color.BlanchedAlmond
+        Me.IconButton3.IconFont = FontAwesome.Sharp.IconFont.Regular
+        Me.IconButton3.IconSize = 15
+        resources.ApplyResources(Me.IconButton3, "IconButton3")
+        Me.IconButton3.Name = "IconButton3"
+        Me.IconButton3.UseVisualStyleBackColor = False
+        '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
+        resources.ApplyResources(Me.IconPictureBox1, "IconPictureBox1")
+        Me.IconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck
+        Me.IconPictureBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid
+        Me.IconPictureBox1.IconSize = 20
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.TabStop = False
         '
         'Label1
         '
@@ -418,26 +431,6 @@ Partial Class TelaDeReservas
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.PictureBox4.Image = Global.WindowsApp1.My.Resources.Resources.NEOBETEL__BRANCO
-        resources.ApplyResources(Me.PictureBox4, "PictureBox4")
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.TabStop = False
-        '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
-        resources.ApplyResources(Me.IconPictureBox1, "IconPictureBox1")
-        Me.IconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck
-        Me.IconPictureBox1.IconColor = System.Drawing.Color.FromArgb(CType(CType(246, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(16, Byte), Integer))
-        Me.IconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid
-        Me.IconPictureBox1.IconSize = 20
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.TabStop = False
-        '
         'TelaDeReservas
         '
         resources.ApplyResources(Me, "$this")
@@ -449,7 +442,6 @@ Partial Class TelaDeReservas
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.dgvGridReserva)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.PictureBox4)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.HelpButton = True
@@ -477,10 +469,8 @@ Partial Class TelaDeReservas
         CType(Me.dgvGridReserva, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -524,7 +514,6 @@ Partial Class TelaDeReservas
     Friend WithEvents IconButton2 As FontAwesome.Sharp.IconButton
     Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents IconButton3 As FontAwesome.Sharp.IconButton
 End Class
