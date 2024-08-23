@@ -111,6 +111,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TelaDeAlteracao.Designer.vb">
       <DependentUpon>TelaDeAlteracao.vb</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaDeReservas.pt-BR.resx">
       <DependentUpon>TelaDeReservas.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LogoNeobetel.ico" />
+    <None Include="Resources\Logo NEOBETEL-Principal1.jpg" />
+    <None Include="Resources\neobetel_logo.jpg" />
+    <None Include="Resources\NEOBETEL- PRINCIPAL.png" />
+    <None Include="Resources\NEOBETEL- BRANCO.png" />
+    <None Include="Resources\Logo NEOBETEL-Principal.jpg" />
+    <None Include="Resources\Logo NEOBETEL-Fundo Azul1.jpg" />
+    <None Include="Resources\Logo NEOBETEL-Fundo Azul.jpg" />
     <None Include="Resources\2886665.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -30,9 +30,12 @@ Public Class TelaDeAlteracao
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '   usu_login_VC.Text = usu_login_VC.Text.Replace(".", " ")
-        Me.StartPosition = FormStartPosition.Manual
-        Me.Top = 400
-        Me.Left = 1200
+
+        Me.StartPosition = FormStartPosition.CenterScreen
+
+        'Me.StartPosition = FormStartPosition.Manual
+        'Me.Top = 400
+        'Me.Left = 1200
 
         UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
 

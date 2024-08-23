@@ -35,8 +35,8 @@ Partial Class TelaDeAgendamento
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Motivo = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.DataHoraFim.SuspendLayout()
         Me.DataHoraInicio.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -63,11 +63,11 @@ Partial Class TelaDeAgendamento
         '
         Me.ComboBox2.BackColor = System.Drawing.SystemColors.Info
         Me.ComboBox2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ComboBox2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(6, 60)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(148, 24)
+        Me.ComboBox2.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox2.TabIndex = 11
         '
         'DateTimePickerFim
@@ -87,7 +87,7 @@ Partial Class TelaDeAgendamento
         '
         Me.TextBoxUsuarioNome.BackColor = System.Drawing.SystemColors.Window
         Me.TextBoxUsuarioNome.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(10, 33)
+        Me.TextBoxUsuarioNome.Location = New System.Drawing.Point(2, 35)
         Me.TextBoxUsuarioNome.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBoxUsuarioNome.Multiline = True
         Me.TextBoxUsuarioNome.Name = "TextBoxUsuarioNome"
@@ -112,11 +112,11 @@ Partial Class TelaDeAgendamento
         '
         Me.ComboBox1.BackColor = System.Drawing.SystemColors.Info
         Me.ComboBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.ComboBox1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(6, 60)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(148, 24)
+        Me.ComboBox1.Size = New System.Drawing.Size(148, 21)
         Me.ComboBox1.TabIndex = 10
         '
         'DateTimePickerInicio
@@ -143,9 +143,9 @@ Partial Class TelaDeAgendamento
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton2.IconSize = 24
         Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton2.Location = New System.Drawing.Point(113, 314)
+        Me.IconButton2.Location = New System.Drawing.Point(120, 314)
         Me.IconButton2.Name = "IconButton2"
-        Me.IconButton2.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton2.Size = New System.Drawing.Size(113, 30)
         Me.IconButton2.TabIndex = 25
         Me.IconButton2.Text = "&Salvar"
         Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -162,9 +162,9 @@ Partial Class TelaDeAgendamento
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton1.IconSize = 24
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton1.Location = New System.Drawing.Point(239, 314)
+        Me.IconButton1.Location = New System.Drawing.Point(246, 314)
         Me.IconButton1.Name = "IconButton1"
-        Me.IconButton1.Size = New System.Drawing.Size(120, 40)
+        Me.IconButton1.Size = New System.Drawing.Size(113, 30)
         Me.IconButton1.TabIndex = 26
         Me.IconButton1.Text = "&Sair"
         Me.IconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -208,6 +208,18 @@ Partial Class TelaDeAgendamento
         Me.Panel2.Size = New System.Drawing.Size(351, 171)
         Me.Panel2.TabIndex = 28
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.PictureBox2.Location = New System.Drawing.Point(307, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 24
+        Me.PictureBox2.TabStop = False
+        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
@@ -220,30 +232,18 @@ Partial Class TelaDeAgendamento
         Me.Label1.Text = "Horario"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox2.Location = New System.Drawing.Point(313, 3)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 24
-        Me.PictureBox2.TabStop = False
-        '
         'TelaDeAgendamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(367, 366)
+        Me.ClientSize = New System.Drawing.Size(364, 347)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.IconButton1)
         Me.Controls.Add(Me.IconButton2)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "TelaDeAgendamento"

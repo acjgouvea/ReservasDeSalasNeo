@@ -32,10 +32,10 @@ Partial Class TelaDeAlteracao
         Me.MASERP_HMLDataSet = New WindowsApp1.MASERP_HMLDataSet()
         Me.MASERPHMLDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.IconButton1 = New FontAwesome.Sharp.IconButton()
         Me.IconButton2 = New FontAwesome.Sharp.IconButton()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.MASERP_HMLDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MASERPHMLDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -123,6 +123,18 @@ Partial Class TelaDeAlteracao
         Me.Panel2.Size = New System.Drawing.Size(298, 121)
         Me.Panel2.TabIndex = 31
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.PictureBox2.Location = New System.Drawing.Point(231, 0)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 24
+        Me.PictureBox2.TabStop = False
+        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
@@ -146,7 +158,7 @@ Partial Class TelaDeAlteracao
         Me.IconButton1.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton1.IconSize = 24
         Me.IconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton1.Location = New System.Drawing.Point(190, 141)
+        Me.IconButton1.Location = New System.Drawing.Point(160, 141)
         Me.IconButton1.Name = "IconButton1"
         Me.IconButton1.Size = New System.Drawing.Size(120, 40)
         Me.IconButton1.TabIndex = 30
@@ -165,7 +177,7 @@ Partial Class TelaDeAlteracao
         Me.IconButton2.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.IconButton2.IconSize = 24
         Me.IconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.IconButton2.Location = New System.Drawing.Point(63, 141)
+        Me.IconButton2.Location = New System.Drawing.Point(33, 141)
         Me.IconButton2.Name = "IconButton2"
         Me.IconButton2.Size = New System.Drawing.Size(120, 40)
         Me.IconButton2.TabIndex = 29
@@ -173,30 +185,18 @@ Partial Class TelaDeAlteracao
         Me.IconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.IconButton2.UseVisualStyleBackColor = False
         '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(63, Byte), Integer))
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.PictureBox2.Location = New System.Drawing.Point(231, 0)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(25, 27)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 24
-        Me.PictureBox2.TabStop = False
-        '
         'TelaDeAlteracao
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(323, 197)
+        Me.ClientSize = New System.Drawing.Size(317, 187)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.IconButton1)
         Me.Controls.Add(Me.IconButton2)
         Me.Controls.Add(Me.ButtonCancel)
         Me.Controls.Add(Me.ButtonSave)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "TelaDeAlteracao"

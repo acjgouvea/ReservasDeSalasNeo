@@ -33,9 +33,13 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub EventForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.StartPosition = FormStartPosition.Manual
-        Me.Top = 400
-        Me.Left = 1200
+
+        Me.StartPosition = FormStartPosition.CenterScreen
+
+
+        '   Me.StartPosition = FormStartPosition.Manual
+        ' Me.Top = 400
+        ' Me.Left = 1200 '
 
         UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel1)
         UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
@@ -63,6 +67,8 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub DateTimePickerInicio_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePickerInicio.ValueChanged
+
+        DateTimePickerInicio.MinDate = DateTime.Today
         ComboBox1.Text = DateTimePickerInicio.Value.ToString("HH:mm")
         If DateTimePickerFim.Value <= DateTimePickerInicio.Value Then
             DateTimePickerFim.Value = DateTimePickerInicio.Value.AddMinutes(30)
@@ -92,12 +98,18 @@ Public Class TelaDeAgendamento
     End Sub
 
     Private Sub TextBoxUsuarioNome_TextChanged(sender As Object, e As EventArgs) Handles TextBoxUsuarioNome.TextChanged
-        TextBoxUsuarioNome.Text = TextBoxUsuarioNome.Text.ToUpper()
-        TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        ' Converter o texto para maiúsculas
+        Dim textUpper As String = TextBoxUsuarioNome.Text.ToUpper()
 
-        If TextBoxUsuarioNome.Text.Length > 25 Then
-            TextBoxUsuarioNome.Text = TextBoxUsuarioNome.Text.Substring(0, 25)
-            TextBoxUsuarioNome.SelectionStart = TextBoxUsuarioNome.Text.Length
+        ' Limitar a 45 caracteres
+        If textUpper.Length > 45 Then
+            textUpper = textUpper.Substring(0, 45)
+        End If
+
+        ' Atualizar o texto na TextBox e manter o cursor no final
+        If TextBoxUsuarioNome.Text <> textUpper Then
+            TextBoxUsuarioNome.Text = textUpper
+            TextBoxUsuarioNome.SelectionStart = textUpper.Length
         End If
     End Sub
 

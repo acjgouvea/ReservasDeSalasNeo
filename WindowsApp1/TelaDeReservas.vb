@@ -23,7 +23,8 @@ Public Class TelaDeReservas
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        SelecaoDeEmpresa.DropDownStyle = ComboBoxStyle.DropDownList
+        SelecaoDeSalas.DropDownStyle = ComboBoxStyle.DropDownList
 
 
         Me.StartPosition = FormStartPosition.CenterScreen
@@ -31,8 +32,9 @@ Public Class TelaDeReservas
 
         dgvGridReserva.RowTemplate.Height = 15
 
-        Me.StartPosition = FormStartPosition.Manual
-        Me.Location = New Point(300, 100)
+        Me.StartPosition = FormStartPosition.CenterScreen
+
+        ' Me.Location = New Point(300, 100)
 
         dgvGridReserva.ReadOnly = True
 
@@ -47,10 +49,13 @@ Public Class TelaDeReservas
             EstilizarGrid()
             AjustarLarguraDasColunas()
 
+
+
             UtilsNeobetel.UtilGeral.carregaVisualComponente(pnlDetalhesReserva)
             UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel1)
             UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel2)
-            'UtilsNeobetel.UtilGeral.carregaVisualComponente(dgvGridReserva)
+            UtilsNeobetel.UtilGeral.carregaVisualComponente(Panel3)
+
 
         Catch ex As Exception
             MessageBox.Show("Erro ao carregar empresas: " & ex.Message)
@@ -130,7 +135,10 @@ Public Class TelaDeReservas
         Try
             Dim selectedRow As DataRowView = CType(SelecaoDeEmpresa.SelectedItem, DataRowView)
             idDaEmpresa = Convert.ToInt32(selectedRow("emp_empresa_IN"))
+
             CarregarSalas(idDaEmpresa)
+
+
 
         Catch ex As Exception
             MessageBox.Show("Erro ao selecionar empresa: " & ex.Message)
@@ -138,6 +146,8 @@ Public Class TelaDeReservas
     End Sub
 
     Private Sub CarregarSalas(empId As Integer)
+
+
         SelecaoDeSalas.DataSource = Nothing
         SelecaoDeSalas.Items.Clear()
 
@@ -156,12 +166,18 @@ Public Class TelaDeReservas
         SelecaoDeSalas.DisplayMember = "sala_nome"
         EstilizarGrid()
 
+
+
+
     End Sub
 
     Private Sub SelecaoDeSalas_SelectedIndexChanged(sender As Object, e As EventArgs) Handles SelecaoDeSalas.SelectedIndexChanged
+
+
         If SelecaoDeSalas.SelectedIndex = -1 Then Return
 
         idDaSala = Convert.ToInt32(SelecaoDeSalas.SelectedValue(0))
+        Label6.Text = "Sala atual: " & SelecaoDeSalas.Text
         CarregarReservasDaSemana(currentStartDate)
     End Sub
 
@@ -176,7 +192,7 @@ Public Class TelaDeReservas
         Dim startOfWeek As DateTime = selectedDate.AddDays(-dayOfWeek + If(dayOfWeek = 0, -6, 1))
         Dim endOfWeek As DateTime = startOfWeek.AddDays(6)
 
-        Label1.Text = "Semana de " & startOfWeek.ToString("dd/MM") & " a " & endOfWeek.ToString("dd/MM")
+        'Label1.Text = "Semana de " & startOfWeek.ToString("dd/MM") & " a " & endOfWeek.ToString("dd/MM")
         currentStartDate = startOfWeek
         CarregarReservasDaSemana(currentStartDate)
 
@@ -202,55 +218,141 @@ Public Class TelaDeReservas
     '    timerEsconderPainel.Interval = 7000
     'End Sub
 
+
+
     Private Sub dgvGridReserva_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvGridReserva.CellClick
 
-        pnlDetalhesReserva.Visible = True
+        Try
+            pnlDetalhesReserva.Visible = True
 
+            If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
+                'Dim horario As String = dgvGridReserva.Rows(e.RowIndex).Cells(0).Value.ToString()
+                Dim horario As String = dgvGridReserva.Rows(e.RowIndex).Cells(6).Value.ToString()
+                Dim diaDaSemana As String = dgvGridReserva.Columns(e.ColumnIndex).HeaderText
 
+                ' Tente extrair a data do cabeçalho
+                Dim dataTexto As String
+                Try
+                    dataTexto = diaDaSemana.Split(" "c)(1)
+                Catch ex As Exception
+                    MessageBox.Show("Formato do cabeçalho inesperado. Verifique o formato de data.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End Try
 
-        'timerEsconderPainel.Start()
+                ' Converte a data
+                Dim data As DateTime
+                Try
+                    data = DateTime.ParseExact(dataTexto, "dd/MM", Nothing)
+                Catch ex As Exception
+                    MessageBox.Show("Erro ao converter a data. Verifique o formato.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Exit Sub
+                End Try
 
+                'Dim dataHoraInicio As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(0)}")
+                'Dim dataHoraFim As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(2)}")
+                Dim dataHora As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.ToString()}")
 
-        If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
+                Dim parametros As New List(Of SqlParameter) From {
+                    New SqlParameter("@Sala_IN", idDaSala),
+                    New SqlParameter("@DataHora", dataHora)
+                }
 
-            Dim horario As String = dgvGridReserva.Rows(e.RowIndex).Cells(0).Value.ToString()
-            Dim diaDaSemana As String = dgvGridReserva.Columns(e.ColumnIndex).HeaderText
+                Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarDetalhesReserva", parametros)
 
+                If dataTable IsNot Nothing AndAlso dataTable.Rows.Count > 0 Then
+                    Dim detalhesReserva As DataRow = dataTable.Rows(0)
 
-            Dim dataTexto As String = diaDaSemana.Split(" "c)(1)
-            Dim data As DateTime = DateTime.ParseExact(dataTexto, "dd/MM", Nothing)
-
-
-            Dim dataHoraInicio As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(0)}")
-            Dim dataHoraFim As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(2)}")
-
-
-            Dim parametros As New List(Of SqlParameter) From {
-                New SqlParameter("@Sala_IN", idDaSala),
-                New SqlParameter("@DataHoraInicio", dataHoraInicio),
-                New SqlParameter("@DataHoraFim", dataHoraFim)
-            }
-
-            Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarDetalhesReserva", parametros)
-
-            If dataTable IsNot Nothing AndAlso dataTable.Rows.Count > 0 Then
-
-                Dim detalhesReserva As DataRow = dataTable.Rows(0)
-
-                'GroupBox4.Text = "Detalhes da Reserva"
-                lblUsuarioNome.Text = detalhesReserva("reserva_usuario_nome").ToString()
-                lblReservadoEm.Text = Convert.ToDateTime(detalhesReserva("data_reservado")).ToString("dd/MM/yy HH:mm")
-                lblDataHoraInicio.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_inicio")).ToString("dd/MM/yy HH:mm")
-                lblDataHoraFim.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_fim")).ToString("dd/MM/yy HH:mm")
-                lblEvento.Text = detalhesReserva("reserva_evento").ToString()
-            Else
-                MessageBox.Show("Nenhuma reserva encontrada para o horário selecionado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    lblUsuarioNome.Text = detalhesReserva("reserva_usuario_nome").ToString()
+                    lblReservadoEm.Text = Convert.ToDateTime(detalhesReserva("data_reservado")).ToString("dd/MM/yy HH:mm")
+                    lblDataHoraInicio.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_inicio")).ToString("dd/MM/yy HH:mm")
+                    lblDataHoraFim.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_fim")).ToString("dd/MM/yy HH:mm")
+                    lblEvento.Text = detalhesReserva("reserva_evento").ToString()
+                Else
+                    '    MessageBox.Show("Nenhuma reserva encontrada para o horário selecionado.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    lblUsuarioNome.Text = ""
+                    lblReservadoEm.Text = ""
+                    lblDataHoraInicio.Text = ""
+                    lblDataHoraFim.Text = ""
+                    lblEvento.Text = ""
+                End If
             End If
-        End If
 
-
+        Catch ex As Exception
+            MessageBox.Show("Ocorreu um erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
 
     End Sub
+
+    Private Sub dgvGridReserva_SelectionChanged(sender As Object, e As EventArgs) Handles dgvGridReserva.SelectionChanged
+        'Try
+        'pnlDetalhesReserva.Visible = True
+
+        '    ' Verificar se há células selecionadas
+        '    If dgvGridReserva.SelectedCells.Count > 0 Then
+        '        ' Iterar por todas as células selecionadas
+        '        For Each cell As DataGridViewCell In dgvGridReserva.SelectedCells
+        '            If cell.RowIndex >= 0 And cell.ColumnIndex > 0 Then
+        '                Dim horarioCell = dgvGridReserva.Rows(cell.RowIndex).Cells(0).Value
+
+        '                ' Verifica se a célula de horário está vazia ou nula
+        '                If horarioCell Is Nothing OrElse String.IsNullOrWhiteSpace(horarioCell.ToString()) Then
+        '                    Continue For ' Pula para a próxima célula se esta estiver vazia
+        '                End If
+
+        '                Dim horario As String = horarioCell.ToString()
+        '                Dim diaDaSemana As String = dgvGridReserva.Columns(cell.ColumnIndex).HeaderText
+
+        '                ' Tente extrair a data do cabeçalho
+        '                Dim dataTexto As String
+        '                Try
+        '                    dataTexto = diaDaSemana.Split(" "c)(1)
+        '                Catch ex As Exception
+        '                    MessageBox.Show("Formato do cabeçalho inesperado. Verifique o formato de data.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '                    Exit Sub
+        '                End Try
+
+        '                ' Converte a data
+        '                Dim data As DateTime
+        '                Try
+        '                    data = DateTime.ParseExact(dataTexto, "dd/MM", Nothing)
+        '                Catch ex As Exception
+        '                    MessageBox.Show("Erro ao converter a data. Verifique o formato.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '                    Exit Sub
+        '                End Try
+
+        '                Dim dataHoraInicio As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(0)}")
+        '                Dim dataHoraFim As DateTime = DateTime.Parse($"{data.ToString("yyyy-MM-dd")} {horario.Split(" "c)(2)}")
+
+        '                Dim parametros As New List(Of SqlParameter) From {
+        '                New SqlParameter("@Sala_IN", idDaSala),
+        '                New SqlParameter("@DataHoraInicio", dataHoraInicio),
+        '                New SqlParameter("@DataHoraFim", dataHoraFim)
+        '            }
+
+        '                Dim dataTable As DataTable = conexao.ExecutarConsulta(CommandType.StoredProcedure, "usp_SelecionarDetalhesReserva", parametros)
+
+        '                If dataTable IsNot Nothing AndAlso dataTable.Rows.Count > 0 Then
+        '                    Dim detalhesReserva As DataRow = dataTable.Rows(0)
+
+        '                    lblUsuarioNome.Text = detalhesReserva("reserva_usuario_nome").ToString()
+        '                    lblReservadoEm.Text = Convert.ToDateTime(detalhesReserva("data_reservado")).ToString("dd/MM/yy HH:mm")
+        '                    lblDataHoraInicio.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_inicio")).ToString("dd/MM/yy HH:mm")
+        '                    lblDataHoraFim.Text = Convert.ToDateTime(detalhesReserva("reserva_data_hora_fim")).ToString("dd/MM/yy HH:mm")
+        '                    lblEvento.Text = detalhesReserva("reserva_evento").ToString()
+        '                Else
+        '                    ' Nenhuma reserva encontrada para a célula selecionada
+        '                    'MessageBox.Show($"Nenhuma reserva encontrada para o horário: {horario} no dia: {diaDaSemana}.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '                End If
+        '            End If
+        '        Next
+        '    End If
+
+        'Catch ex As Exception
+        '    MessageBox.Show("Ocorreu um erro: " & ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
+
+    End Sub
+
 
     'Private Sub timerEsconderPainel_Tick(sender As Object, e As EventArgs) Handles timerEsconderPainel.Tick
 
@@ -265,8 +367,8 @@ Public Class TelaDeReservas
 
     Private Sub EstilizarGrid()
         ' Definir fonte para as células e cabeçalhos
-        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 9, FontStyle.Regular)
-        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 12, FontStyle.Bold)
+        dgvGridReserva.DefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semiboldl", 8, FontStyle.Regular)
+        dgvGridReserva.ColumnHeadersDefaultCellStyle.Font = New System.Drawing.Font("Segoe UI Semibold", 10, FontStyle.Bold)
 
         ' Cor de fundo para o cabeçalho
         dgvGridReserva.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(0, 29, 63)
@@ -275,8 +377,7 @@ Public Class TelaDeReservas
         ' Cor do texto no cabeçalho
         dgvGridReserva.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.FromArgb(246, 186, 16)
 
-        ' Cor de fundo alternada para as linhas
-        'dgvGridReserva.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Gray
+
 
 
         ' Cor do texto para as células
@@ -296,7 +397,7 @@ Public Class TelaDeReservas
 
     End Sub
 
-    Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles dgvGridReserva.CellFormatting
+    Private Sub dgvGridReserva_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs)
         ' Verifica se estamos formatando uma linha alternada (índice de linha ímpar)
         If e.RowIndex Mod 2 = 1 AndAlso e.ColumnIndex > 0 Then
             e.CellStyle.BackColor = System.Drawing.Color.LightGray
@@ -329,7 +430,13 @@ Public Class TelaDeReservas
         eventForm.Show()
     End Sub
 
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
+    Private Sub IconButton4_Click(sender As Object, e As EventArgs) Handles IconButton4.Click
+        Me.Close()
     End Sub
+
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Me.Close()
+    End Sub
+
 End Class
